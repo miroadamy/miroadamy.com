@@ -7,14 +7,22 @@ weight: 50
 
 ---
 
-Hugo is a static site engine written in Go.
+# About me
+
+This is personal blog of Miro Adamy.
+
+Im am DevOps/Cloud engineer, living in beautiful Valencia, Spain and spending my days designing and creating software systems for living and pleasure, reading books, surfing Web, walking, thinking and enjoying life with my family
+
+## Resume
+
+My current resume can be downloaded from here <a href="/resume/miro-adamy-2019.pdf" download>as PDF</a>
+
+## Contact
+
+Email me - firstname dot lastname, at Sergei's and Larry's company's email
+
+## Disclaimer
+
+The thoughts and opinions expressed in this blog are mine and do not represent the position of my employer.
 
 
-It makes use of a variety of open source projects including:
-
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
