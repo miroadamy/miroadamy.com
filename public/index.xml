@@ -1,63 +1,187 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <title>Miro&#39;s World</title>
+    <link>http://miroadamy.com/</link>
+    <description>Recent content on Miro&#39;s World</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 17:52:35 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 12:57:35 -0500</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://miroadamy.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Theme preview</title>
-      <link>http://localhost:1313/posts/even-preview/</link>
+      <link>http://miroadamy.com/posts/even-preview/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/even-preview/</guid>
+      <guid>http://miroadamy.com/posts/even-preview/</guid>
       <description>Based on MarkdownPreview test.md.
  Markdown 1 2 3 4 5 6 7 8  # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 ### Duplicate Header ### Duplicate Header   H1 H2 H3 H4 H5 H6 Duplicate Header Duplicate Header Paragraphs 1 2 3 4  This is a paragraph. I am still part of the paragraph. New paragraph.   This is a paragraph.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://miroadamy.com/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
+      <guid>http://miroadamy.com/about/</guid>
+      <description>About me This is personal blog of Miro Adamy.
+Im am DevOps/Cloud engineer, living in beautiful Valencia, Spain and spending my days designing and creating software systems for living and pleasure, reading books, surfing Web, walking, thinking and enjoying life with my family
+Resume My current resume can be downloaded from here as PDF
+Contact Email me - firstname dot lastname, at Sergei&amp;rsquo;s and Larry&amp;rsquo;s company&amp;rsquo;s email
+Disclaimer The thoughts and opinions expressed in this blog are mine and do not represent the position of my employer.</description>
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Fri, 22 Nov 2019 17:52:35 +0100</pubDate>
+      <title>DockerCon 2018 - great event (with a small fly in the ointment)</title>
+      <link>http://miroadamy.com/posts/2018-12-07-dockercon-2018/</link>
+      <pubDate>Fri, 07 Dec 2018 12:57:35 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>#Retrieve kubeconfig - easy way
- go to console - e.g. https://100.24.106.171 log on using credentials from teraform file (admin / never-mind) go to &amp;lsquo;quickstart&amp;rsquo; cluster use &amp;lsquo;kubeconfig&amp;rsquo; file link  </description>
+      <guid>http://miroadamy.com/posts/2018-12-07-dockercon-2018/</guid>
+      <description>DockerCon 2018 - great event (with a small fly in the ointment) I have just returned from DockerCon Europe 2018 and I’d like to share my impressions while they are fresh in my mind. It was my first DockerCon so I was not quite sure what to expect. As the title says, it was great experience and barring the scaling issue (more below) could have been really awesome experience.</description>
+    </item>
+    
+    <item>
+      <title>This is a hidden post.</title>
+      <link>http://miroadamy.com/posts/hidden-post/</link>
+      <pubDate>Thu, 08 Mar 2018 17:40:19 +0800</pubDate>
+      
+      <guid>http://miroadamy.com/posts/hidden-post/</guid>
+      <description>&lt;p&gt;This post is hidden from the home page.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>[English] Creating a New Theme</title>
-      <link>http://localhost:1313/posts/english-preview/</link>
+      <link>http://miroadamy.com/posts/english-preview/</link>
       <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/english-preview/</guid>
+      <guid>http://miroadamy.com/posts/english-preview/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
+      <title>Shortcodes</title>
+      <link>http://miroadamy.com/posts/shortcodes/</link>
+      <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
+      
+      <guid>http://miroadamy.com/posts/shortcodes/</guid>
+      <description>&lt;h1 id=&#34;admonition&#34;&gt;Admonition&lt;/h1&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;&lt;p class=&#34;admonition-title&#34;&gt;I&amp;#39;m title!&lt;/p&gt;
+  
+biu biu biu.
+
+&lt;details class=&#34;admonition note&#34;&gt;&lt;summary class=&#34;admonition-title&#34;&gt;note&lt;/summary&gt;
+  &lt;p&gt;biu biu biu.&lt;/p&gt;
+
+&lt;/details&gt;
+
+&lt;div class=&#34;admonition example&#34;&gt;
+  &lt;p&gt;Without title.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;{{% admonition note &amp;#34;I&amp;#39;m title!&amp;#34; false %}}
+biu biu biu.
+
+{{% admonition type=&amp;#34;note&amp;#34; title=&amp;#34;note&amp;#34; details=&amp;#34;true&amp;#34; %}}
+biu biu biu.
+{{% /admonition %}}
+
+{{% admonition example %}}
+Without title.
+{{% /admonition %}}
+
+{{% /admonition %}}&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Starting ACC (ATG Control Centre) on OS-X</title>
+      <link>http://miroadamy.com/posts/2016-03-24-acc-on-osx/</link>
+      <pubDate>Thu, 24 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-24-acc-on-osx/</guid>
+      <description>Starting ACC (ATG Control Centre) on OS-X Copy the installation of ACC for respective version from a Linux VM:
+The startup script in bin/startClient will fail, because it cannot determine which Java to use to run the app.
+It is trying to determine Unix flavour, failing that defaults to Solaris and ends up with invalid settings.
+Fix Set the variable JAVA_VM to path to executable command on your system.</description>
+    </item>
+    
+    <item>
+      <title>Git bits 2</title>
+      <link>http://miroadamy.com/posts/2016-03-23-gitbits2/</link>
+      <pubDate>Wed, 23 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-23-gitbits2/</guid>
+      <description>Git bits 2 Using the Scala source repo to demonstrate - see Github
+Show merged and unmerged branches This command allows you to show all local branches merged / unmerged to current branch
+1 2 3 4 5  ➜ scala git:(2.12.x) git branch -a --merged * 2.12.x remotes/origin/2.11.x remotes/origin/2.12.x remotes/origin/HEAD -&amp;gt; origin/2.12.x  1 2 3 4 5 6 7  ➜ scala git:(2.12.x) git branch -a --no-merged remotes/origin/2.</description>
+    </item>
+    
+    <item>
+      <title>Git - find unmerged commits</title>
+      <link>http://miroadamy.com/posts/2016-03-22-git-unmerged/</link>
+      <pubDate>Tue, 22 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-22-git-unmerged/</guid>
+      <description>Git - find unmerged commits This is Ruby script I found way back and was using it since.
+The credits for creation goes to Zach Dennis. The script is decribed in his blog post
+The source is here
+Example This is beginning of very long output from Groovy source
+The code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337  #!</description>
+    </item>
+    
+    <item>
+      <title>Git committer activity</title>
+      <link>http://miroadamy.com/posts/2016-03-21-gitbits1/</link>
+      <pubDate>Mon, 21 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-21-gitbits1/</guid>
+      <description>Git committer activity Git command git shortlog is very handy to see what is team activity.
+Show committer activity - whole project (output shortened to first 20 lines)
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  git shortlog -sn | head -20 2991	Paul King 1757	Cedric Champeau 1615	Jochen Theodorou 1031	James Strachan 749	Guillaume Laforge 312	Roshan Dawrani 306	Jason Dillon 301	Danno Ferrin 284	Alex Tkachman 273	PascalSchumacher 230	John Wilson 217	Pascal Schumacher 204	pascalschumacher 160	Thibault Kruse 158	Jeremy Rayner 134	Russel Winder 123	Cédric Champeau 122	Hamlet D&amp;#39;Arcy 116	Dierk Koenig 104	Pilho Kim   variant (without n) has different ordering:</description>
+    </item>
+    
+    <item>
+      <title>Git project statistic tool</title>
+      <link>http://miroadamy.com/posts/2016-03-20-gitinspector/</link>
+      <pubDate>Sun, 20 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-20-gitinspector/</guid>
+      <description>Git project statistic tool Python based, requires Python 2.6+
+Works OOTB on Mac
+Installation  Download TAR from Github unzipped to /opt
+1 2 3 4 5 6 7 8 9  ➜ ll /opt/gitinspector-0.3.2 total 52K -rw-r--r-- 1 miro 999 Jul 29 2013 DESCRIPTION.txt -rw-r--r-- 1 miro 32K Jun 14 2013 LICENSE.txt -rw-r--r-- 1 miro 78 Jul 2 2013 MANIFEST.in -rw-r--r-- 1 miro 681 Jan 13 2014 README.txt drwxr-xr-x 45 miro 1.</description>
+    </item>
+    
+    <item>
       <title>JS Flowchart Diagrams</title>
-      <link>http://localhost:1313/posts/js-flow-diagrams/</link>
+      <link>http://miroadamy.com/posts/js-flow-diagrams/</link>
       <pubDate>Wed, 04 Mar 2015 21:57:50 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/js-flow-diagrams/</guid>
+      <guid>http://miroadamy.com/posts/js-flow-diagrams/</guid>
       <description>&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -99,10 +223,10 @@ c2(no)-&amp;gt;op2-&amp;gt;e&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
     
     <item>
       <title>JS Sequence Diagrams</title>
-      <link>http://localhost:1313/posts/js-sequence-diagrams/</link>
+      <link>http://miroadamy.com/posts/js-sequence-diagrams/</link>
       <pubDate>Wed, 04 Mar 2015 21:57:45 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/js-sequence-diagrams/</guid>
+      <guid>http://miroadamy.com/posts/js-sequence-diagrams/</guid>
       <description>&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -122,10 +246,10 @@ Andrew-&amp;gt;&amp;gt;China: I am good thanks!&lt;/code&gt;&lt;/pre&gt;&lt;/td&
     
     <item>
       <title>Syntax Highlighting</title>
-      <link>http://localhost:1313/posts/syntax-highlighting/</link>
+      <link>http://miroadamy.com/posts/syntax-highlighting/</link>
       <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/syntax-highlighting/</guid>
+      <guid>http://miroadamy.com/posts/syntax-highlighting/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1

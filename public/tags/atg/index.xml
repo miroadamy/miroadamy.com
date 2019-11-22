@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>atg on Miro&#39;s World</title>
+    <link>http://miroadamy.com/tags/atg/</link>
+    <description>Recent content in atg on Miro&#39;s World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 24 Mar 2016 12:57:35 -0500</lastBuildDate>
+    
+	<atom:link href="http://miroadamy.com/tags/atg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Starting ACC (ATG Control Centre) on OS-X</title>
+      <link>http://miroadamy.com/posts/2016-03-24-acc-on-osx/</link>
+      <pubDate>Thu, 24 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-24-acc-on-osx/</guid>
+      <description>Starting ACC (ATG Control Centre) on OS-X Copy the installation of ACC for respective version from a Linux VM:
+The startup script in bin/startClient will fail, because it cannot determine which Java to use to run the app.
+It is trying to determine Unix flavour, failing that defaults to Solaris and ends up with invalid settings.
+Fix Set the variable JAVA_VM to path to executable command on your system.</description>
+    </item>
+    
+  </channel>
+</rss>

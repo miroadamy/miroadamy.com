@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Git project statistic tool - Miro&#39;s World</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Miro Adamy" /><meta name="description" content="Git project statistic tool Python based, requires Python 2.6&#43;
+Works OOTB on Mac
+Installation  Download TAR from Github unzipped to /opt
+1 2 3 4 5 6 7 8 9  ➜ ll /opt/gitinspector-0.3.2 total 52K -rw-r--r-- 1 miro 999 Jul 29 2013 DESCRIPTION.txt -rw-r--r-- 1 miro 32K Jun 14 2013 LICENSE.txt -rw-r--r-- 1 miro 78 Jul 2 2013 MANIFEST.in -rw-r--r-- 1 miro 681 Jan 13 2014 README.txt drwxr-xr-x 45 miro 1." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
+
+
+<link rel="canonical" href="http://miroadamy.com/posts/2016-03-20-gitinspector/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Git project statistic tool" />
+<meta property="og:description" content="Git project statistic tool Python based, requires Python 2.6&#43;
+Works OOTB on Mac
+Installation  Download TAR from Github unzipped to /opt
+1 2 3 4 5 6 7 8 9  ➜ ll /opt/gitinspector-0.3.2 total 52K -rw-r--r-- 1 miro 999 Jul 29 2013 DESCRIPTION.txt -rw-r--r-- 1 miro 32K Jun 14 2013 LICENSE.txt -rw-r--r-- 1 miro 78 Jul 2 2013 MANIFEST.in -rw-r--r-- 1 miro 681 Jan 13 2014 README.txt drwxr-xr-x 45 miro 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miroadamy.com/posts/2016-03-20-gitinspector/" />
+<meta property="article:published_time" content="2016-03-20T12:57:35-05:00" />
+<meta property="article:modified_time" content="2016-03-20T12:57:35-05:00" />
+<meta itemprop="name" content="Git project statistic tool">
+<meta itemprop="description" content="Git project statistic tool Python based, requires Python 2.6&#43;
+Works OOTB on Mac
+Installation  Download TAR from Github unzipped to /opt
+1 2 3 4 5 6 7 8 9  ➜ ll /opt/gitinspector-0.3.2 total 52K -rw-r--r-- 1 miro 999 Jul 29 2013 DESCRIPTION.txt -rw-r--r-- 1 miro 32K Jun 14 2013 LICENSE.txt -rw-r--r-- 1 miro 78 Jul 2 2013 MANIFEST.in -rw-r--r-- 1 miro 681 Jan 13 2014 README.txt drwxr-xr-x 45 miro 1.">
+
+
+<meta itemprop="datePublished" content="2016-03-20T12:57:35-05:00" />
+<meta itemprop="dateModified" content="2016-03-20T12:57:35-05:00" />
+<meta itemprop="wordCount" content="928">
+
+
+
+<meta itemprop="keywords" content="osx,git," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git project statistic tool"/>
+<meta name="twitter:description" content="Git project statistic tool Python based, requires Python 2.6&#43;
+Works OOTB on Mac
+Installation  Download TAR from Github unzipped to /opt
+1 2 3 4 5 6 7 8 9  ➜ ll /opt/gitinspector-0.3.2 total 52K -rw-r--r-- 1 miro 999 Jul 29 2013 DESCRIPTION.txt -rw-r--r-- 1 miro 32K Jun 14 2013 LICENSE.txt -rw-r--r-- 1 miro 78 Jul 2 2013 MANIFEST.in -rw-r--r-- 1 miro 681 Jan 13 2014 README.txt drwxr-xr-x 45 miro 1."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/posts/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/posts/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Git project statistic tool</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-03-20 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#git-project-statistic-tool">Git project statistic tool</a>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="git-project-statistic-tool">Git project statistic tool</h1>
+
+<p>Python based, requires Python 2.6+</p>
+
+<p>Works OOTB on Mac</p>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+<li>Download TAR from <a href="https://github.com/ejwa/gitinspector">Github</a></li>
+
+<li><p>unzipped to /opt</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">➜  ll /opt/gitinspector-0.3.2
+total 52K
+-rw-r--r--  <span class="m">1</span> miro  <span class="m">999</span> Jul <span class="m">29</span>  <span class="m">2013</span> DESCRIPTION.txt
+-rw-r--r--  <span class="m">1</span> miro  32K Jun <span class="m">14</span>  <span class="m">2013</span> LICENSE.txt
+-rw-r--r--  <span class="m">1</span> miro   <span class="m">78</span> Jul  <span class="m">2</span>  <span class="m">2013</span> MANIFEST.in
+-rw-r--r--  <span class="m">1</span> miro  <span class="m">681</span> Jan <span class="m">13</span>  <span class="m">2014</span> README.txt
+drwxr-xr-x <span class="m">45</span> miro <span class="m">1</span>.5K Mar <span class="m">20</span>  <span class="m">2015</span> gitinspector
+-rw-r--r--  <span class="m">1</span> miro <span class="m">1</span>.9K Jan <span class="m">14</span>  <span class="m">2014</span> setup.py
+-rw-r--r--  <span class="m">1</span> miro  <span class="m">110</span> Jul <span class="m">27</span>  <span class="m">2013</span> stdeb.cfg</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>create symlink from ~/bin (or from whatever directory on $PATH)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ln -s /opt/gitinspector-0.3.2/gitinspector/gitinspector.py ~/bin/gitinspector.py
+  
+➜  ~  ll ~/bin <span class="p">|</span> grep gitin
+lrwxr-xr-x <span class="m">1</span> miro   <span class="m">52</span> Mar <span class="m">20</span> <span class="m">16</span>:06 gitinspector.py -&gt; /opt/gitinspector-0.3.2/gitinspector/gitinspector.py</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>Look at scala sources - git@github.com:scala/scala.git</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">➜  scala git:(2.12.x) gitinspector.py -Tlr --since=2014-01-01
+The following historical commit information, by author, was found in the repository:
+
+Author                     Commits    Insertions      Deletions    % of changes
+Adriaan Moors                    6            69           7365            9.81
+Antoine Gourlay                  6            98           7391            9.88
+David Hoepelman                  1            30             25            0.07
+EECOLOR                          1             1              5            0.01
+Eitan Adler                      1             2              2            0.01
+Felix Mulder                    12           776           6272            9.30
+Janek Bogucki                    1             2              2            0.01
+Jason Zaugg                     26           617            263            1.16
+Kato Kazuyoshi                   3            12             12            0.03
+Lukas Rytz                      22          7400          44785           68.87
+Marcin Kubala                    1            95             35            0.17
+Mariot Chauvin                   1             6             29            0.05
+Michał Pociecha                  1             1              1            0.00
+Pim Verkerk                      1             1              1            0.00
+Seth Tisue                       1             0             38            0.05
+Simon Ochsenreither              3           246             71            0.42
+Viktor Klang                     1            19             44            0.08
+mpociecha                        1            26             26            0.07
+
+Below are the number of rows from each author that have survived and are still intact in the current revision:
+
+Author                     Rows       % in comments
+Adriaan Moors                29               10.34
+Antoine Gourlay              18               38.89
+David Hoepelman              30               10.00
+EECOLOR                       1                0.00
+Felix Mulder                616               11.36
+Janek Bogucki                 2                0.00
+Jason Zaugg                 430                8.84
+Kato Kazuyoshi                5                0.00
+Lukas Rytz                34620                1.20
+Marcin Kubala                49                2.04
+Pim Verkerk                   1                0.00
+Simon Ochsenreither         245                5.31
+mpociecha                     2              100.00
+
+The following history timeline has been gathered from the repository:
+
+Author                  2014-02    2014-03    2014-05    2014-06    2014-07    2014-08    2014-09    2014-10    2014-11    2014-12    2015-02
+Adriaan Moors                ++          -                                                                                           ----++++
+Antoine Gourlay                                                              ---------  +++++++++
+Jason Zaugg           +++++++++          +          .  +++++++++  +++++++++                                .  +++++++++
+Kato Kazuyoshi                                                                       .
+Lukas Rytz                                   ++++++++                                .         ++                                .
+Marcin Kubala                     --++++++
+Simon Ochsenreither                                                                                     ++++
+Viktor Klang                                                                                        ------++
+mpociecha                                                                                                                 ----++++
+Modified Rows:               95        174       4028          7          1       7414         91         94         10         54          4
+
+Author                  2015-03    2015-04    2015-05    2015-06    2015-07    2015-08    2015-09    2015-10    2015-11    2015-12    2016-01
+Adriaan Moors                                                 ++  ---------
+Antoine Gourlay               .                                                          ++++++++
+EECOLOR                       .
+Eitan Adler                                                                                                                                 .
+Felix Mulder                                                                                                              ---+++++  ---------
+Janek Bogucki                                                                                                  ----++++
+Jason Zaugg             +++++++          .          .          +          .                        +++++++++                                .
+Kato Kazuyoshi                .          .
+Lukas Rytz             ++++++++  ---------  ---------   ++++++++       ++++
+Mariot Chauvin                                                            .
+Michał Pociecha                                                                      .
+Seth Tisue                                                                   ---------
+Simon Ochsenreither                      .                                                                                                  .
+Modified Rows:              642      12953      31781         62      10763         40         12          6          4        173       5694
+
+Author                  2016-02    2016-03
+David Hoepelman                          +
+Felix Mulder           ----++++         -+
+Jason Zaugg                      ---------
+Lukas Rytz                    .
+Pim Verkerk                              .
+Modified Rows:             1255        411
+
+The following repsonsibilties, by author, were found in the current revision of the repository (comments are exluded from the line count, if
+possible):
+
+Adriaan Moors is mostly responsible for:
+    12 test/files/pos/t9356/MyAnnotation.java
+     3 test/files/pos/t6169/Skinnable.java
+     3 test/files/pos/t6169/ExistIndir.java
+     3 test/files/pos/t6169/ExistF.java
+     3 test/files/pos/t6169/Exist.java
+     1 test/files/pos/t6169/Skin.java
+     1 test/files/pos/t6169/OP.java
+
+Antoine Gourlay is mostly responsible for:
+     8 test/files/pos/t9239/Usage.java
+     1 test/files/neg/t4851/J2.java
+     1 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/index.js
+     1 spec/public/scripts/highlight.pack.js
+
+David Hoepelman is mostly responsible for:
+    27 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/template.js
+
+EECOLOR is mostly responsible for:
+     1 src/library/scala/runtime/BoxesRunTime.java
+
+Felix Mulder is mostly responsible for:
+   395 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/index.js
+    74 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/template.js
+    49 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/scheduler.js
+    26 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/diagrams.js
+     1 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/jquery.panzoom.min.js
+     1 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/jquery.mousewheel.min.js
+
+Janek Bogucki is mostly responsible for:
+     1 src/library/scala/reflect/ScalaSignature.java
+     1 src/library/scala/reflect/ScalaLongSignature.java
+
+Jason Zaugg is mostly responsible for:
+    45 test/files/run/t7741a/GroovyInterfaceDump.java
+    45 test/files/run/t7741a/GroovyInterface$1Dump.java
+    43 src/library/scala/runtime/StructuralCallSite.java
+    29 src/library/scala/runtime/LambdaDeserialize.java
+    20 src/library/scala/runtime/SymbolLiteral.java
+    16 test/files/run/indy-via-macro-with-dynamic-args/Bootstrap.java
+    15 test/files/run/indy-via-macro/Bootstrap.java
+    12 test/files/run/t9268/Java.java
+    11 test/files/pos/t5165b/TestAnnotation_1.java
+    10 test/files/pos/t9393/NamedImpl_2.java
+
+Kato Kazuyoshi is mostly responsible for:
+     5 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/template.js
+
+Lukas Rytz is mostly responsible for:
+   495 src/library/scala/runtime/java8/JFunction2.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZJJ$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZJI$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZJD$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZIJ$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZII$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZID$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZDJ$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZDI$sp.java
+   495 src/library/scala/runtime/java8/JFunction2$mcZDD$sp.java
+
+Marcin Kubala is mostly responsible for:
+    47 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/template.js
+     1 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/index.js
+
+Pim Verkerk is mostly responsible for:
+     1 src/scaladoc/scala/tools/nsc/doc/html/resource/lib/scheduler.js
+
+Simon Ochsenreither is mostly responsible for:
+   117 spec/public/scripts/toc.js
+    55 spec/public/scripts/main.js
+    11 test/files/neg/t8700b/Baz_1.java
+    11 test/files/neg/t8700a/Baz.java
+     5 test/files/run/t4788/SAnnotation.java
+     5 test/files/run/t4788/RAnnotation.java
+     5 test/files/run/t4788/CAnnotation.java
+     5 test/files/run/t4788-separate-compilation/SAnnotation_1.java
+     5 test/files/run/t4788-separate-compilation/RAnnotation_1.java
+     5 test/files/run/t4788-separate-compilation/CAnnotation_1.java
+
+The extensions below were found in the repository history (extensions used during statistical analysis are marked):
+rtf number x-build conf 0-M0 txt check xml [java] scala res json html yml css bnd tmpl sbt latex bib [js] SAMPLE awk html5 properties md bat sha1 svg script list sh flags</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Miro Adamy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-03-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/osx/">osx</a>
+          <a href="/tags/git/">git</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/posts/2016-03-21-gitbits1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Git committer activity</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/posts/js-flow-diagrams/">
+            <span class="next-text nav-default">JS Flowchart Diagrams</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:miro.adamy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/369692/miro-a" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/miroadamy" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/miro.adamy" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/miroadamy/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/miroadamy" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/miro.adamy/?hl=sk" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="https://gitlab.com/miro.adamy" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="https://bitbucket.org/%7Bc05adff9-951c-4ad1-9a83-e43a1af1b81a%7D/" class="iconfont icon-bitbucket" title="bitbucket"></a>
+  <a href="http://miroadamy.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2006 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

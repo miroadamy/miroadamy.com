@@ -1,7 +1,7 @@
-baseURL = "http://localhost:1313/"
+baseURL = "http://miroadamy.com/"
 languageCode = "en"
 defaultContentLanguage = "en"                           
-title = "Even - A super concise theme for Hugo"
+title = "Miro's World"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 enableEmoji = true
@@ -60,7 +60,7 @@ copyright = ""            # default: author.name ↓
   # site info (optional)                                  
   logoTitle = "Even"        # default: the title value    
   keywords = ["Hugo", "theme","even"]
-  description = "Hugo theme even example site."
+  description = "Miro's World - personal blog of Miro Adamy"
 
   # paginate of archives, tags and categories             
   archivePaginate = 5
@@ -72,10 +72,10 @@ copyright = ""            # default: author.name ↓
   dateFormatToUse = "2006-01-02"
 
   # show word count and read time ?                       
-  moreMeta = false
+  moreMeta = true
 
   # Syntax highlighting by highlight.js
-  highlightInClient = false
+  highlightInClient = true
 
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
   toc = true                                                                            
@@ -90,7 +90,7 @@ copyright = ""            # default: author.name ↓
 
   postMetaInFooter = true   # contain author, lastMod, markdown link, license           
   linkToMarkDown = false    # Only effective when hugo will output .md files.           
-  contentCopyright = ''     # e.g. '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+  contentCopyright = '(c) 2006-2019 Miro Adamy'     # e.g. '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 
   googleVerification = ""  # Google Verification         
 
@@ -147,15 +147,14 @@ copyright = ""            # default: author.name ↓
 
   [params.social]                                         
     a-email = "mailto:miro.adamy@gmail.com"
-    b-stack-overflow = "http://localhost:1313"
-    c-twitter = "http://localhost:1313"
-    d-facebook = "http://localhost:1313"
-    e-linkedin = "http://localhost:1313"
-    f-google = "http://localhost:1313"
-    g-github = "http://localhost:1313"
-    m-instagram = "http://localhost:1313"
-    n-gitlab = "http://localhost:1313"
-    o-bilibili = "http://localhost:1313"
+    b-linkedin = "https://www.linkedin.com/in/miroadamy/"
+    c-stack-overflow = "https://stackoverflow.com/users/369692/miro-a"
+    d-github = "https://github.com/miroadamy"
+    e-gitlab = "https://gitlab.com/miro.adamy"
+    f-link = "https://bitbucket.org/%7Bc05adff9-951c-4ad1-9a83-e43a1af1b81a%7D/"
+    i-twitter = "https://twitter.com/miroadamy"
+    j-facebook = "https://www.facebook.com/miro.adamy"
+    h-instagram = "https://www.instagram.com/miro.adamy/?hl=sk"
 
 # See https://gohugo.io/about/hugo-and-gdpr/
 [privacy]

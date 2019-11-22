@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>DockerCon 2018 - great event (with a small fly in the ointment) - Miro&#39;s World</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Miro Adamy" /><meta name="description" content="DockerCon 2018 - great event (with a small fly in the ointment) I have just returned from DockerCon Europe 2018 and I’d like to share my impressions while they are fresh in my mind. It was my first DockerCon so I was not quite sure what to expect. As the title says, it was great experience and barring the scaling issue (more below) could have been really awesome experience." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
+
+
+<link rel="canonical" href="http://miroadamy.com/posts/2018-12-07-dockercon-2018/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="DockerCon 2018 - great event (with a small fly in the ointment)" />
+<meta property="og:description" content="DockerCon 2018 - great event (with a small fly in the ointment) I have just returned from DockerCon Europe 2018 and I’d like to share my impressions while they are fresh in my mind. It was my first DockerCon so I was not quite sure what to expect. As the title says, it was great experience and barring the scaling issue (more below) could have been really awesome experience." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://miroadamy.com/posts/2018-12-07-dockercon-2018/" />
+<meta property="article:published_time" content="2018-12-07T12:57:35-05:00" />
+<meta property="article:modified_time" content="2018-12-07T12:57:35-05:00" />
+<meta itemprop="name" content="DockerCon 2018 - great event (with a small fly in the ointment)">
+<meta itemprop="description" content="DockerCon 2018 - great event (with a small fly in the ointment) I have just returned from DockerCon Europe 2018 and I’d like to share my impressions while they are fresh in my mind. It was my first DockerCon so I was not quite sure what to expect. As the title says, it was great experience and barring the scaling issue (more below) could have been really awesome experience.">
+
+
+<meta itemprop="datePublished" content="2018-12-07T12:57:35-05:00" />
+<meta itemprop="dateModified" content="2018-12-07T12:57:35-05:00" />
+<meta itemprop="wordCount" content="2047">
+
+
+
+<meta itemprop="keywords" content="docker,events," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DockerCon 2018 - great event (with a small fly in the ointment)"/>
+<meta name="twitter:description" content="DockerCon 2018 - great event (with a small fly in the ointment) I have just returned from DockerCon Europe 2018 and I’d like to share my impressions while they are fresh in my mind. It was my first DockerCon so I was not quite sure what to expect. As the title says, it was great experience and barring the scaling issue (more below) could have been really awesome experience."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/posts/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/posts/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">DockerCon 2018 - great event (with a small fly in the ointment)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-07 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#dockercon-2018-great-event-with-a-small-fly-in-the-ointment">DockerCon 2018 - great event (with a small fly in the ointment)</a>
+<ul>
+<li><a href="#content">Content</a></li>
+<li><a href="#dockercon-party">DockerCon Party</a></li>
+<li><a href="#the-fly-in-the-ointment">The fly in the ointment</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h1 id="dockercon-2018-great-event-with-a-small-fly-in-the-ointment">DockerCon 2018 - great event (with a small fly in the ointment)</h1>
+
+<p>I have just returned from DockerCon Europe 2018 and I’d like to share my impressions while they are fresh in my mind. It was my first DockerCon so I was not quite sure what to expect.
+As the title says, it was great experience and barring the scaling issue (more below) could have been really awesome experience.</p>
+
+<p>But let&rsquo;s take things in order. First location - Barcelona. Hard to pick better place in December than Spain. I am sure the Northerners greatly appreciated the break from cold and enjoyed the balmy 15 to 20 degrees. The venue Centre de Convencions Internacional de Barcelona - CCIB - though not located in the centre, is at the shore and one can walk to the beach in 2-3 minutes. There were three of us going from Valencia office (which is 3 hours train ride down the coast from Barcelona) and we had also great hotel experience. I can highly recommend <a href="https://hotelbarcelonaprincess.com/en">Hotel Princess Barcelona</a>. What can be better than starting your day with watching sunrise over Mediterranean Sea. Thanks David - because you did such a great job, you are now in charge of travel and hotel booking going forward :-D</p>
+
+<p><img src="/images/2018-sunrise.png" width="400" /></p>
+
+<p>The registration was well prepared and smooth. Considering the amount of participants (I do not have the numbers, but it felt well over thousand) it was very quick. DockerCon mobile app was available with up to date schedule, agenda, speakers info and feedback option and it worked quite well.</p>
+
+<p><img src="/images/2018-entry-hall.png" width="400" /></p>
+
+<h2 id="content">Content</h2>
+
+<p>The activities of the DockerCon come in different form, targeting different audiences and different sized rooms.</p>
+
+<p>There were general sessions aka keynotes - the only ones streamed online (see <a href="https://europe-2018.dockercon.com">DockerCon</a>). These were in big hall seating everybody. From my point of view, these were OK but not overly exciting. What I heard only confirms impression about direction of the Docker as a company - but I will get back to that.</p>
+
+<p>Much more interesting were Breakout sessions and Community theatre sessions. Breakout sessions were hosted on first floor in auditoriums of capacity hundreds of participants. There were multiple tracks focusing on developers, operations etc - <a href="https://europe-2018.dockercon.com/track-descriptions/">5 in total</a> and we had to choose one. Sometimes two interesting tracks overlapped, but judging by the presence of the recording crew, those I missed will be eventually available as recordings. Cannot wait until I can add them to my long watch list - still working through AWS re:Invent 2018 videos.</p>
+
+<p>Pretty much every session I attended was good or great. It was very interesting to see Jaana B. Dogan of Google (@rakyll) in person (you may know the name if you are following GoLang space or <a href="https://medium.com/@rakyll">Medium</a>. Here are the [slides])<a href="https://speakerdeck.com/rakyll/monitoring-and-debugging-containers)">https://speakerdeck.com/rakyll/monitoring-and-debugging-containers)</a></p>
+
+<p>The few I would like to emphasize are those where I either learned something new or I can immediately use it - e.g. &ldquo;Dockerfile Best Practices&rdquo; by Sebastiaan van Stijn and <a href="https://twitter.com/tiborvass?lang=en">Tibor Vass</a>, or <a href="https://drive.google.com/file/d/1RBAl2PfTnn-IZWzQEoiISaXh4GQOpjxL/view">&ldquo;Tips and Tricks of the Docker Captains&rdquo;</a></p>
+
+<p><img src="/images/2018-sessions.png" width="400" /></p>
+
+<p>The nice surprise at the DockerCon was for me the presentation of Sean Gillespie of Pulumi: Program the Cloud Using Containers as the Building Block. At first sight the idea looked a lot like Trophoshere in Typescript - use real programming language in place of DSL or YAML, only instead of being limited to Python and generation of Cloudformation, one can use TypeScript, Python or Go and instead of only script generation it interfaces with target API on your behalf. The target API can be AWS, GCP or Azure - or Kubernetes. And it also maintains state (inside their cloud for now, more backends coming). So all in all - this is like Terraform with real programming language instead of HCL - something that may come very handy. I am intrigued and will certainly try it out. It is open source and this is the <a href="https://github.com/pulumi/examples">repo</a> and <a href="https://github.com/pulumi/pulumi">https://github.com/pulumi/pulumi</a>. Btw - great presentation, Sean - it was pleasure to listen to you.</p>
+
+<p><img src="/images/2018-community.png" width="400" /></p>
+
+<p>In Community theatre - interesting talk about psychology of doing code reviews by Elodie Rafalimanana and for me personally very interesting “Transparent Execution of Scientific Workflows in Docker Containers” from Barcelona Supercomputing Centre” by Jorge Ejarque and talk by Boston Consulting Group on “Lessons in Using Docker to Close the Loop on Industrializing AI and ML Applications” (Clement Roche and Bartlomiej Nogas). The talk “Improving Docker Desktop File Sharing Performance” by David Scott and Pierre Gayvallet was also very useful for practical day-to-day work.</p>
+
+<p><img src="/images/2018-docker-ee.png" width="400" /></p>
+
+<p>As on every conference, there were some product announcements and important innovations. Some were on Enterprise side - Docker Desktop Enterprise, which may be important for the Docker penetration of the large enterprises and new features of DockerEE. I personally found most interesting <a href="https://blog.docker.com/2018/12/simplifying-kubernetes-with-docker-compose-and-friends/">convergence of docker-compose and Kubernetes file formats</a> and &ldquo;default&rdquo; Kubernetes local cluster available in Docker since version <a href="https://blog.docker.com/2018/11/introducing-docker-engine-18-09/">18.09</a>. The addition (and opening up) of the buildkit with possibility of adding new syntax to Docker file is something that will have great impact and allow innovation in many directions. Generally, the improvements in buildkit were pretty impressive and examples shown with multi-container builds made me gasp few times. Well done, Docker team and Docker community.</p>
+
+<p><img src="/images/2018-docker-keynote.png" width="400" /></p>
+
+<p>One important announcement about which I have mixed feelings was docker assemble - new tool that allows creating docker image without creation of Dockerfile. Sure it is useful, but did not make me anywhere as impressed as the improvements above. Dockerfiles are not exactly rocket science and saving creation of boilerplate ones for common scenarios like Java Maven project or DotNet project is not such a great help - IMHO. I may be wrong but somehow it does not seem to be such a big deal.</p>
+
+<p>Docker sees it as very important though, and it was emphasized in the keynote that the strategic goal is to move from ~ 1 mil of users (mostly Linux) to 10+ millions and include many more Windows users. Importance of Windows, making things simpler and emphasis on Enterprise and enterprise customers were the main corporate theme here in Barcelona. I think there is an acquisition writing on the wall and Microsoft is the buyer. It would make a lot of sense for both - and frankly, Microsoft would be IMHO better option than some the other names mentioned (hello Oracle). All recent events point in that direction - the <a href="https://techcrunch.com/2018/03/28/solomon-hykes-leaves-docker-the-company-he-founded/">departure of the co-founder and CTO in May</a> and new CTO - an enterprise veteran from WMWare and Oracle <a href="https://www.linkedin.com/in/kalde/">Kal De</a>.</p>
+
+<p>The other important announcement confirming the importance of Windows and Microsoft was CNAB - <a href="https://blog.docker.com/2018/12/announcing-cloud-native-application-bundle-cnab/">cloud native application bundle</a></p>
+
+<p>I guess, with the exponential growth Docker is experiencing, the &ldquo;enterprisation&rdquo; is inevitable and morphing of the small, loved, open-source company into something playing in the big leagues is observed with mixed feelings. Luckily, the Docker community and ecosystem is awesome, stronger than ever and will not make it easy for greed to stifle the technical innovation. The strong community will prevail - there are enough good recent examples that show this - like Java and raise of OpenJDK (hello Oracle again).</p>
+
+<p>There were lots of booths and vendor demos. I liked the SysDig and the Datadog demos. We had nice chat with Rancher team and I even found ex-paesano from Czech republic in RedHat booth (one can always recognize the homeland accent). I also had good opportunity to dust off my German.</p>
+
+<p><img src="/images/2018-docker-booths.png" width="400" /></p>
+
+<p>The AWS was present, pushing Fargate (no surprise there) as well as Azure. It is great that somebody is trying to compete with Amazon. Google did not have any booth, neither did any of the &ldquo;lesser clouds&rdquo;.</p>
+
+<p>The food at the event was great, by far the best of any conference I went to. Jose (being used to very high standard as a Spaniard) said it was OK - but he was comparing with Barcelona and Valencia &ldquo;native level&rdquo; of expectations. For us, guiris it was just great. Well - except the coffee which was OK. Or maybe I am getting get used to &ldquo;native level&rdquo; ? LOL.</p>
+
+<h2 id="dockercon-party">DockerCon Party</h2>
+
+<p><img src="/images/2018-docker-party.png" width="400" /></p>
+
+<p>On day two Docker threw very impressive party. The busses took us from conference centre to the night club district at the shore - Barcelonetta - where people could choose among 4 different styles of clubs: salsa / cuban music, electronic lounge, jazz themed and Indian / Asian themed with what may have been authentic live Indian music. All 4 clubs were interconnected by the shared beach so one could walk on the beach and visit all of them. Add very good food and open bar and you&rsquo;ll have complete picture. Night clubs with lots of people are not exactly my natural habitat, so it was interesting to see it for a change. Now I can say I was in a night club in Spain. Actually, on Tuesday I probably visited more night clubs than during previous 40 years :-).</p>
+
+<p><img src="/images/2018-docker-party2.png" width="400" /></p>
+
+<h2 id="the-fly-in-the-ointment">The fly in the ointment</h2>
+
+<p>Now we are coming to the &ldquo;fly in the ointment&rdquo; of the conference - the workshops. The organizers decided to host one of the most interesting parts of the conference - workshops - in small rooms seating tens of people. The rational probably being to keep the hands-on spirit of the presentation, make communication and interaction feasible - which makes sense. As a teacher and trainer I understand very well that it is hard to do deeper hands-on sessions with larger audiencies. What was IMHO complete and inexcusable failure on the side of organizers was</p>
+
+<ol>
+<li>communication of real capacity and expectation management</li>
+<li>lack of providing &ldquo;read-only&rdquo; access via streaming to overflow rooms<br /></li>
+<li>failure to record the sessions.</li>
+</ol>
+
+<p>Actually, a combination of 1 and (2 or 3) would had solved the problem.</p>
+
+<p>There was mentioning on the website of the DockerCon that RSVP for workshops is required. I tried to register the week before the conference and every workshop was allready full, including the waiting list. On Monday - first day of the conference - there were only workshops scheduled, all of them unavailable.</p>
+
+<p>As we found out, there were hundreds of people in the same situation, and even those who tried to register weeks before the event did not get in. This was mentioned on the discussion in the conference app several times. So it was clear to organizers weeks ahead that the capacity of the sessions is way under the expected demand and they did absolutely nothing.</p>
+
+<p>The communication and expectation management was IMHO pretty misleading: the conference web site should had explained that &ldquo;Workshops: RSVP required&rdquo; on the website page describing what was included in the conference offering actually meant this: &ldquo;some 20 % of you conference pass buyers may get chance to get into workshop sessions if you are really fast and we will do nothing for the rest of you - just happily take your money&rdquo;.</p>
+
+<p>Considering that one day out of three the only scheduled sessions were workshops (the breakouts, general sessions and Community Theatre was only on Tue and Wed) all big breakout rooms were empty on Monday and there were enough of them to broadcast the stream of each of the workshops - all that was required was to do it. Not good enough, Docker !</p>
+
+<p>Some people went for Self-paced hands-on - which may had been nice alternative for beginners with Docker or people interested in Docker Enterprise. Not belonging to either of those groups, we went to Barcelona center and spent 3 hours walking through the one of the most interesting and beautiful cities in Europe. Which was kinda silver lining on the Monday.</p>
+
+<p><img src="/images/2018-docker-sagrada.png" width="400" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>But let bygones be bygones and focus on the positive: I am very happy I went.</p>
+
+<p>I feel energized and inspired, have discovered few completely new things to try, got many useful hints on how to improve workflows and tools I use, saw the marvellous creations of Gaudi  and sunrise over the sea again, spent time with friends among people of my tribe, and even got to the high end nightclub - what a great 3 days. The clear unspoken message from both the breakout sessions, announcements and demos was importance and dominance of Kubernetes, new raising Cloud OS.</p>
+
+<p>Which - btw - does not really need Docker and can run using different containerization technologies. But that is a different story.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Miro Adamy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-12-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">docker</a>
+          <a href="/tags/events/">events</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/posts/even-preview/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Theme preview</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/posts/hidden-post/">
+            <span class="next-text nav-default">This is a hidden post.</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:miro.adamy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/369692/miro-a" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/miroadamy" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/miro.adamy" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/miroadamy/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/miroadamy" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/miro.adamy/?hl=sk" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="https://gitlab.com/miro.adamy" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="https://bitbucket.org/%7Bc05adff9-951c-4ad1-9a83-e43a1af1b81a%7D/" class="iconfont icon-bitbucket" title="bitbucket"></a>
+  <a href="http://miroadamy.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2006 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>osx on Miro&#39;s World</title>
+    <link>http://miroadamy.com/tags/osx/</link>
+    <description>Recent content in osx on Miro&#39;s World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 24 Mar 2016 12:57:35 -0500</lastBuildDate>
+    
+	<atom:link href="http://miroadamy.com/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Starting ACC (ATG Control Centre) on OS-X</title>
+      <link>http://miroadamy.com/posts/2016-03-24-acc-on-osx/</link>
+      <pubDate>Thu, 24 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-24-acc-on-osx/</guid>
+      <description>Starting ACC (ATG Control Centre) on OS-X Copy the installation of ACC for respective version from a Linux VM:
+The startup script in bin/startClient will fail, because it cannot determine which Java to use to run the app.
+It is trying to determine Unix flavour, failing that defaults to Solaris and ends up with invalid settings.
+Fix Set the variable JAVA_VM to path to executable command on your system.</description>
+    </item>
+    
+    <item>
+      <title>Git project statistic tool</title>
+      <link>http://miroadamy.com/posts/2016-03-20-gitinspector/</link>
+      <pubDate>Sun, 20 Mar 2016 12:57:35 -0500</pubDate>
+      
+      <guid>http://miroadamy.com/posts/2016-03-20-gitinspector/</guid>
+      <description>Git project statistic tool Python based, requires Python 2.6+
+Works OOTB on Mac
+Installation  Download TAR from Github unzipped to /opt
+1 2 3 4 5 6 7 8 9  ➜ ll /opt/gitinspector-0.3.2 total 52K -rw-r--r-- 1 miro 999 Jul 29 2013 DESCRIPTION.txt -rw-r--r-- 1 miro 32K Jun 14 2013 LICENSE.txt -rw-r--r-- 1 miro 78 Jul 2 2013 MANIFEST.in -rw-r--r-- 1 miro 681 Jan 13 2014 README.txt drwxr-xr-x 45 miro 1.</description>
+    </item>
+    
+  </channel>
+</rss>
