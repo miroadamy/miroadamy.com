@@ -10,6 +10,7 @@ category: programming
 tags: 
   - git
   - ruby
+categories: ["Technology"]  
 author: "Miro Adamy"
 ---
 

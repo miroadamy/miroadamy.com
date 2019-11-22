@@ -9,6 +9,7 @@ category: programming
 tags: 
   - osx
   - git
+categories: ["Technology"]
 author: "Miro Adamy"
 ---
 
