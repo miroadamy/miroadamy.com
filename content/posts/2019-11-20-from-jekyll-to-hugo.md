@@ -35,12 +35,12 @@ As result, the whole blog thing came to a big halt – no posts for over 6 month
 The blog <http://thinkwrap.wordpress.com/> is still out there and ends in 2009 with 
 the post [The Fork at the end of this blog](https://thinkwrap.wordpress.com/2009/12/29/the-fork-at-the-end-of-this-blog/).
 
-The <https://blog.thinkwrap.com/> evolved over years into something much more corporate-ish and enterprise-ish and eventually disappeared with Thinkwrap purchase of 
+The <https://blog.thinkwrap.com/> evolved over years into something much more corporate-ish and enterprise-ish and eventually disappeared with Thinkwrap purchase by Tenzing. 
 
 
 ### Version 2 - 2 blogs in Wordpress 
 
-After halting the <http://thinkwrap.wordpress.com/> for my personal stuff, I have exported and reimported the content into different WordPress blog and hooked it under domain that clearly indicates that it was my personal blog and personal opinions: <https://miroadamy.wordpress.com/>
+After stoppin the use of <http://thinkwrap.wordpress.com/> for my personal stuff, I have exported and reimported the content into different WordPress blog and hooked it under domain that clearly indicates that it was my personal blog and personal opinions: <https://miroadamy.wordpress.com/>
 
 This blog is still out there and it's "separate existence" started with [this post](https://miroadamy.wordpress.com/2009/12/30/blog-reloade/) in December 2009.
 
@@ -56,7 +56,7 @@ Well, the first attempt did not take. I tried to use Wiki pages in Github attach
 
 ### Version 3 - Jekyll and Github pages with custom domain 
 
-The blog <https://miroadamy.com/> existed in Jekyll incarnation from 2013 to November 2019. The look and feel was a bit plain and lots of posts were not included in the public version. It worked OK (mostly). 
+The blog <https://www.miroadamy.com/> existed in Jekyll incarnation from 2013 to November 2019. The look and feel was a bit plain and lots of posts were not included in the public version. It worked OK (mostly). 
 
 I had three major issues with with this setup:
 
