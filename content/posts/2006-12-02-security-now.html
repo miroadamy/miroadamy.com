@@ -1,0 +1,21 @@
+---
+layout: post
+title: Security now
+date: 2006-12-02 20:38:04.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>After listening for over week to Security Now! podcast (thanks, Steve, thanks Leo and happy birthday), I've decided to actually do something about the security on computers around. I started to scanning my home network using "<a href="https://www.grc.com/x/ne.dll?bh0bkyd2">Shields Up</a>" and was happy to found that the only open port was SSH, exactly as I thought I configured it.</p>
+<p>As next step, I followed the advice from <a href="http://www.grc.com/SecurityNow.htm#45">this podcast</a> and used my hosts file to block out ads servers and other internet vermins.  You may also want to look at the <a href="http://www.grc.com/sn/notes-045.htm">podcast notes</a>, read <a href="http://www.grc.com/sn/SN-045.pdf">full transcript</a> or <a href="http://media.grc.com/sn/SN-045.mp3">listen</a> to it.</p>
+<p>I have downloaded the <a href="http://www.mvps.org/winhelp2002/hosts.txt">public hosts file</a>, containing  over 12 thousands entries and merged it with my own hosts file. Because I am running Web server on every computer I use (to be able to develop web applications), I have replaced the loopback to 127.0.0.1 with 0.0.0.0 in all entries (except for localhost, of course). The 0.0.0.0 is invalid address and will cause that the request will be dropped immediatelly, rather that trying to reach destination. If you are not running web server, the 127.0.0.1 will work just fine. Do not get scared with the file size - Windows can scan through the entries really quickly and it is always by order of magnitude faster than try to do any network connection. Guarranteed ! Btw, Wikipedia has pretty good entry on <a href="http://en.wikipedia.org/wiki/Hosts_file#Ad_filtering">hosts file</a>.</p>
+<p>As third, I started to use <a href="http://10minutemail.com/10MinuteMail/index.html">10 minutes email</a> for sites that require my email address to register (and potentially spam me).  The idea is simple: you go to the web page, generate for yourself temporary email address that will live for 10 minutes. Any e-mails sent to that address will show up automatically on the web page. You can read them, click on links, and even reply to them. The e-mail address will expire after 10 minutes. You can extend the life for another 10 minutes if you need to. Simple, effective, free. There are many other providers of this service (see e.g. <a href="http://email.about.com/cs/dispaddrrevs/tp/disposable.htm">this list</a>) but some of them require you to register first, which IMHO beats the purpose: in order to avoid providing your email, you have to provide your email first :-). The 10minute mail works without this nonsense. Hope it will stay alive</p>
+<p><strong>Few more quick finds from Web:</strong></p>
+<p>- See the some examples of non-standard and creative 404 pages: <a href="http://homokaasu.org/errors/404.html">1</a>, <a href="http://towel.blinkenlights.nl/">2</a>, <a href="http://www.plinko.net/404/area404.asp">3</a>, <a href="http://www.psycho78tacoma.com/index.html">4</a><br />
+-  if you are male AND software developer, this is <a href="http://just-humour.blogspot.com/2006/11/programming-languages-are-like-women-by.html">rather non-standard characterization of programming languages</a><br />
+- interesting <a href="http://scrapetorrent.com/">torrent search site</a><br />
+- here is what will happen when you try to <a href="http://www.w3schools.com/downloadwww.htm">download the whole internet</a><br />
+- nice article on <a href="http://codebetter.com/blogs/jeremy.miller/archive/2006/10/30/My-Programming-Manifesto.aspx">pragmatic agile approach summary</a> (which I wholeheartedly agree with) by Jeremy Palermo</p>

@@ -11,7 +11,7 @@ meta: {}
 author: "Miro Adamy"
 ---
 See also <a href="{{< ref 2006-08-22-road-to-mac-i-hard-decisions.md >}}">part I</a>, <a href="{{< ref 2006-08-23-road-to-mac-ii-ive-got-a-macbook.md >}}">part II</a>
-and <a href="{{< ref 2006-08-24-road-to-mac-iii-the-culture-shock.md >}}">part II</a>
+and <a href="{{< ref 2006-08-24-road-to-mac-iii-the-culture-shock.md >}}">part III</a>
 
 ## August 10th
 

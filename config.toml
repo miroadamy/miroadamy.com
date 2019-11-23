@@ -58,12 +58,12 @@ copyright = ""            # default: author.name ↓
   gitRepo = ""
 
   # site info (optional)                                  
-  logoTitle = "Even"        # default: the title value    
-  keywords = ["Hugo", "theme","even"]
+  logoTitle = "Miro's World"        # default: the title value    
+  keywords = ["blog", "Miro"]
   description = "Miro's World - personal blog of Miro Adamy"
 
   # paginate of archives, tags and categories             
-  archivePaginate = 5
+  archivePaginate = 10
 
   # show 'xx Posts In Total' in archive page ?            
   showArchiveCount = false

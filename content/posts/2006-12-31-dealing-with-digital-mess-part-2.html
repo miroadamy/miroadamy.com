@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'Dealing with digital mess - Part 2: Passwords'
+date: 2006-12-31 23:48:11.000000000 -05:00
+type: post
+published: true
+status: publish
+category: lifehacks
+tags: [security]
+meta: {}
+author: "Miro Adamy"
+---
+<p>Today's topic is dealing with sensitive information - such as logins, passwords, PIN numbers, credit card numbers and so on.</p>
+<p>Up to last week, I was using the <a href="http://www.splashdata.com/splashid/">SplashID</a> software to keep everything worth securing secure. I started to use SplashID back in 2001 when I bought the Palm based Sony Clie SJ30 (as replacement for wonderful Palm IIIxe). The Palm based program came with desktop counterpart that allowed editing of entries. Later in 2004 when I switched to Pocket PC, I simply purchased Windows Mobile version of the same software.</p>
+<p>So - similarly as TheBat!, this was a legacy and similarly as TheBat! it had to go for two main reasons: closed source with proprietary format and Windows mostly. Technically, there is a Mac-OS-X desktop client for SplashID, but both Windows and Mac desktop clients are mainly add-ons to mobile platform counterpart. They focus on the problem of synchronizing one desktop with one or more) mobile device, but they do not do a good job in synchronizing two desktops.</p>
+<p>I also found out that I do not really use the Pocket PC for other purposes than reading eBooks and sometimes looking up phone number or address. Since I have MacBook, the later happens really rarely, because Macbook wakes up almost instantly and it takes about same time to find address  on PPC and Mac.<br />
+After some research and evaluation, I have decided to go with OpenSource solution <a href="http://keepass.sourceforge.net/screenshots.php">KeePass</a>. It is available for Windows as well as for <a href="http://keepassx.sourceforge.net/">MacOS</a> and Linux, and in case I'd like to use my Toshiba again there is even a <a href="http://keepasssd.sourceforge.net/">PocketPC</a> version. The binary file format is 100% compatible - I tested out the file created on Windows works fine on Mac. I am not competent enough to judge the cryptographic capabilities of the system, but I trust the open source peer review process :-). The authors seem to know and care about security a lot - for example, after you copy password from entry edit form into clipboard, program automatically clears clipboard entry after defined amount of time (default is 10 seconds). Also user interface is very nice and what I liked is visual indication of the password strength - gives you some idea about how bad your passwords are. If you are really security conscious, it has nice generator of really strong passwords - the ones that you probably will not be able enter without clipboard.</p>
+<p>I still need to solve the issue of synchronizing different desktop. For now I do it with workflow: whenever I make a change in passwords or logins (this implies I am online), I sent myself an email with attached latest password file and enter ToDo to update other desktops. The file is very small - for few hundred entries ~ 50 kB. The file sits  in my mailbox and is always available. When I receive new password file, I erase previous one in mail archive. Not ideal, but workable - because the frequency of adding new entries and changing passwords is not that high.</p>
+<p>A friend of mine is using USB stick on which he carries both the file as well as the KeePass software. This works too - assuming that you do not keep forgetting your USB key as I do. I have better results with email.</p>
+<p>Final note to the conversion: it is possible to export the data as CSV file and import it to KeePass. What strangely was more efficient for me was to transfer the entries by opening both program and using clipboard entry-by-entry. This way I got rid of some really obsolete entries, verified many passwords and URL's and changed several long overdue password.</p>

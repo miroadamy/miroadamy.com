@@ -1,0 +1,56 @@
+---
+layout: post
+title: Dealing with digital mess - Part 1
+date: 2006-12-29 03:14:59.000000000 -05:00
+type: post
+published: true
+status: publish
+category: lifehacks
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>In certain sense, people and companies have one things in common. If have been around for few years, you collect, acquire or create very strange collection of tools, platforms, software and data formats. In short, you end up with lots of digital mess. I am planning to make major cleanup and streamlining in 2007 - consolidate the hardware, software, data formats and workflows both at home and at work.</p>
+<p>I have read the <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">GTD</a> <a href="http://www.businessweek.com/smallbiz/content/aug2001/sb20010824_770.htm">book</a> and many interesting <a href="http://wiki.43folders.com/index.php/Main_Page">articles</a> and <a href="http://www.lifehack.org/">blogs</a> on how people implement it. I noticed that the best way how to succeed is try to follow and customize the GTD approach for own circumstances, and build set of tools and processes that would make dealing with stuff easier, faster and more efficient.</p>
+<p>Most of my "data stuff" consists of:</p>
+<p>- email(s)<br />
+- appointments and todo's<br />
+- contacts and people information<br />
+- passwords and sensitive information<br />
+- links, bookmarks<br />
+- chunks of information from the Web<br />
+- active content (documents in process)<br />
+- reference - finished documents , files<br />
+- ebooks<br />
+- music (MP3)<br />
+- images and digital video<br />
+- source code examples and chunks<br />
+- backups, archives and data CD/DVD's</p>
+<p>I'd like to review and adjust all of the above over next month or so. I am saying next month - this is no new year resolution thing, it is more like convergence of the technology being available and size of the mess to deal with being uncomfortably large. Streamlining and simplifying email seems like good place to start - for one single reason: it keeps coming :-)<strong><br />
+</strong></p>
+<p><strong>Dealing with Email</strong></p>
+<p>Here is what I had up to last week on email side:</p>
+<p>- multiple email accounts (GMail, Yahoo, severals Rogers-Yahoo accounts)<br />
+- multiple email clients on multiple platforms: Outlook and Thunderbird on Windows, Mail (and possibly Thunderbird) on Mac OS, none (only Web based access) on Linux</p>
+<p>There are two basic workflows with email: one is daily use - reading/writing/answering. Occasionally you need to search back and find something for reference. The other is organizing, archival and searching for historical purposes. Unlike the first one, which must be done daily and from everywhere, the later can be executed from dedicated place, which allows the really old archives not be online. The setup I was using until this end of year was configuring each email client to leave messages on the server and then, using single "sink" once in a while I downloaded the old messages into archive. Sort of many-to-many setup, each client pulling emails from several on-line accounts. As result, I had many duplicate copies of emails on many machines. Every sorting and structuring of email was very time consuming and because there was never simple way how to "repeat" the cleanup/organizing from my desktop to my notebook, it was seldom done ... I was also never sure that any local client has complete snapshot - in case the client was down during archiving it could miss part of the conversations.</p>
+<p>I had two main goals on desktop side of email: to decrease the number of email clients to maximum 2 and define "standard" client. The format of the stored email must be open and client independent (to avoid lockup), must be multiplatform (so that I can move to Mac as main home platform as soon as Leopard is out) and must be programatically accessible (so that I can later process information from emails). The only email client that fits is Thunderbird, which fortunately uses open format, it is cross-platform, free and nicely extensible by plugins and there are many other good reasons for using it.</p>
+<p>This also pretty much excludes Outlook as email client because it uses proprietary binary BLOB format with fairly bad track record of reliability and is (for all practical purposes) Windows only. For historical reasons, I was also using <a href="http://www.ritlabs.com/en/products/thebat/">TheBat</a>! for the "sink". Bat has same issues as Outlook, so the first task was to get my old emails out of the proprietary TBB format something more portable and more open.<br />
+<strong><br />
+Converting TheBat! email to Thunderbird / mbox</strong></p>
+<p>It is very easy, but needs some manual work. In TheBat! you can export one folder at a time into Unix mbox format. You have to select all messages (Ctrl-A) in folder, select Tools -&gt; Export, Unix mailbox and it is done. As long as you do not forget to select all messages, you will be fine. The resuting file is probably the most accessible and portable format you email can be in. You can easily import the emails from mbox to Thinderbird by free plugin <a href="http://nic-nac-project.de/~kaosmos/index-en.html">mboximport</a>. Conversion works like charm, including the attachements. The result is also very easily accessible - e.g. see examples using Python here.</p>
+<p>Unlike some people, I spend very little time working on my emails offline. For that reason, biggest simplification and improvement is using on-line email as base repository, rather than trying to keep it on desktops. This removes problems with email synchronization and makes it always available. The desktop clients are really meant to be used mainly for back-up and archiving, occasionaly for more comfortable editing or editing offline.<br />
+When deciding between Yahoo and Google as main online platform, Google won. Both services give 2 GB free storage (Google right now almost 3 GB), both provide POP access. GMail user interface is however much more user friendly and lighter. Yahoo mail 2.0 is taking too much memory and power to run - and the old one is nowhere close to GMail. GMail also nicely integrates (by personalized Google home page) with Google Docs and Google Calendar which I am using a lot (and will need a lot for other categories of stuff).</p>
+<p>To make Google central email hub is quite easy. You need to redirect other emails to GMail. Rogers-Yahoo allows that - after you set redirection email, you need to send verification request and enter code from received email - to confirm that you own the destination email address. After that, all works and all the spam that would otherwise be downloaded to your PC and filtered by excellent spam filters of Thunderbird, will be caught by GMail spam filters.</p>
+<p>After this, none of the Rogers email accounts in my machines are receiving any emails. In order to make all sent email from any PC or Mac available in global repository, it is necessary to add rule 'Bcc: my-gmail-account' in every Thunderbird email account that can be used for sending email. With this change, all is set.</p>
+<p>The Thunderbird(s) and Mail.app are now used only for sending email and editing off-line emails (should it be necessary).</p>
+<p>GMail allows you to use multiple identities - you can set multiple From addresses and select (when writing new email) which one to use. This feature is available from Settings-&gt;Accounts. Email addresses you use must be verified (by clicking on URL in verification email) to be addresses owned by you.</p>
+<p>There is one "feature" of GMail that needs to be mentioned: when you have multiple clients who use POP to download GMail messages, unlike with my Rogers accounts, only first client downloads message. This can be used to your advantage when you set up one dedicated client to do frequent checks for new emails and all others to do no automatic checks - this way all your email will be automagically archived on one of your clients.</p>
+<p>What are achievements of all these changes:</p>
+<p>- all my email is available on-line via GMail (platform agnostic)<br />
+- all clients are more or less just convenience how to send email when working offline<br />
+- all email is archived in one place (home desktop), in open and portable format (Thurderbird mbox). Most of email still stays on-line<br />
+- there are no duplicates of emails in the clients<br />
+- rather than trying to sort emails into folders, I use tags and Archive feature of GMail. Searching works good enough and whole process is much faster.<br />
+- Outlook as email client is gone, as well as problems with PST format (like synchronization)<br />
+- TheBat! as email client (archiving sink) is gone, archiving is now platform-agnostic mbox. Old archives are converted to mbox.</p>
+<p>Nice start !</p>

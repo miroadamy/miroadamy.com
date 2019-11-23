@@ -1,0 +1,16 @@
+---
+layout: post
+title: Vista security and Java
+date: 2006-12-26 20:44:11.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+meta: {}
+author: "Miro Adamy"
+---
+<p>I had a brief MSN chat with friend of mine today, who tried to install and use Vista as development platform. I mean install on the real hardware, in order to use it as core operating system. I have no feedback yet on how Visual Studio works, but as he found out, his <a href="http://ant.apache.org/">Ant </a>build files he uses to compile and deploy Java programs stopped working - because Vista did not allow to copy Javascript files. I can understand why Javascript files are treated with caution - however, it should not be considered the same when a file is copied from a local file to a local file, rather then downloaded from the internet.</p>
+<p>Problems like this one were not occuring on XP for two main reasons: one becase XP security was nowhere at the same level and two because pretty much every developer was running XP as administrator. Using an admin account for everyday work is bad for security and Microsoft tried hard to create system that would be actually usable when logged on as standard non-priviledged user.</p>
+<p>If suprises  like this one occur too often, people will likely decide to go back running  as administrators again ... which beats the idea of having better security under Vista. If I think about it, all code related demos at the <em>"Ready for the new day"</em> were done under administrator account. Is it because this is the only practical way how to develop application under Vista ?</p>
+<p>I guess <a href="http://http://en.wikipedia.org/wiki/Security_Now%21">Steve Gibson</a>'s  scepticism about early adoption of Vista was not far off (again). Let's wait for real stories from real use scenarios and maybe even a Service Pack 1 - and then evaluate whether Vista is already prime-time ready for a developer.</p>
