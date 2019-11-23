@@ -1,4 +1,4 @@
-baseURL = "https://miro.adamy.gitlab.io/miroadamy.com"
+baseURL = "https://miroadamy.com/"
 languageCode = "en"
 defaultContentLanguage = "en"                           
 title = "Miro's World"
