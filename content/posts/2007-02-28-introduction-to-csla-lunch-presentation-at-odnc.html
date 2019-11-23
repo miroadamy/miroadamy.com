@@ -1,0 +1,21 @@
+---
+layout: post
+title: Introduction to CSLA - lunch presentation at ODNC
+date: 2007-02-28 22:21:31.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>The <a href="http://www.ottawacommunity.net/" target="_blank">Ottawa .NET Community</a> organized today interesting lunch-and-learn session: first of two sessions on introducing the Rocky Lhotka's <a href="http://www.lhotka.net/Area.aspx?id=3" target="_blank">CSLA Framework</a>. Usual location - Glacier Room at downtown <a href="http://www.microsoft.com/en/ca/default.aspx" target="_blank">Microsoft</a> Office. I decided to attend for two reasons: first was that I knew the presenter - David Campbell. David is a great guy - consultant with 20 years of history in the software development business, running his <a href="http://www.creativeprocess.ca/DesktopDefault.aspx?tabindex=1&amp;tabid=2" target="_blank">own company</a>. Last year when we were looking for people with CSLA experience in Ottawa, David's name came out first.</p>
+<p>My second reason was a educational. No, I did not really expect to learn something new about CSLA. We are using the framework on two projects since summer 2006, I have read the <a href="http://www.amazon.ca/Expert-2005-Business-Objects-Second/sim/1590596323/1?o=10&amp;pf=3" target="_blank">book</a> (and agree with David that it is good but a pretty dry read) and also read and wrote quite some amount of code that uses the framework. I certainly do not think that I know enough about CSLA (as the German proverb says, <em>man lernt nie aus</em> ) but it is hard to go during introductory session to the level of detail that uncovers anything new to active users of the CSLA. What I was looking for is an inspiration how to present the framework to the developers who are new to it - and I was not disappointed. And btw, I *did* learn something completely new about CSLA: that SmartDate trick with ".", "+" and "-" is really neat (see the source code of SmartDate unit tests).</p>
+<p>What I always enjoy on the ODNC sessions is discussion during and after the presentation. It was like this last time (Adam Machanic) and it was like that today. People ask great questions (OK - with one expection - if you are ODNC regular, you know who I am talking about).</p>
+<p>We have had lots of discussion in-house about the relative pros and cons of using CSLA. In our projects, portions of the CSLA functionality are not so important: we do not really need multi-level undo, for one example. On the other hand, the location-independent business objects and scalability it gives you is really nice. Yes - CSLA forces you to do things certain way, which  may not be considered ideal, but at least it results in consistent approach across the codebase.</p>
+<p>CSLA has pretty steep learning curve, even with the books available and the way of doing things can look strange to seasoned object oriented designer. Heavy use of generics and design of the core framework classes forces you to use very flat object hierarchies. Instead of inheritance, it pushes either towards sharing functionality with wrapping or using code generation. I am not exactly crazy about the read-only/readwrite object dichotomy - without use of inheritance, it often leads to code duplication.</p>
+<p>Also the book example on Projects and Resource is IMHO not the most illustrative one: it puts too much emphasis on dealing with lists of objects and does not illustrate many important aspects of dealing with root objects and switchable (root/child) objects. I had trouble of using this example for in-house training and mentoring: it is not simple enough to make obvious things really obvious and not comprehensive enough to cover many everyday situations.</p>
+<p>Despite of all that, our experience with CSLA was overly positive: we were very pleased with performance compared to plain datasets and after few initial hick-ups, the framework allows you to create very solid, reusable, scalable layer of mobile business objects.</p>
+<p>David is going to do Part Deux of the CSLA intro, which should be practical exercise of creating address book applicatopn based on CSLA with multiple UI. Looking forward to it - maybe that example will fill the gap ...</p>
+<p>And btw - thanks, David.</p>

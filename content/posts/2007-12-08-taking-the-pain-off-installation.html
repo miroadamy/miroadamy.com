@@ -1,0 +1,17 @@
+---
+layout: post
+title: Taking the pain off installation
+date: 2007-12-08 19:31:52.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>I was trying to set up an Oracle appliance - install the Oracle Express XE into a virtual machine. What (in my mind) should be smooth and straightforward process was something very different. I should have been forewarned warned after seeing the <a href="http://forums.oracle.com/forums/thread.jspa?messageID=2182965" target="_blank">discussion</a> ... To make long story short, the installer failed on three different Linux VM's I had available - because of unavailable dependencies, too small swap space etc, etc.</p>
+<p>I am not picking neither on Linux nor on Oracle as there is no such thing as standard or predictable Linux installation. Even within single distribution (like Fedora 7) it is completely up to the user which subset of 1500+ packages will get selected during initial install. The installers are sophisticated enough to add missing dependencies, but nothing will prevent you not to install some seemingly unimportant package, without which the Oracle will not run. Given enough time, you can go and add the missing dependency (and it's dependency and so on - up to the transitive closure of all missing libs), but that makes the 30 minutes installation more like 3 hours project.</p>
+<p>What I ended up doing is loading the XP VM and the Oracle was up and running in less than 15 minutes. The Windows configuration is given (no user meddling possible) and the MSI installers do great job. The price to pay is the nagging feeling that each install may bring that huge binary blob called registry closer to it's death ... but in VM's that is a non-issue.</p>
+<p>There are two ways how to avoid issues like this. The option is go for pre-configured virtual appliance. Lots of appliances are available for <a href="http://www.vmware.com/appliances/" target="_blank">VMWARE</a> or for Microsoft Virtual Server.</p>
+<p>If there is no appliance, next best thing is to go for "stack install". Many software packages are now available bundled as stacks - e.g. LAMP/MAMP/WAMP stack (Apache with PHP and MySQL on Linux, Mac or Windows). There is good website <a href="http://www.bitnami.com/" target="_blank">BitNami</a> offering <a href="http://www.bitnami.com/stacks" target="_blank">many more stacks</a>, including Liferay portal, Alfresco, Joomla, Drupal, Wordpress or Ruby stack ... This in combination with an "empty" VM should really ease the pain.</p>

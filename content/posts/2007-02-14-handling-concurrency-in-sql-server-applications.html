@@ -1,0 +1,17 @@
+---
+layout: post
+title: Handling concurrency in SQL Server applications
+date: 2007-02-14 22:24:49.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>On Tuesday evening, the <a href="http://www.ottawacommunity.net/" target="_blank">Ottawa Dotnet Users Group</a> organized presentation of Adam Machanic from Boston with title <em><strong>"Designing Highly Concurrent SQL Server Database Applications". </strong></em>I was not sure whether I will make it, because because I did not feel really well, but I am very happy I went.</p>
+<p>It was probably one of the best presentations I have seen in Microsoft Glacier Room on 100 Queen Street. I am not sure whether because it was indeed so great or because it touches closely what we are doing.</p>
+<p>What was great on the lecture was lack of dependency on SQL server. Technically, most modern databases could be used and the techniques would still work. We are going to stay with SQL 2005 which is btw one very decent, well performing, easy to install and manage database system - but learning something portable is always a pleasure.</p>
+<p>The presentation covered two classical way how to handle concurrency - pessimistic and optimistic and presented quite clever way how to do it without stored procedures. It also covered the "multi value" approach, which replaces update with inserts and maintain multiple copies of each record. This is btw, very close to what we are doing in Tirevigil Navigator - keeping full history of tire and vehicle data.</p>
+<p>Adam is an co-author of <a href="http://www.apress.com/author/authorDisplay.html?aID=718">Pro SQL Server 2005</a> as well as blogger: see <a href="http://sqljunkies.com/WebLog/amachanic/" target="_blank">this </a>and <a href="http://msdneventsbloggers.net/Directory/Bloggers/Adam_Machanic.category" target="_blank">this </a>. His new book <a href="http://www.apress.com/book/bookDisplay.html?bID=10220" target="_blank">Expert SQL Server 2005 Development</a> is about to be published in March - I will definitely give it a serious look.<br />
+You can grab the slides and source code from the presentation <a href="http://www.nesql.org/Files.aspx" target="_blank">here</a>.</p>

@@ -1,0 +1,17 @@
+---
+layout: post
+title: Converting eBooks to Sony Reader format
+date: 2007-03-22 19:50:51.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [books]
+author: "Miro Adamy"
+---
+<p>Since yesterday, I made nice progress in solving my issues with content creation for PRS500 and it's readability. There are several ways how to proceed:</p>
+<p>The simplest is to download <a href="http://www.the-ebook.org/e107/download.php?view.9" target="_blank">Book Designer</a>. It is free for non-commercial use and current version 5.0 Alpha does the job very well. It allows you to load source in text, HTML, Lit, PDF, PalmDoc (prd/prc), rb and few other formats and process them into native LRF format - plus few others I do not really care about. The result is nice, readable LRF file with three sizes, nicely formatted, with metada. As added benefit, because the author is Russian, the program does not assume that English alphabet is the only one in existence and allows to select encoding. The result is quite good - most of the extended characters from Czech/Slovak are there, some are missing and displayed as space (namely ř,ě,ľ ...) but it is readable. What is maybe better option is that with English as language and default encoding, the software "downscales" the extended characters to closest English pairs: ř -&gt; r,ě -&gt; e - which results in familiar computer Czech/Slovak. I am very comfortable with option 2, and will work on getting correct font for #1.</p>
+<p>If you want to read more about the program go <a href="http://www.the-ebook.org/e107/news.php" target="_blank">here </a>and <a href="http://bookdesigner.org/wordpress/" target="_blank">here</a> - as long as you can read Russian. I found out that even after 22 years of not using Russian, I can still reasonably well read and understand it ...</p>
+<p>The program is useful for creating Palmbooks as well as Microsoft Reader Lit book. I did not try that yet. User interface of Book Designer is not exactly Apple-made - extremely technical,  geekish - looking like designed  by engineer for engineers :-)  - here is how it <a href="http://forum.irexnet.com/viewtopic.php?t=418" target="_blank">looks like</a>.  But it is the functionality that counts. Thank you - whoever made this possible :-).</p>
+<p>If you want actually understand how the LRF format works and how the book is formatted on very low level, read the <a href="http://www.sven.de/librie/Librie/LrfFormat" target="_blank">format spec</a> and then download the BBeBinder from <a href="http://code.google.com/p/bbebinder/" target="_blank">Google Code</a>. It is C# 2.0 project, which aims to create something similar that BookDesigner - but as opensource, GPL-ed application. It is very early version (0.2) but in the true spirit of opensource, it actually (mostly) works. I have downloaded it and looked inside the code. The solution contains BBeB encoding/decoding library and main program, which was nicely designed with extensibility in mind. Using plugins, it allows to add additional input data formats (currently works well for text files, some HTML and I had mixed results with others).</p>
+<p>If both of my projects were not in C# space (which is causing me being slightly over-see-sharped at the moment), I would not mind volunteering few hours into this - to make sure that Central European encoding is handled OK :-).</p>

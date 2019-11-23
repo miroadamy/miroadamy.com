@@ -1,0 +1,18 @@
+---
+layout: post
+title: Unified ID's for legacy database
+date: 2007-05-22 23:20:12.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>I found a handy T-SQL trick that helped to solve the following problem: during datawarehouse creation, we needed to consolidate multiple data sources from databases belonging to two generations of system: older one using int identity keys, the newer one, designed for replication and distributed data scenarios using GUID's as primary keys.</p>
+<p>In the consolidated database, we needed to create single representation that would allow to store both new GUID based identities as well as old int-based keys. Direct conversion between UNIQUEIDENTIFIER type and int is not allowed. The following one liner will do the trick:</p>
+<p><code><br />
+CONVERT(UNIQUEIDENTIFIER, CONVERT(BINARY(10), 0) + CONVERT(BINARY(6), @id))<br />
+</code></p>
+<p>The "fake GUID's" it creates from integers are easy to identify as they have leading zeros. If you for any reason do not like it, replace the 0 in first convert with any suitable number.</p>

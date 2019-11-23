@@ -1,0 +1,47 @@
+---
+layout: post
+title: The amazing free System Information utility for Windows
+date: 2007-01-13 23:37:29.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>I found today something that (after long time) make me to say Wow! - and it had nothing to do with Apple or OS-X. Simple small system management utility for Windows modestly named <a href="http://www.gtopala.com/">System info</a>, written by fellow Canadian Gabriel Topala (originally from Romania, but living in Toronto, as I found out from his <a href="http://www.gtopala.com/cv.html">resume</a> on his web site).</p>
+<p>So what is so fantastic about this program:</p>
+<p>- it is small (single file, 1.3 MB)<br />
+- portable no installer required<br />
+- free (although author welcomes donations and encourages registration)<br />
+- amazing depth. It gives you more information than you expected, often more than you were aware you may get!<br />
+The main (and only) window of the program has three panes:</p>
+<p><img src="/images/croppercapture14.png" alt="croppercapture14.Png" /></p>
+<p>The navigation tree contains three main nodes: Software, Hardware and Network.</p>
+<p>Under <strong>Hardware </strong>you will find:</p>
+<p>all disk information with free space, physical memory, all MB details (model, chipset, vendor, CPU type, socket, max speed, sensors information (CPU+disks temperature, voltage, fans), speed, bios maker, version, CPU information down to Feature Flags. You can e.g. verify if your CPU supports MMX instructions, virtual machine extensions or Processor serial number. Much more details than you wanted to know on system slots, devices, network card, video-card (including supported modes) and 3 screen long details on Direct X ...<br />
+<img src="/images/croppercapture16.png" alt="croppercapture16.Png" /></a></p>
+<p>In <strong>Network </strong>portion:</p>
+<p><img src="/images/croppercapture17.png" alt="croppercapture17.Png" /></a></p>
+<p>you can see e.g. ARP table, MAC addresses and IP addresses of computers around you, windows shares, open ports (inclusive program name which owns them and domain name of remote host it connects to), and wide variety of scans in network neighborhood: FTP, HTTP, NetBios, SQL Server, Telnet, VNC, Oracle, RDP ... you name it).</p>
+<p><strong>Software</strong></p>
+<p><img src="/images/croppercapture15.png" alt="croppercapture15.Png" /></a></p>
+<p>Because I am software developer, it were the features from Software subtree that made say Wow! few times. Let's start with details of the Windows XP (btw, including all service pack info and all installed patches, showing file name, version, installed data and for many of them with unistall command. As added value, it reveals the serial number and Windows XP product key which may come handy  in case you lost the sticker.</p>
+<p>You will get list of all installed applications with description, version and uninstall command. This list is MUCH more complete and detailed than what you get out of Control panel. For example, this are two entries for really old Java versions:</p>
+<p><code>Name: Java 2 SDK Standard Edition v1.3.1_12<br />
+Versions: empty<br />
+Uninstall: RunDll32 C:\PROGRA~1\COMMON~1\INSTAL~1\engine\6\INTEL3~1\Ctor.dll,LaunchSetup "C:\Program Files\InstallShield Installation Information\{96539824-B716-11D7-88E8-0050DA21757E}\Setup.exe"  -uninst<br />
+</code><br />
+<code><br />
+Name: Java 2 SDK, SE v1.4.2_03<br />
+Version: 1.4.2_03<br />
+Uninstall: MsiExec.exe /I{35A3A4F4-B792-11D6-A78A-00B0D0142030}<br />
+</code></p>
+<p>The list was 278 entries old on my 3 year old installation of XP.</p>
+<p>Special section "Applications" shows much more information for subset of installed programs. The much more in many cases (like Microsoft Office) means showing the product keys, serial numbers and versions of DLL's that belong to the package (e.g. Visual C++ Runtime)</p>
+<p>Very nice is File association section, which shows you name, path to executable and extension of the owner of every registered extension, as well all verbs (open, edit)</p>
+<p>And now the killer feature: Processes. SI displays PID, executable name, version, description, parent PID, number of threads, priority, process creation time, lifetime, kernel/user time, size and full path to executable. The Explore menuitem from context menu selects the executable in Finder, I mean Explorer. Clicking on process shows all loaded DLL's in lower panel (with path version, description, handle). The Loaded DLL's view goes the other way: upper panel shows all DLL's and after clicking on DLL you can see list of processes who loaded the DLL into their address space. Very interesting !</p>
+<p>Extremely informative is also the section Drivers and NT Services, audio/video codecs, registered ActiveX controls. What is also very useful is list of all open files, including the name and path of the process who opened them. This way you can e.g. see that Skype has open well over 30 file even if you are logged off and inactive - just by sitting in the system tray .. It is very eye opening exercise.</p>
+<p>Sysadmins at heart will like the Groups and Users info: all details, inclusive SID, last logon, when and whether will password expire, group membership in one clean page.</p>
+<p>The tool allows few interesting security hacks: "Secrets" lists all Form auto-complete passwords (for both IE and Firefox). It can also help you reveal the "starred" password typed into Windows form password fields using menu Tools-&gt;Eureka. From Tools menu you can display all cookies, visited websites and Internet file cache.</p>
+<p>If you are system administrator or have to keep few Windows machines alive and in good shape, you will want this tool. Go and give it a try - you will be very surprised what it can do for you. And if you find it useful, consider donation or registration - or at least try to <a href="http://www.gtopala.com/siw_help_me.html">help the author</a> some other way (like spreading the word) - he deserves it !</p>

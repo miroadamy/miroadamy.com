@@ -1,0 +1,29 @@
+---
+layout: post
+title: First week with SmugMug
+date: 2007-07-07 22:44:14.000000000 -04:00
+type: post
+published: true
+status: publish
+category: general
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>Week ago, my SmugMug 14 day trial period expired and (as expected) I signed up for the 1 year service. Here are my first impressions after over week of use, with over 3000 uploaded photos and 6.8 GB disc space consumed :-).</p>
+<p>Good news is - it really works as advertised and I still like it a lot. I have not really tried many of the features, but what I did try, worked as expected. The uploader (I am using the default, Java applet based drag-and-drop universal uploader) is very friendly - the small status windows shows not only status of the upload, but also the thumbnail of the uploaded image.</p>
+<p>Every photo lives in the gallery and the galleries can be assigned into categories with optional subcategories. The system is pretty smart - when you create a gallery inside category (or category / subcategory), these are pre-set as defaults (which you can change, of course). The uploaded file names are parsed and "meaningful" words are automatically assigned as keywords. As long as the words are separated by spaces or underscore. This works best in English - some of my pictures have names in Slovak and the word stemming generated multiple keywords - but that is the price for not using English :-).</p>
+<p>Proper tagging of images is a lot of work. Once you do that, though, the search using keywords is pretty effective. You have the classical tag cloud and can select the images by the keyword. SmugMug offers also related keywords and allows to further limit the search.</p>
+<p>I have decided to organize the photos chronologically, using categories and subcategories to denote year and months (one or more). This in theory can be achieved using built in time line, but more than 30% of my images are scans and have no EXIF data in JPG. It would be great if somehow there was a possibility to assign date (at least year or year and month) for the set of images - same way as keywords are assigned. However, this is not yet possible.</p>
+<p>Within the categories / subcategories, you can have only one level of galleries. At first I thought that this 2 or 3 level fixed hierarchy will be too limiting and inflexible, but in reality, it is not such a big deal. In the occasions where I have nested folders with images - e.g. vacations folder named Europe and subfolders for Italy and Switzerland (where Europe contains all other images) - I simply created galleries named 'Europe', 'Europe / Italy' and 'Europe / Switzerland'. The slash indicated the folder structure on the server and sticking with the naming convention will allow to use the <a href="http://smugmug.jot.com/WikiHome/API" target="_blank">API</a> and do automatic synchronization (using Ruby ;-))</p>
+<p>Getting images up there is quite time consuming. But after you have them uploaded, the fun begins. The viewing and navigation is where SmugMug really shines. I have seen many Web2-ish sites, but the paging here is one of the bests (if not the best). You can use either "classic" pager links:</p>
+<p><img src="/images/classic-pager.png" alt="classic-pager.png" /></p>
+<p>or dynamic (Javascript):</p>
+<p><img src="/images/javascript-pager.png" alt="javascript-pager.png" /></p>
+<p>Loading of the thumbnails and images is very fast and with reasonably fast Internet connection, you can get very good user experience. Even the slideshow - about which I did not have very high expectations - works surprisingly well. Much better that you would expect from a browser based solution. Because the images are intelligently scaled down on server side, doing slideshow in full screen with 3-4 seconds delay is not much different than using default Windows viewer with local LAN (where the images are transferred in full size and scaled to fit the window on client side) - especially when you have 3-4 MB images..</p>
+<p>The only minor annoyance is long lasting "Processing  image" syndrom. After you upload image, the back-end processes the image and during this time (in 99.9% of images few seconds) the image thumbnail and real image is represented by "Processing image" placeholder.</p>
+<p><img src="/images/cropper-capture28.png" alt="cropper-capture28.png" /></p>
+<p>and</p>
+<p><img src="/images/cropper-capture129.png" alt="cropper-capture129.png" /></p>
+<p>As it happened in 2 or three cases during the upload of 3000+ images, the back-end processing never ended and even after few hours that particular image was still hanging in the state of processing. It is possible that this syndrome can be caused by the user (myself) opening the gallery being uploaded in second tab of the browser ... I am not sure whether there is some background nightly batch that will catch it - but it is a good idea visually verify the upload after it finishes.</p>
+<p>Btw, if you consider going  with <a href="http://www.smugmug.com/">SmugMug</a>, here is coupon code that will be give you $5 discount from the $39.95 yearly price: <span class="green">ndkpdNg15cgYI</span></p>

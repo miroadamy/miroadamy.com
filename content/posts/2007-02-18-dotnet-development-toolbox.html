@@ -1,0 +1,22 @@
+---
+layout: post
+title: DotNet Development Toolbox
+date: 2007-02-18 19:33:36.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>I have recently picked very interesting book that I have read about year ago, from <a href="http://www.larkware.com/">Mike Gunderloy</a> named <a href="http://codertodeveloper.com/">Coder to Developer</a>, with subtitle <em>Tools and Strategies for Delivering Your Software</em>. It is an excellent book and I highly recommend to give it a look if you are in software development business on Microsoft platform. Easy read, practical, useful.When I was reading it back in 2006, it was before we have set up own development lab and started the biometric project. With this recent experience, I was re-reading the book with quite different view: unlike before, I knew what we tried, what worked and what did not. Unlike before, I have now broader experience with what it means developing software and run large project inside the organization, creating and maintaining infrastructure for team of developers and leading the project design and implementation.</p>
+<p>Book has 14 chapters, addressing various areas from starting a new project, organizing it, using tools such as source control, unit testing, IDE, bugtracking, logging, build tools etc.  While starting up the lab and the biometric project, we had to go through pretty much every book chapter. Sometimes we made same choice as Mike recommends, sometimes different. Here is our toolbox, in order of the book chapters:</p>
+<p><strong>Ch-3 - Source code control</strong><br />
+Mike is mentioning several Source code control systems: BitKeeper, ClearCase, CVS, Subversion, Perforce, VSS. We have excluded VSS (because of the reliability), ClearCase (because of complexity and price) and the final selection was done between CVS and Subversion. Actually, between <a href="http://www.cvsnt.org/wiki">CVS-NT</a> and Subversion. We have decided to adopt both, starting with CVS, because it was more familiar for majority of the team members.</p>
+<p>At the beginning, we were considering VSTS, but the prohibitive price, complexity and low version number were reason why we decided to wait for at least Service Pack 2 before considering it.</p>
+<p><strong>Ch-5 - Unit Testing</strong></p>
+<p>Compared to other projects, we managed to be quite successful in implementing unit tests and TDD. The BO layer has over 100 unit tests which helped to catch several pretty vicious bugs in early days. We settled upon using <a href="http://www.mbunit.com/" target="_blank">MbUnit</a>, instead of <a href="http://www.nunit.org/" target="_blank">NUnit</a>, because of very useful extensions such as row tests. MbUnit is pretty much superset of NUnit - see more at <a href="http://www.mertner.com/confluence/display/MbUnit/MbUnit+Home" target="_blank">project Wiki page</a>. MbUnit works very well, the only disadvantage is very limited documentation.</p>
+<p><strong>Ch-6 - IDE</strong></p>
+<p>Visual studio - what else ? In version 2005 it provides very good featureset. Refactoring support is still not quite as comprehenshive as in Eclipse, but very good nevertheless. Some developers use special plugins - e.g. <a href="http://www.wholetomato.com/" target="_blank">Visual AssistX</a>, but others (including myself) found it rather contraintuitive and liked plain VS.NET better.</p>
+<p>One of the plugins that we evaluated and actually liked, was <a href="http://www.testdriven.net/" target="_blank">Testdriven.NET</a> - nice VS addin to use MbUnit, csUnit and NUnit. Unfortunately, the publisher has very strange licensing policy: <a href="http://www.testdriven.net/purchase_pro.aspx" target="_blank">the more licenses you buy, the more you pay </a>: Professional license costs $95, but if you need more than one you must purchase Enterprise version ($135). Out of principle, to be "voting with our dollars" we decided not to go with Testdriven.Net. Let's hope that more people will do the same and eventually, the author will get the message.</p>
+<p><em>To be</em> <em>continued</em></p>

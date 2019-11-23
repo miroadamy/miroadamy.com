@@ -1,0 +1,22 @@
+---
+layout: post
+title: Spring example Petclinic on Tomcat 6
+date: 2007-09-20 23:07:37.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>If you try to deploy one of the Spring 2 samples included in the Spring framework source distribution - Petclinic on Tomcat 6 (6.0.14), the web application does not get loaded and fails with errror. The cause is the ClassNotFound exception for the class org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader, more precisely:</p>
+<p><code><br />
+SEVERE: LifecycleException<br />
+java.lang.ClassNotFoundException: org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader<br />
+at java.net.URLClassLoader$1.run(Unknown Source)<br />
+at java.security.AccessController.doPrivileged(Native Method)<br />
+at java.net.URLClassLoader.findClass(Unknown Source)<br />
+at java.lang.ClassLoader.loadClass(Unknown Source)</code></p>
+<p>The message is a bit confusing, because after peeking into spring.jar you'll find out that class in question is it is contained in the jar. What is happening is "classical" issue of classloaders and the who-loads-what problem.</p>
+<p>Fortunately, solution is very easy: what helped was copying the spring-tomcat-weaver.jar from Spring distribution into TOMCAT_HOME/lib directory and restarting the container.</p>
+<p>This <a href="http://forum.springframework.org/archive/index.php/t-28028.html" target="_blank">thread</a> was helpful to find out the cause. It may also be mentioned in the documentation, alas - I did not get to reading it yet :-).</p>

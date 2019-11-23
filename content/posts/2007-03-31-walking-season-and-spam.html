@@ -1,0 +1,23 @@
+---
+layout: post
+title: Walking season ... and SPAM
+date: 2007-03-31 22:10:53.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [security]
+author: "Miro Adamy"
+---
+<p>Today I have started the walking season 2007. I did some gentle preparation during the week - few short, 4-5 km strolls around the neighbourhood, but it was today when I really started. It was <a href="http://www.theweathernetwork.com/weather/cities/can/Pages/CAON0512.htm" target="_blank">beautiful</a> day in <a href="http://www.ottawa.com/" target="_blank">Ottawa</a> - sunny, temperature around 8-10, so I took off and did 12 km loop through <a href="http://www.ottawaliving.ca/community.php?community_id=31" target="_blank">Westboro</a>, down south and around <a href="http://www.ottawakiosk.com/panos/rideau_canal_3.html" target="_blank">Dow's Lake</a> up to downtown. Just fantastic. The companion on the road were Security Now! - I was behind few episodes, but I managed to listen to almost full 3 episodes.</p>
+<p>Interesting one was about Spambots - fleet of Zombies, remotely controlled that are used to send out spam. Conservative estimates are that from around 600 milion PC's, about 150 millions are infected zombies - without their owner's knowledge or consent, of course.</p>
+<p>Steve was speaking about the way how to detect from email headers that the email was spoofed. Basically, what you need to investigate is where the chain of Received headers which contains IP address of the sender is broken - that determines the point where the spammer connected to some SMTP server and send out message, all other headers beneath can be spoofed. I know this is not best explanation, but it is pointless to rephrase what Steve explained very nicely - listen <a href="http://media.grc.com/sn/SN-079.mp3" target="_blank">here</a> or <a href="http://www.grc.com/sn/SN-079.pdf" target="_blank">read the notes</a>.</p>
+<p>So while walking and listening that,  I have got an idea - with all the social websites and Web2.0 communities there may are realistic way how to cut down the spam wave that is everywhere around us (it is estimated that over 80% of all email is spam).</p>
+<p>Key ingredients of the solutions are:<br />
+1) - owners of the zombie machines who do not know about the "service" their PC's are providing. It is not easy to identify these machines and they may not know what to do<br />
+2) - who suffer the spam effects (and should be motivated to fix it) are the ISP's of these zombie users, because it is their bandwidth and their IP ranges who get blacklisted<br />
+3) - those who would happily cooperate is everybody who hates spam (all of us, minus the spammers) and would not mind to do something - as long as the participation would be easy ...</p>
+<p>What I was thinking about a Web site/ Web service - something like where you can forward the spam you get which ends in your Junk folder or bounces back to your address. The service would analyze the headers and extract the IP's of zombies - and keep building and maintaining the list. Extraction is not that hard and doable with nice Perl/Python/Ruby script :-). After a while, it would lead to a list of IP's with activity record attached to it (which would allow the IP to drop off the list) ...</p>
+<p>Now imagine that the ISP's could register themselves and enter the range of their IP's. They would get back subset of the Zombie list residing in their own address space - and deal with them - for example notify users, ask them to download some malware removal program or even sell some additional service. It clearly must be ISP to deal with the Zombie owners, because they are only one who has access to their identity and it is in their interest to limit amount of bad things origination from their network. It is not only about spam - infected machine that sends spam can as easily and likely be part of DDoS attack, which is quite different legal category of problems. Either way, at the end, the result would be less active zombies around.</p>
+<p>If the really big email services such as GMail and Yahoo - or big cable/DSL providers would participate and supply their own filtered spam (or even filtered list of Zombie-candidates) the database would IMHO start to provide valuable data very soon.</p>
+<p>What do you think ?</p>

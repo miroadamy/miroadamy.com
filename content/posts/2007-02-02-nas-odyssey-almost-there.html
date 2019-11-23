@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'NAS Odyssey: Almost there'
+date: 2007-02-02 19:36:04.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>As the tittle says, Fedora Core 6 is it. Everything is installed, everything works. The box is very fast, Samba network server is visible on all computers - I have not had time yet to do some tests on access and write speed. I have 930 GB shared space on RAID 5 which is in process of being subdivided into separate shares for video, images, music,  and so on.</p>
+<p>Installation was really nice and I was very pleasantly surprised how huge progress did Linux made since 2000 when I last time was really spending some time on it (I was always using Linux as file server and Webserver, but since year 2000 never actually was working in Linux environment). The only minor issue during configuration was that after installing suggested updates (one almost feels like with Windows when Linux box tells you that there newer versions for 200 something packages available), the mouse disappeared. It was there, I could drag and drop, click - but it was invisible. It took less then minute googling to <a href="http://www.virtualwar.com/unix/cat_x-windows.html">find an answer</a>. As usually in Linux, once you find what is wrong, fixing it is very easy. All I had to do was editing /etc/X11/xorg.conf file (which is of course text file) and adding: Option "HWCursor" "off" to the Videocard device section.</p>
+<p>---- xorg.conf ----<br />
+Section "Device"<br />
+Identifier "Videocard0"<br />
+Driver "nv"<br />
+Option "HWCursor" "off"<br />
+EndSection<br />
+----------------------</p>
+<p>and the cursor automagically reappeared. Hint: do not forget the quotes arounds "off" - otherwise X Windows does not start :-).</p>
+<p>So now I have my NAS and the long part of the work starts. I will have to define shares, assign access rights and the start moving the content to the NAS and cleaning it up in the process. I expect to learn and re-discover a lot in the process - more than I learned until now. Cannot wait ...</p>

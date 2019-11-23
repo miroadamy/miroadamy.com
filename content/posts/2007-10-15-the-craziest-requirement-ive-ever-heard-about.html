@@ -1,0 +1,15 @@
+---
+layout: post
+title: The craziest requirement I've ever heard about
+date: 2007-10-15 23:12:46.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>Can you imagine a database table with 25000 (twenty five thousands) columns ? No, not rows, COLUMNS ! Now if you can do that, can you imagine displaying these columns in a datagrid (spreadsheet) on a screen ?</p>
+<p>This is exactly what <a href="http://www.codeproject.com/script/comments/forums.asp?msg=2268886&amp;forumid=1649#xx2268886xx" target="_blank">this guy is describing</a> to be his requirements. I hope he did misunderstood or misread the requirements, because displaying 25000 columns on a screen is not only impossible - it is absolutely useless. How would the user interaction look like ? As one of the guys in the discussion pointed out, the table would be few hundred meters wide (assuming 1 cm cell and 19 inch monitor) ....</p>
+<p>Monsters like this happens when the person responsible for WHAT needs to be done goes step further and defines his/her idea about HOW it should be done. I have seen it many times when otherwise very good functional analyst gets overexcited in the process and goes beyond domain model - makes the actual data model part of the spec - despite lack of data modeling or database skills. This is ususally a guaranteed way how to end with bad data model and lot of unnecessary complexity later on.</p>
+<p>In this case, showing peak information about customer the key is slicing the time interval (to show just some subset of information), proper using of graphs and aggregation of the values with drill-down functionality to show the details.</p>

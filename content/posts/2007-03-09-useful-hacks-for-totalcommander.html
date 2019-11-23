@@ -1,0 +1,41 @@
+---
+layout: post
+title: Useful hacks for TotalCommander
+date: 2007-03-09 19:18:35.000000000 -05:00
+type: post
+published: true
+status: publish
+category: lifehacks
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>The following may interest you only if you are using my <a href="http://www.ghisler.com/index.htm" target="_blank">favorite file manager</a> (IMHO, it is the best file manager ever created, but your mileage may vary ..)</p>
+<p><strong>List of selected files to Clipboard</strong><br />
+One of the things that I am doing over and over is to search subtree - set of files for some content and then do something with the result. Let's say for example that I need all SQL files which refer to TESTDATABASE. On Unix, fastest way is to use <em><strong>find</strong></em> and pipe the result. On Windows, my workflow (using TotalCommander) is:</p>
+<p>- Alt-F7 (Commands -&gt; Search)<br />
+- enter *.sql in 'Search for, Alt-t + enter TESTDATABASE and hit Enter</p>
+<p>The list of matching files is displayed, you can view content of file, go to file or (what I usually do) is Feed to Listbox. The listbox view is very useful - contains list of files from various subdirectories, you can either inspect the content (using F3), edit files (using F4), show it's location in other panel (Ctrl-arrow left/arrow right, depending on in which panel you are, use arrow for other panel).</p>
+<p>What I am usually interested in, is subset of files and I use Ins to select the files of interest. With selected set of files you can do what you need: copy them (F5), move them (F6), delete (F8) or ZIP them to archive (File-&gt;Pack). So far so good.</p>
+<p>What I was not aware of is the you can very simply get the list of all selected files - with or without path - to clipboard. In fact, this works for any selected set of files, not only search results. In order to do this, you need to extend the menu (or add button, but menu works better for me).</p>
+<p>Go to directory where TotalCommader is installed (e.g. c:\totalcmd), and edit the default menu file - c:\totalcmd\LANGUAGE\WCMD_ENG.MNU. It is a text file with simple syntax. Add under Commands POPUP<br />
+<code><br />
+MENUITEM SEPARATOR<br />
+MENUITEM "Selected file to CLP", cm_CopyNamesToClip<br />
+MENUITEM "Selected file to CLP with path", cm_CopyFullNamesToClip<br />
+</code></p>
+<p>Last thing to do is to make sure the TC uses the menu file. Go to Configuration -&gt; Options, Language, select Main menu to be the file you have just edited and press Apply.</p>
+<p>After this, you will be able select any file, and using Command-&gt;Select File to CLP, list will be copied to clipboard</p>
+<p><strong>Show content of file without opening Viewer window</strong><br />
+Just press Ctrl-Q. To hide press Ctrl-Q again</p>
+<p><strong>Advanced select file</strong><br />
+In addition to selecting file one-by-one (Ins), group (shift/click) you can use the Num-+, Num-- and Num-* to select, unselect or invert selection. The operations are cumulative, you can select all EXE files, the add all DLL files - or select all files and then unselect one or more group. This is pretty obvious and TC user know it well.</p>
+<p>What is less obvious is that you can use multiple patterns at the same time - e.g. "*.EXE *.DLL" will select/unselect BOTH EXE and DLL files.</p>
+<p>What I did not know - because I never read manual for new versions as they kept coming for the years I was using TotalCommander since 1992) - that you can use regular expression for search and selection dialog. The above multiple patterns is just a special case. The details are in Help-&gt;Regular expressions, but one is so useful that I must mention it: select except: everything after '|' will get subtracted - "*.EXE *.??L|*.WUL" will select all EXE files and all files ending on L in extension, except .WUL. This may NOT be so useful in Select files dialog, but is very useful in Synchronize Dir - see next hack.</p>
+<p><strong>Synchronize directories</strong><br />
+The function allowing compare directories is something I use every day. Typical scenario is to find out out changes in two CVS sandboxes, containing different branches what was changed/removed added. It works great, with one minor issue - because of the different branches, the files within the CVS subdirectories will be different and will show in list of the changed files.</p>
+<p>Using the following regular expression the File selection box (the middle combobox) will fix the problem:<br />
+<code><br />
+*.*|Entries.* Repository Root<br />
+</code><br />
+and make the CVS subdirectories disappear</p>

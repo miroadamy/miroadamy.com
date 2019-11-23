@@ -1,0 +1,34 @@
+---
+layout: post
+title: More on Sony Reader
+date: 2007-01-27 20:24:16.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+author: "Miro Adamy"
+---
+<p>I have been living with my Sony eReader for almost a month now and managed to read about two full books. If not the time crush in biometric project, I would have probably read much more than just two books - nevertheless, I do have some real life experience with the device.</p>
+<p>First - the claimed battery life of 7500 page turns is BS. I have observed real battery life about 15-20 hours, so unless you manage to turn about 500 pages per hour, it just does not add up. I have observed that battery was good for about 1 full book (about 400 letter pages, or about 900 "small" pages on reader), read over 2 weeks period, the battery dropped from full charge to one segment. It is possible that it depends on how reading style - if you are turning pages and reading continuously, it lasts longer. Browsing through books seems to consume considerable energy. I think that 15-20 hours reading time is more than enough - it will keep you busy on flight to Australia :-). Certainly huge improvement against PDA based readers, where the battery life is 4-5 hours max. My 2 years old PocketPC is now down to about 3.5 hrs. I am still using it because a) I have lots of books in PalmDoc and CHM formats and b) I like to read in bed ...</p>
+<p>I have looked at the content of the SD card as it is in file system. The Reader does not seem to do any conversion for the files involved - the copied PDF and RTF files are binary equal to the original files. The structure of the SD card is:</p>
+<p><code>\Sony Reader\<br />
+\Sony Reader\books<br />
+\Sony Reader\database<br />
+</code></p>
+<p>The books folder contains all files copied into SD. The database contains single XML file  cache.xml, which holds directory of the books. I do not know yet whether the file indeed a directory or what it says - a cache. Simple experiment to do is to copy few files and test of Reader will find them and updates the cache. The book metadata has following format as:<br />
+<code><br />
+&lt;text author="AUTHOR NAME" page="0" part="0" scale="0" sourceid="37" id="269"&gt;<br />
+date="Sat, 30 Dec 2006 22:42:12 GMT" mime="text/plain"<br />
+path="Sony Reader/books/FILENAME.txt" size="339623"<br />
+title="BOOK TITLE"&gt;<br />
+&lt;layouts&gt;<br />
+&lt;layout part="0" scale="0"&gt;<br />
+...<br />
+</code></p>
+<p>I am not sure how the one or more encoded binary chunks - layouts (for various scales) work. The encoded jpeg -thumbnail is on the hand pretty obvious.</p>
+<p>The source of the information appearing in the metadata depends on the source format. For PDF and RTF files, Connect software seems to access the document properties, for TXT files I did not figure it out yet.</p>
+<p>So to get good content on the Reader requires</p>
+<p>a) get the metadata right and<br />
+b) convert the content into best readable format.</p>
+<p>Which is, unfortunately the proprietary format <a href="http://www.sven.de/librie/Librie/BBeB">BBeB</a>. The readibility of the BBeB is far the best, it offer nicer text, better sizing and overall much better reading experience. The good news is, that it is possible to create content in this format and first few tools are appearing on the net. I will try them out and post the results here as soon as I am done. Until that time, you can download free ebooks (Project Gutenberg and others) on <a href="http://manybooks.net/">Manybooks.net</a> directly in the eReader format.</p>
+<p><a href="http://wiki.mobileread.com/wiki/Category:Sony_Portable_Reader">This site</a> is very good source of information on the eReader and things around it.</p>

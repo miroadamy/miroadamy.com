@@ -1,0 +1,31 @@
+---
+layout: post
+title: Who is the most successful programmer of the world ?
+date: 2007-02-11 23:52:35.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>Depending on how you define <em>success</em>, you may get different answer to the question above.</p>
+<p>If you choose for the success criteria:</p>
+<p>- amount of money made by programming AND<br />
+- number of people using the product AND<br />
+- impact on the community at large</p>
+<p>the answer is probably <a href="http://en.wikipedia.org/wiki/Simonyi" target="_blank">Charles (Karoly) Simonyi</a>, Hungarian born ex-Microsoft employee, billionaire, astronaut and original author of Microsoft Word.</p>
+<p>True, there certainly are people that made more money than him and their fortune is closely related to software - but unlike Simonyi none of them was actively programming for major part of their career. Take Bill Gates for example - most of his coding goes back to his teenage years and after creating Basic, his role was not related with active code writing. Also the number of people using Altair Basic (or any basic) today is likely nowhere in the Word league.</p>
+<p>Simonyi is also creator of contraversial <a href="http://en.wikipedia.org/wiki/Hungarian_notation" target="_blank">Hungarian naming notation </a>of variables, which was considered to be "canonical" notation for programming Windows with C and C++, popularized by another Charles, the author of de-facto standard Windows programming textbook - <a href="http://www.charlespetzold.com/" target="_blank">Charles Petzold</a>. In a nutshell, Hungarian notation adds prefix to each variable name which encodes its data type: for example: <strong><em>char *lpszBuffer</em></strong> means long pointer to string (zero-terminated).</p>
+<p>The supporters say that this allows easy visual control of how the variables are used, e.g. from:</p>
+<p><em>strcpy(lpszBuff, &amp;cName);<br />
+</em></p>
+<p>is obvious (at least for experienced C programmer) that the code will crash, because the right side is an address of single byte character, not a string and there is no terminating zero after the byte, therefore the strcpy will likely overwrite the buffer and possibly stack.</p>
+<p>The opponents say that modern languages and modern compilers make most of these checks available in the compiler and that the name should denote what is the role/purpose of the variable, not it's type - as the type can easily change. <a href="http://en.wikipedia.org/wiki/Roedy_Green" target="_blank">Roedy</a> Green calls Hungarian Notation "the tactical nuclear weapon of source code obfuscation techniques." (see his recommendation <a href="http://mindprod.com/jgloss/unmain.html" target="_blank"><span style="font-style:italic;">How to write unmaintainable code</span></a> and Mozilla programmer Alec Flett wrote (using Hungarian Notation):</p>
+<p><em>"prepBut nI vrbLike adjHungarian! qWhat's artThe adjBig nProblem?</em></p>
+<p>How did I get to writing about Charles Simonyi ausgerechnet today ? The MIT Technology Review published fairly <a href="http://www.technologyreview.com/Infotech/18047/page1/" target="_blank">interesting article</a> on him and his latest brainchild - <a href="http://en.wikipedia.org/wiki/Intentional_programming" target="_blank">Intentional Programming</a>. The article is fairly long read, but quite interesting. The goals of Intentional Programming are very ambitious and it is hard to say, how realistic is it to achieve them at all. The domain specific languages are certainly fashionable and idea of having "WYSIWYG" for graphical construction of code is attractive. But is it doable ? The details on are sketchy and without trying it out, it is hard to make any opinion - but it looks much more like interesting research concept than the production-ready system.</p>
+<p>Take the example on <a href="http://www.technologyreview.com/Infotech/18047/page13/" target="_blank">Page 13</a> - it reminds me a lot of what I have seen during my PhD studies: a system that works for some very narrow, textbook size example - small, well defined problem with perfectly described boundaries and no inter-dependencies, but is just impractical for any real life application. Metaprogramming is still one of the many Holy Grails of software engineering - and we often get confused by believing that adding another level of indirection will substantially change the nature of the problem on hand ...</p>
+<p>IMHO best quote from the article was the Wirth's Law (after Niklaus Wirth):</p>
+<p style="font-style:italic;font-weight:bold;">"Software gets slower faster than hardware gets faster."</p>
+<p>This is so true, especially if you look on Vista's hardware requirements and think for a moment about your subjective feeling how responsive is your brand new, 2 GHZ dual core notebook with 2GB RAM running Vista. Now try to think few years back (if you can go back to 1998-99) and compare this to the state-of-the-art machine you were using at that time - probably something like a single core 300-450 MHz Pentium II with 128 MB RAM running Windows NT 4. How did that feel ?</p>
+<p>As far as I can remember, the feeling was about the same - while doing the same things - develop software, browse Web, write documents and do emails - the old notebook did not perform considerably worse, certainly not 2-3 times worse. So despite the 10 times increase in RAM size, speed/CPU power, disk size and disk speed, we have not gained much on the user responsiveness side. Vista looks much nicer, but the feeling of speed is the same ... only software is many times more bloated.</p>

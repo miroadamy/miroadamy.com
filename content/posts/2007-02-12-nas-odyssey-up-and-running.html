@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'NAS Odyssey: Up and running'
+date: 2007-02-12 23:31:55.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>After lots of attempts (see <a href="http://thinkwrap.wordpress.com/2007/01/21/the-joys-of-open-source-nas/" target="_blank">here</a>, <a href="http://thinkwrap.wordpress.com/2007/01/29/joys-of-the-opensource-nas-part-2-openfiler/" target="_blank">here</a> and <a href="http://thinkwrap.wordpress.com/2007/01/30/nas-odyssey-openfiler-is-out-lets-try-ubuntu/">here</a>), I have finally resolved my disk space problems and the RAID-5 NAS server is up and running since about two weeks now. I have stayed with Fedora 6, successfully installed Samba, configured the shares and copied all family JPEG's, videos, MP3's etc onto the huge 907 GB large RAID5 share. The old <a href="http://en.wikipedia.org/wiki/NSLU2">NSLU2</a> is still dead - I did not have any time to try to re-flash it, but all content of it's disk was without any issues readable by the new server (the NSLU2 was using ext3 filesystem) so I did not even have to try to use backups.</p>
+<p>Most of things in Fedora can be configured graphically. The only case I had to go to shell were final configuration changes in Samba. As it turned out, the default umask allowed search on directories (rwxr-xr-x), but none on files (rwx------). This lead to strange behaviour when the images were visible from Windows client - user could see the file names in the directory but no viewer could display them. Fix was trivial:</p>
+<p>find . -name "*.jpg" -exec chmod +r '{}' \;</p>
+<p>It's kind of funny how old skills reapper when you need them. Unix is like riding a bike: you get uncomfortable and out of form but you never loose it completely. I even remembered quite a few vi and emacs key combinations (but happily switched to use gedit or JEdit).</p>
+<p>One thing that did <em>not</em> work out of the box was VNC server (I am getting ready to disconnect monitor and keyboard, move the box under the desk and forget about it for next year or so :-)). When attempting to start the VNC server using the GUI interface - it does not report any error, but does not start either. When trying from command line (using /sbin/service), the error explained the problem with Xstartup. I found this <a href="http://www.bobpeers.com/linux/vnc">useful info</a>, will try it out.</p>
+<p>So far I am very happy with performance of the system (I have copied about 150 GB of content on the NAS).</p>
+<p>Lessons learned:<br />
+- the "NAS" like distributions (FreeNAS, NASLite+) have variety of limitations (like lack of readonly/readwrite access support, user access rights) and are basically all-or-nothing solutions<br />
+- OpenFiler is not good solution for home network either. It goes to the other extreme - unless you have domain controller, you are out of luck, as it does not support local users<br />
+- from full distributions, Fedora provides everything you need to have NAS as well as well user friendly environment for administration. To be fair, I did not try OpenSUSE or Mandriva. Ubuntu - despite being known as the "most user friendly" distro did not work for me: the desktop edition (which indeed was great user experience) does not contain server components and the server edition requires really experienced Linux admin as it has no GUI at all.</p>
+<p>All summed up: lots of fun. Worth every penny.</p>

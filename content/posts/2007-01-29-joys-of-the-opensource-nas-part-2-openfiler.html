@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'Joys of the Opensource NAS - Part 2: OpenFiler'
+date: 2007-01-29 00:54:31.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+author: "Miro Adamy"
+---
+<p>After spending most Saturday and Sunday fixing, coding and logging bugs, I finally got to moving ahead. Very likely it is about time, because the NSLU2 keeps producing strange sounds</p>
+<p>The box has now additional IDE 160 GB IDE disk, which will hold Linux installation as well as "temp" share, which will not be RAID-ed. Sort of staging area for the stuff in flux.</p>
+<p>After contemplating for a while which distribution to use - and generally, whether to build more generic Linux server with Samba or more appliance-type box, I went on with trying OpenFiler first. The truth is that my old Linux box did 99% of his services as Samba fileserver and very little as Web server / Java application server. Most of the fancy GUI applications were barely used - including pretty loaded Gnome and KDE installation (one can never decide which one is actually better). So why to repeat same mistake twice ?</p>
+<p>Nevertheless, I have created a shortlist of distributions and prepared the media. Here is the shortlist:</p>
+<p>a) Ubuntu<br />
+b) Fedora Core<br />
+c) Open Suse</p>
+<p>I have no real rational reason why exactly these 3 distros and why this order - decision was partially based on reviews from Net and partially on personal recommendations.</p>
+<p>Installation of OpenFile (still running) was very straightforward. Of course, you have to select manual partitioning, not automatic if you want to create RAID. I have created 4 partitions on /dev/hda - /boot, /, swap and /var - occupying the rest of the system - as ext3. The  SATA disk got created one large partition each, formated as Software Raid. The actual raid - /dev/md0 - was created right in disk partitioning tool. The only uncertainty was the number after 'Number of spares'. I was not sure what it means "spare" - but then decided that it should be the number of spare partitions actually not participating in the RAID, just available, in case something would fail. I have left the default value 0 and moved on.</p>
+<p>The created RAID was as expected, over 915 GB large (4x305 GB disks in RAID5 = 3x305+parity). After that, the installer requires to set time zone, IP address and hostname and starts formatting the partitions, which will take long, long long time - it is running now for over an hour ...</p>
+<p>Few good links to the topic: Linux <a href="http://linux-ata.org/faq-sata-raid.html">SATA RAID FAQ</a>, explanation <a href="http://linux.yyz.us/why-software-raid.html">Why software RAID</a>,<br />
+<em> To be continued</em></p>

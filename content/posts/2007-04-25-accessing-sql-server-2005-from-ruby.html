@@ -1,0 +1,17 @@
+---
+layout: post
+title: Accessing SQL Server 2005 from Ruby
+date: 2007-04-25 23:58:13.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [ruby]
+meta: {}
+author: "Miro Adamy"
+---
+<p>The natural gravity of our environment keeps pulling me out of scripting and Ruby world back to .Net zone :-). Out of curiosity, I looked into how easy or hard is it to access other database from Ruby, than the default MySQL which dominates all books, samples and tutorials.</p>
+<p>I have found three ways (at least), one likely platform independent and two Windows only. The platform independent requires module ADO.rb and works with the DBI interface. This sounds very similar to the way how Perl used to access databases, so I put this at the end of the list (some details are <a target="_blank" href="http://justinram.wordpress.com/tag/ruby/ruby-on-rails/">here</a>). First Windows only methods used ODBC - no, thanks. Configuring machine specific data sources is not the way I wanted.</p>
+<p>The best way was described in the <a target="_blank" href="http://rubyonwindows.blogspot.com/2007/03/ruby-ado-and-sqlserver.html">Dave Mullet's blog</a> and worked perfectly. I took the liberty to make the class better configurable - the result is published at <a target="_blank" href="http://snippets.dzone.com/posts/show/3906">code snippets</a>.</p>
+<p>If you do not know DZone Snippets, give it a look - it is best way how to share chunks of code that are too big to fit into blog (like one-liners or small functions) but not really a projects, which could be uploaded to SourceForge or CodePlex or similar open source repository. Snippets have coloring filter and tagging system - and the site is YACLRRW2C - yet another cool looking Ruby on Rails Web 2.0-ish creation ...</p>
+<p>  </p>

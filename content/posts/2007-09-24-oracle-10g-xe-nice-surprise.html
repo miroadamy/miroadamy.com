@@ -1,0 +1,16 @@
+---
+layout: post
+title: Oracle 10g XE - nice surprise
+date: 2007-09-24 11:22:04.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>As part of current project I need to test some ORM frameworks and for that, you need a database. In this particular case, database equals Oracle. I need a local instance to be able to work outside of the customer's location.</p>
+<p>On my notebook, I have already installation of MySQL (for all the Rails stuff) and SQLServer (for ASP.NET). Plus few lightweight databases (meaning that they do not really need a server) such as sqlite3, Derby and HSQLDB). I was very hesitant to add another instance and for some time tried to do the work with MySQL - but differences in SQL and most importantly the way how the CLOBs and BLOBs are handled convinced me this is a bad idea.</p>
+<p>So grudgingly I downloaded the <a href="http://www.oracle.com/technology/products/database/xe/index.html" target="_blank">Oracle 10g Express Edition -</a> which is free and available for any use - including production deployment. Remembering my last installation was not very encouraging: the machine I installed the 9i suite (Windows 2000 back in 2002 or 2003) became close to unusable for development after install because of the memory consumption and CPU load of the database server - and after the installation I had to go and develop on different machine. I also remembered that it installed variety of services, two or three different instances of Apache (for no obvious reason) and lots of other stuff I had no need for.</p>
+<p>I have to say that Oracle made a huge improvement since that time. The install went very smooth, did not mess up the notebook and everything actually works very nicely. It did not even ask the scary questions that one does not fully understand and later pay dearly for answering them wrong... The admin interface is web based and does not require you to read hundreds pages of documentation to make anything useful. It shows memory used and allows easily manage users, databases and pretty much everything what a developer (not a DBA) may want. If you need more or are an Oracle DBA, you have the dreaded command line based SQL tool available as well - so even Bob can feel at home with XE :-). The whole Oracle suite is now single service (more or less) and if you do not need it, you just stop single service (shortcut in Programs is provided) and claim the memory + CPU to where you need them.</p>
+<p>Now I know that if you need a lightweight commercial grade database (backed with The Big Name), there is an alternative to <a href="http://msdn2.microsoft.com/en-us/express/aa718378.aspx" target="_blank">SQL Server Express</a> - very comparable with respect to footprint, resources, easy of use and limitations (from developer's point of view unimportant such as 4 GB size limit on database). And as added benefit, you can install on Windows or Linux - which may come handy if you need to build a virtual database appliance without any licensing issues on the operating system side ...</p>

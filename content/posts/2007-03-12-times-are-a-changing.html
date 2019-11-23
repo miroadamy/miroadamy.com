@@ -1,0 +1,18 @@
+---
+layout: post
+title: Times are a-changing
+date: 2007-03-12 20:07:13.000000000 -04:00
+type: post
+published: true
+status: publish
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>This year unusually early, we switched the Daylight Saving Time. The clocks did spring ahead one hour on Sunday morning. Btw, this is a good mnemonic how to remember which direction does the clock go: it Springs ahead and it Falls back ... Technically, it was decision of the US legislative to start DST early but because of the integration of the two economies,  Canada had not much choice, just to follow. So, for next three weeks or so, we are one hour closer to Europe.</p>
+<p>As a coincidence, we have been working with time and timezones related issues in both my C# related projects. Both project deal with data captured in different geographical locations and need to interpret the data timestamps from the point of view of user in particular timezone. In theory, .NET offers good support for time zones. In reality, the support is not really that great after all.</p>
+<p>What you can do very easily is to convert between local time of the Windows client and UTC. What you cannot do easily is to convert between <strong><em>any</em></strong> particular timezone and UTC - the conversion functions do not accept timezone code as parameter. What you also cannot do right out of the box is to provide user with list of all time zones and access the information like offset, date and time of DST etc (btw - both of these problems are much simpler in Java). Yes, it is not too hard to do it in C#, but every solution I have seen leads to one of two problems:</p>
+<p>a) provides .NET wrapper using Windows timezone database in registry</p>
+<p>b) creates own timezone information (in database, XML file, Web service - you name it).</p>
+<p>Neither of these solution is really clean. Windows registry database is incomplete (contains only 75 zones) and it's accuracy depends on whether the Windows update is enabled or not (the Windows workstations installed in October without automatic update on did NOT recognize the early DST start this year). Accessing the registry may lead to priviledge problems and is generally problematic in Web applications. The information in the registry is pretty cryptic and the "unique key" is non-descriptive integer with no external world relation (the Index). If you can live with these limitations, look at this <a href="http://www.codeproject.com/dotnet/WorldClock.asp" target="_blank">Codeproject article</a> and on Michael Brumm's <a href="http://www.michaelbrumm.com/simpletimezone.html" target="_blank">SimpleTimeZone</a> class.</p>
+<p>If you want to create and maintain own timezone database, you need first to get the authoritative source of the TZ data and then make sure you keep it up to date. If you use on-line source, you require permannent connectivity or some sort of synchronization - which adds amount of work required. Good starting point is <a href="http://www.twinsun.com/tz/tz-link.htm" target="_blank">this webpage.</a></p>

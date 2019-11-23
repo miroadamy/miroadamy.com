@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'NAS Odyssey: Fedora Core'
+date: 2007-01-31 01:23:08.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+author: "Miro Adamy"
+---
+<p>As the title says, the Ubuntu is out. Not really because of some technical flaw or missing features (as the FreeNAS, NASLite+ and OpenFiler before), but because of lack of experience and patience on my side. Unlike other distribution which come pre-packed on DVD, Ubuntu installs from a single CD. There are 3 CD variations available: Desktop, which most of the people use and which is likely responsible for Ubuntu fame, Server and Alternative. I did not want to go with desktop - for obvious reasons, so I started to install Server. It installed OK, except it did not offered any option to create RAID. Technically, I still had the RAID created from experiments with OpenFiler, but as I was not sure in which state did I left it, I wanted to recreate it.</p>
+<p>The server installation, unfortunately does not install any GUI and all operations are performed from command line. I dare to administer Apache and Samba via command line, but meddling with file system operations made me feel really uncomfortable. I tried installed webmin (using apt-get) but it did not succeed at the first attempt and gave up afterwards. Ubuntu seems to cover well two sides of the Linux experience scale: beginers (ex-Windows users) and experienced Linux guys. For somebody who needs more than simple desktop but does not really want to go to deep internals, it does not provide very much. Maybe the alternative install would do - but I gave up, time to move ahead.</p>
+<p>I decided to try Fedora first. There seems to be lot of information available (such as books on Safari Online) and I know few people that use Fedora and may be a good source of information if I get stuck.</p>
+<p>I've encountered few issues during Fedora setup. First - there seems to be a bug in Anaconda installer: as soon as you try to select additional RPM repositories, it crashes and you can start from beginning - as nothing was saved yet. Lesson learned: do not do that. The other problem I've seen had nothing to do with Linux: my setup kept freezing and crashing at first. I figured out that there likely was an IRQ conflict between USB and RAID - after I disabled RAID on BIOS, it disappeared. Right now, I have selected the packages and the installer runs ...</p>
+<p>Put alltogether: it was great lerning experience so far and much more complicated that I have expected, but quite fun. And that is only beginning - I am pretty sure I'll learn much more cool stuff in the process of managing my new (still not existing) NAS. I have to hurry up, because the all NSLU2 died and the family archive of images and videos is inaccessible on USB drive formatted as ext3 filesystem ...</p>

@@ -1,0 +1,26 @@
+---
+layout: post
+title: Differences between Visual Studio and SSMS
+date: 2007-05-11 22:43:32.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+meta: {}
+author: "Miro Adamy"
+---
+<p>I am working on the BI modules for automotive data-analytics application these days. Which means that I am doing quite a bit coding and using T-SQL and in addition to Visual Studio 2005, I use quite often the Sql Server Management Studio for SQL Server 2005. In theory, both tools should be based on the Visual Studio IDE code base. Which is maybe true, but there are many quite annoying differences.</p>
+<p>Some of the differences is available featureset. I wish there was single tool that had all the database features of both: strong scripting capabilities of SSMS and much better development support with debugging in VS-2005. One can understand that the tools were meant to serve different audiences, but why not make the SSMS a lightweight, trimmed down version of VS2005 targeting database and OLAP projects only ?</p>
+<p>Some differences are really annoying though. One discovered today is related to GUID's. Take the code sequence<br />
+<code><br />
+Declare @MyGuid	uniqueidentifier<br />
+set @MyGuid = NEWID()<br />
+select 'aaaaa', @MyGuid<br />
+</code><br />
+You would expect that the result will be one row, consisting of value 'aaaaa' and some GUID, right ? Wrong. It is true only in SSMS as the picture shows:</p>
+<p><img src="/images/ssms.png" alt="SQL Server Management Studio" /></p>
+<p>In Visual Studio 2005 SP1, the result looks like this:</p>
+<p><img src="/images/visualstudio.png" alt="Visual Studio without conversion" /></p>
+<p>which on one side announces 1 row in resultset, but does show the same result as if the resultset was empty. As we found out, the problem is related to displaying the GUID value - if your resultset does not contain it, the row will show OK. Same result can be achieved using explicit conversion, as shown in the picture:</p>
+<p><img src="/images/visualstudio2.png" alt="Visual Studio with conversion" /></a></p>

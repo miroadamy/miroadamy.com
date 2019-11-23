@@ -1,0 +1,37 @@
+---
+layout: post
+title: MSDN Documentation - the follow up
+date: 2007-06-15 20:01:02.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+comments: true
+tags: []
+author: "Miro Adamy"
+---
+<p>Judging by the number of hits, Joel (and myself) are not the only people who would like to see nicer, better and faster MSDN documentation. As a very nice surprise,  some of the feedback came directly from the people than actually can do something about it - like Darren Parker from Microsoft and Anand Raman from the Sandcastle project. Rob Relyea  suggested and <a href="http://xamlt.com/" target="_blank">interesting looking tool</a> based on XAML.</p>
+<p>Thanks everybody - it is always nice to find out that even <a href="http://www.microsoft.com/" target="_blank">really big companies</a> listen to the developers and want to address the problems. It almost feels like OpenSource experience where (it was few years back) we have encountered an issue in one of many Java templating libraries, posted to discussion group a question and few hours + several emails later had patch for the bug from the library creator :-). But back to the topic.</p>
+<p>In addition to the issues <a href="/msdn-documentation-the-worse-in-class/" target="_blank">mentioned yesterday</a>, I'd like to add few more suggestions:</p>
+<p><strong>1) Multiple languages on the same page.</strong></p>
+<p>In theory, it sounds great to be able to select in which .NET language syntax I want to see the class, but .... In real life, we seldom switch languages. The project that starts as C# projects will stay C# project - and for several months the developers will not care about documentation in anything but C#, certainly not J# or Javascript ... For that reason,  ability to dynamically switch languages is not really important. And who needs J#, anyway ;-) ?  If there is one thing that should go to sub-pages, the "other languages" should be it.</p>
+<p><strong>2) Visual organization</strong></p>
+<p>Sounds like minor problem, but it impacts usability a lot. Few examples: The icons in the first column can be safely dropped and free space better used to add the return type and parameters. Position in the inheritance tree and list of parent classes / implemented interfaces (hyperlinked) should follow. After that, the list of members - constructors, methods, properties etc, preferably in single page with links to detail page / code examples. Just compare the definition of DataSet in <a href="http://www.go-mono.com/docs/index.aspx?tlink=8@ecma%3a2444%23DataSet%2f" target="_blank">Mono documentation</a> and in <a href="http://msdn2.microsoft.com/en-us/library/system.data.dataset(vs.80).aspx" target="_blank">MSDN</a> to see the difference.</p>
+<p><strong>3) Postback behaviour</strong></p>
+<p>Frames are old and out of fashion, but IMHO still best solution for some sort of tasks - such as documentation. One of killer features of frames is separate and independent reload of one frame while others keep the selection, scroll position etc. Why does the MSDN page - which uses frames - have to reload all of them ?</p>
+<p><strong>4) URL's</strong></p>
+<p>In the spirit of REST, the URL should be descriptive and understandable. The MSDN URL's are not bad - take for example</p>
+<p><code>http://msdn2.microsoft.com/<br />
+en-us/library/system.data.dataset(vs.80).aspx.</code></p>
+<p>I am not sure, however, what value adds embedding the VS version into URL. It may be sometimes interesting to see the changes between the 1.1 and 2.0 versions of the same class, but it would be cleaner to make the "split" at the top level ( e.g.</p>
+<p><code>http://msdn2.microsoft.com/<br />
+en-us/library/2_0/system.data.dataset.aspx</code></p>
+<p>) and provide link from the 2.0 version of DataSet documentation to 1.1 / 1.0 version of the DataSet documentation. This is immensely usefull if you are porting the 1.1 application and need quickly review the changes.</p>
+<p><strong>4) Breadcrumbs or Dynamic Menu or what the heck it is</strong></p>
+<p>I mean this:</p>
+<p><a href="/images/picture-3b.png" title="picture-3.png"><img src="/images/picture-3b.png" alt="picture-3.png" width="400" /></a></p>
+<p>This is something that really should be reviewed, both from implementation and well as content perspective. As I see it - it tries to be several things at the same time and does not really do properly any of them. It duplicates part of the path in tree in left frame, interwoven with some other information.</p>
+<p>Some members of this construct are just plain confusing - for example Previous Version. Assume that I am on DataSet documentation and Click on Previous versions, it lands me either on starting page for .NET Framework 2.0 or 1.1 implementation. The problem is that NONE of these pages has anything to do with page I was on - the DataSet - and only way how to get back is Back button ...</p>
+<p>From usability perspective, selection in the "menu" often causes postback and redraw of all frames ...</p>
+<p>One more thing: it is not really important (and it may not be a problem on Microsoft side), but the left-side tree does not load in Safari on Mac - not that there would be too many people reading MSDN documentation from OS-X platform ;-)</p>
+<p><a href="/images/picture-4b.png" title="picture-4b.png"><img src="/images/picture-4b.png" alt="picture-4.png" /></a></p>
