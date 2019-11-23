@@ -8,8 +8,6 @@ tags: ["gitops", "k8s", "aws"]
 author: "Miro Adamy"
 ---
 
-# All Day DevOps 2019 - Notes
-
 I have attended the All Day Devops - <https://www.alldaydevops.com/> on 06 Nov 2019 - an event that runs for 24 hours and has multiple tracks of content organized in 4 blocks.
 
 The tracks:

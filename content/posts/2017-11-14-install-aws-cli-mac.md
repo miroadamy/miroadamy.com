@@ -8,8 +8,6 @@ tags: ["aws", "cloud", "command-line"]
 author: "Miro Adamy"
 ---
 
-# Install AWS CLI on Mac
-
 The Mac comes with Python 2.7 and no pip
 
 This guide recommends upgrade to Python 3 which I want to avoid: http://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html

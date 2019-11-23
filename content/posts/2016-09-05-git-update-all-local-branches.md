@@ -8,8 +8,6 @@ tags: ["git"]
 author: "Miro Adamy"
 ---
 
-# Update all local branches in Git repo
-
 Issue: The git pull updates just one current branch.
 
 In DevOps I am following many Git repos and need to keep up to date for all local branches.
