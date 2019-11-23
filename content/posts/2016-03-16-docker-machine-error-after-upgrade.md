@@ -13,8 +13,6 @@ tags:
 author: "Miro Adamy"
 ---
 
-# Fixing docker-machine error after upgrade
-
 I had to upgrade docker toolbox on Yosemite to get latest docker-compose additions. 
 
 After installing the new package, I was not able to connect to docker machine:

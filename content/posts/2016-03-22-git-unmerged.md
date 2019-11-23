@@ -14,7 +14,6 @@ categories: ["Technology"]
 author: "Miro Adamy"
 ---
 
-# Git - find unmerged commits
 
 This is Ruby script I found way back and was using it since. 
 
