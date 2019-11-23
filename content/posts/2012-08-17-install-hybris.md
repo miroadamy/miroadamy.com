@@ -2,6 +2,7 @@
 title: "Installing and running 'naked' hybris platform"
 date: 2012-08-17T11:22:48+08:00
 published: true
+type: post
 categories: ["ecommerce"]
 tags: ["hybris"]
 author: "Miro Adamy"

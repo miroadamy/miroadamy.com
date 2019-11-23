@@ -2,6 +2,7 @@
 title: "Difference between matching and simple - Git push"
 date: 2013-09-26T21:02:48+08:00
 published: true
+type: post
 categories: ["Technology"]
 tags: ["os-x"]
 author: "Miro Adamy"

@@ -1,12 +1,23 @@
 ---
-title: "How to make screenshot from command line"
-date: 2013-09-24T11:22:48+08:00
+title: "Update all local branches in Git repo"
+date: 2016-09-05T11:22:48+08:00
 published: true
-categories: ["Technology"]
-tags: ["os-x", "virtualbox"]
+categories: ["programming"]
+tags: ["git"]
 author: "Miro Adamy"
 ---
 
-# How to make screenshot from command line
+# Update all local branches in Git repo
+
+Issue: The git pull updates just one current branch.
+
+In DevOps I am following many Git repos and need to keep up to date for all local branches.
+
+## git ffwd-update command
+
+Source: <http://stackoverflow.com/questions/4318161/can-git-pull-all-update-all-my-local-branches>
+
+Create file named git-ffwd-update somewhere on the path (in my case `~/bin`)
+
 
 ![](/images/binding-dashdoc-with-editors-and-eclipse_5.png)

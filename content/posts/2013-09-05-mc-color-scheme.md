@@ -2,6 +2,7 @@
 title: "Usable mc color scheme"
 date: 2013-09-05T21:32:48+08:00
 published: true
+type: post
 categories: ["Technology"]
 tags: ["os-x", "virtualbox"]
 author: "Miro Adamy"

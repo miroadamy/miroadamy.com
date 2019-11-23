@@ -3,6 +3,7 @@ title: "Few gitbits to remember"
 date: 2012-03-25T15:43:48+08:00
 lastmod: 2012-03-25T15:43:48+08:00
 published: true
+type: post
 categories: ["Programming"]
 tags: ["git"]
 author: "Miro Adamy"
