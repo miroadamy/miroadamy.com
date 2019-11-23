@@ -1,0 +1,15 @@
+---
+layout: post
+title: A false "hang" of Finder
+date: 2008-04-24 00:19:22.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags:
+- osx
+author: "Miro Adamy"
+---
+<p>Yesterday, I have noticed interesting thing related to Finder and "beach ball of the death". Suddenly, for no obvious reason, the top menu became unavailable and cursor changed to beachball every time I moved it there. The Bluetooth mouse stopped responding. Finder stopped responding. All symptoms as if Finder would hanging ...</p>
+<p>The cause of the issue was crash of unrelated application (iShowU, if you are curious), which brought up the  crash report window. For some reason - maybe because it happened while changing spaces - the window was not visible. After closing the window, everything came back to life and even mouse reconnected (after disabling and re-enabling Bluetooth).</p>
+<p>So next time it looks like an application did hang, make first sure that no windows expecting input are not open and hidden. Do not rely upon jumping dock icon - with bad luck and Spaces enabled, it is easy to switch the notification off.</p>

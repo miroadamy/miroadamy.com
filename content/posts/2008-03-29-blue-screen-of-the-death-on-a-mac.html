@@ -1,0 +1,18 @@
+---
+layout: post
+title: Blue screen of the death on a Mac
+date: 2008-03-29 22:29:51.000000000 -04:00
+type: post
+published: true
+status: publish
+tags: [osx]
+author: "Miro Adamy"
+---
+<p>Here it comes, first occurence: one of my VM's BSOD-ed on me yesterday.</p>
+<p><img src="/images/picture-35.png" alt="picture-35.png" /></p>
+<p>To be completely fair, I did have experienced an occurrence of something similar twice in last moths: after wake up from sleep, the screen was collection of the color pixels, completely unreadable. After reboot, everything was normal.</p>
+<p>I found out that the issue may be related to the "safesleep" mode. For now, I disabled the mode by</p>
+<p>sudo pmset -a hibernatemode 0</p>
+<p>To re-enable SafeSleep, the command is:<br />
+sudo pmset -a hibernatemode 3</p>
+<p>So far, everything works - but I am still investigating. Thanks to <a href="http://www.apfeltalk.de/forum/macbook-ruhezustand-dauert-t119450.html" target="_blank">this thread</a> (in German) for the hint.</p>

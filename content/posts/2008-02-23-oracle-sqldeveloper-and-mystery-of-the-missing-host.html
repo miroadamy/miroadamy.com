@@ -1,0 +1,20 @@
+---
+layout: post
+title: Oracle SQLDeveloper and mystery of the missing host
+date: 2008-02-23 09:48:07.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>If you work with Oracle database, a very good tool you should not ignore is the Oracle SQL Developer. It gives you much more power when it comes to manipulating data or managing database. I use most of the time MyEclipseIDE plugins, but when I need e.g. export data, the SQLDeveloper is way to go.</p>
+<p>Today I tried it for first time on the Mac. I started to configure and database connection and was completely confused by the error message "Port must contain numerical value". Here was the dialog box:</p>
+<p><img src="{{ site.baseurl }}/images/picture-6Q.png" alt="picture-6Q.png" /></p>
+<p>I typed  the hostname:1521 but the error message kept coming back. There was no obvious way how to put 3 values - host, port and SID into two field. After checking the documentation, I remembered that the Windows version did have 3 text fields instead of two.</p>
+<p>What was the problem ? The layout manager in Java did unfortunately completely hide one of the 3 fields. After resizing the dialog, all fields would be visible:</p>
+<p><img src="{{ site.baseurl }}/images/picture-4Q.png" alt="picture-4Q.png" /></p>
+<p>After this, everything worked OK.</p>
+<p>Obviously, Mac version of the SQLDeveloper could use some minor improvement. For example, the menu looks everything but like a finished Mac application:</p>
+<p><img src="{{ site.baseurl }}/images/picture-5Q.png" alt="picture-5Q.png" /></p>

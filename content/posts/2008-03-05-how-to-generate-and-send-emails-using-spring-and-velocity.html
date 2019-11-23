@@ -1,0 +1,176 @@
+---
+layout: post
+title: How to generate and send emails using Spring and Velocity
+date: 2008-03-05 23:29:38.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>Testing applications that communicate using email is more challenging than e.g. testing database access. Thanks to GMail and Spring, it can be done pretty easily.</p>
+<p>Here is the scoop: I need to generate email notifying users about business events and after sending the email, store the content in the database. In real environment you will use corporate SMTP server and real email addresses of real people.<br />
+For development we can avoid bothering and spamming our customers by few simple tricks.</p>
+<p>First step is to get new GMail account. Name it e.g. Company.Notifier or something easily distinguishable. In Spring, configure the sender bean:</p>
+<p>[sourcecode language='xml']</p>
+<p>                  smtp.gmail.com</p>
+<p>                          true</p>
+<p>                          true<br />
+                          25000</p>
+<p>                   company.notifier</p>
+<p>                   secret</p>
+<p>            <!--   you don’t need to set the port number, 25 is default --><br />
+     [/sourcecode]<br />
+The port can have value 25 (default) - but if you are using ISP provider such as Rogers, chances are the default port is blocked for outgoing connections - you can use port 587 instead.Second piece is component that actually uses the mailSender: notificationService.<br />
+[sourcecode language='xml']</p>
+<p>               miro.adamy+alwaysCC@thinknostic.com</p>
+<p>    .... deleted ...</p>
+<p>[/sourcecode]<br />
+Note the velocityEngine bean that is used to generate the body of the email from the template. The 'alwaysCCList' property is using nice little trick available with GMail: if you send email to YOURNAME+anything@gmail.com, the '+anything' will be ignored but kept with email and it will arrive as if the address were just YOURNAME@gmail.com. You can use the postfix to find or autotag the emails.The code that sends email is actually pretty simple (the method of the notificationService)<br />
+[sourcecode language='java']<br />
+public EmailContent sendNotificationEmail(EmailParameters params, EmailContent _content, boolean isDryRun) {</p>
+<p>    final EmailContent c = mergeTemplate(params, _content);</p>
+<p>    MimeMessagePreparator preparator = new MimeMessagePreparator() {<br />
+         public void prepare(MimeMessage mimeMessage) throws Exception {<br />
+            MimeMessageHelper message = new MimeMessageHelper(mimeMessage);<br />
+            message.setTo(c.getEmailTo());<br />
+            message.setFrom("DO-NOT-REPLY@company.com"); // could be parameterized...</p>
+<p>            message.setText(c.getEmailBody(), true);<br />
+            message.setSubject(c.getEmailSubject());</p>
+<p>            if (alwaysCCList != null &amp;&amp; alwaysCCList.size() &gt; 0) {<br />
+                message.setCc(alwaysCCList.toArray(new String[0]));<br />
+                c.setEmailCcFromList(alwaysCCList);<br />
+            }<br />
+            ...<br />
+         }<br />
+      };</p>
+<p>      if (isDryRun || emailsToFile)<br />
+      {<br />
+              // save to file<br />
+            ...<br />
+      }</p>
+<p>      if (!isDryRun)<br />
+          this.mailSender.send(preparator);<br />
+      return c;<br />
+}</p>
+<p>[/sourcecode]<br />
+The class EmailContent is container for email address, subject, body, CC list.<br />
+It gets created as empty class with only recipient name and email address passed from business method as well as name of the Velocity template that is used to render email body. The method mergeTemplate loads the Velocity template and renders the actual email body, using the parameters (which is more or less) a hash map, cotaining e.g. URL's or information that needs to be inserted to email. The generated content is stored back to EmailContent, which will be after successful delivery written to database for audit and archiving purposes.If you are JavaScript or Ruby programmer, you will immediately recognize the 'functor' pattern: preparator is set to instance of anonymous inner class and is used with configured preparator.The actual rendering of the content using Velocity can be done like this:</p>
+<p>[sourcecode language='java']</p>
+<p>private EmailContent mergeTemplate( EmailParameters params, EmailContent content) {<br />
+    Map model = new HashMap();<br />
+    model.put("param", params);<br />
+    model.put("content", content);</p>
+<p>    String text = "MISSING TEXT";<br />
+    String subject = "Notification email";<br />
+    String template = content.getTemplateId();<br />
+    try {</p>
+<p>        // get subject line</p>
+<p>        if (template_names.containsKey(template)) {<br />
+            subject = template_names.get(template);<br />
+            VelocityContext velocityContext = new VelocityContext(model);<br />
+             StringWriter writer = new StringWriter (  ) ;<br />
+             PrintWriter out = new PrintWriter ( writer ) ;</p>
+<p>             Velocity.evaluate(velocityContext, out, "subject", new StringReader(subject));<br />
+             subject = writer.toString();</p>
+<p>             model.put("subjectLine", subject);<br />
+            // now the body<br />
+             text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine,<br />
+                    "com/thinknostic/APP/service/email/"+template, model);</p>
+<p>        }<br />
+        else {<br />
+            // TODO: log configuration error - template not found<br />
+        }</p>
+<p>        content.setEmailBody(text);<br />
+        content.setEmailSubject(subject);<br />
+        return content;</p>
+<p>    } catch (VelocityException e) {<br />
+        // back to untranslated<br />
+        // TODO: error report<br />
+        // subject = params.subject;<br />
+    } catch (IOException e) {<br />
+        // TODO Auto-generated catch block<br />
+        e.printStackTrace();<br />
+    }</p>
+<p>    return null;<br />
+}</p>
+<p>[/sourcecode]<br />
+In the above, template id is actual file name with body of the HTML email and the hashmap template_names (configured in Spring XML) maps the id to another string,  which is then used as subject line. Both body and subject can contain macros.<br />
+Note: if you get conflict on ${} syntax, see this <a href="http://thinkwrap.wordpress.com/2008/02/25/spring-propertyplaceholderconfigurer-with-velocity/" target="_blank">entry</a>.</p>
+<p>Now, finally - how do we test this ? It is quite easy, thanks to JUnit support in Spring.</p>
+<p>[sourcecode language='java']</p>
+<p>@ContextConfiguration(locations={"/com/thinknostic/APP/test/test-context.xml",<br />
+"/com/thinknostic/APP/test/service/NotificationTests-context.xml"})<br />
+public class NotificationTests extends AbstractTransactionalJUnit4SpringContextTests {</p>
+<p>    @Autowired<br />
+    NotificationServiceImpl notificationService;<br />
+    public NotificationServiceImpl getNotificationService() {<br />
+        return notificationService;<br />
+    }<br />
+    public void setNotificationService(NotificationServiceImpl notificationService) {<br />
+        this.notificationService = notificationService;<br />
+    }</p>
+<p>    @Autowired<br />
+    ApprovalDAO        approvalDao;<br />
+    public ApprovalDAO getApprovalDao() {<br />
+        return approvalDao;<br />
+    }<br />
+    public void setApprovalDao(ApprovalDAO approvalDao) {<br />
+        this.approvalDao = approvalDao;<br />
+    }</p>
+<p>      Document doc;<br />
+      EmailContent cont;<br />
+      Approval app;<br />
+      ApprovalStep step1;<br />
+      ApprovalStep step2;</p>
+<p>      @Before<br />
+      public void createMockApproval() {<br />
+          this.logger.info("Before");<br />
+          // controlls whether to use emails<br />
+          notificationService.setReallySend(true);</p>
+<p>          doc = (Document)DocumentInfo.createMockDI("103", 1);</p>
+<p>          // create the approval and insert it into<br />
+          app = Approval.createMockApproval(1L, doc);<br />
+          approvalDao.insert(app);</p>
+<p>          step1 = ApprovalStep.createMockStep(app.getApprId(), 1);<br />
+          approvalDao.insert(step1);<br />
+          step2 = ApprovalStep.createMockStep(app.getApprId(), 2);<br />
+          approvalDao.insert(step2);</p>
+<p>          cont = EmailContent.createMock(app.getApprId(), step1.getStep(), "miro adamy", "miro_adamy@rogers.com");</p>
+<p>      }</p>
+<p>      @After<br />
+      public void cleanup() {<br />
+          this.logger.info("After");<br />
+          // reset<br />
+          notificationService.setReallySend(false);<br />
+          doc = null;<br />
+          cont = null;<br />
+          app = null;<br />
+          step1 = null;<br />
+          step2 = null;<br />
+      }</p>
+<p>      private void assertEverything()<br />
+      {<br />
+          assertTrue("The email service is empty", notificationService != null);<br />
+        assertTrue("The email parameteres not available", emailParameters != null);<br />
+        assertTrue("The document does not exist", doc != null);<br />
+      }</p>
+<p>    @Test<br />
+    public void approval_all_cancelled_test() {<br />
+        doc.setFilename("approval_all_cancelled");</p>
+<p>        notificationService.notifyApprovalCancelledAll(doc, cont);<br />
+    }</p>
+<p>    @Test<br />
+    public void approval_cancelled_test() {<br />
+        assertEverything();</p>
+<p>        doc.setFilename("approval_cancelled");<br />
+        EmailContent ui = EmailContent.createMock(app.getApprId(), step1.getStep(), "miro adamy", "Miro.Adamy@gmail.com");</p>
+<p>        notificationService.notifyApprovalCancelled(doc, ui);<br />
+    }</p>
+<p>    // and so on - many more tests<br />
+    ....<br />
+}</p>
+<p>[/sourcecode]<br />
+Assumed that your Spring context configuration files defined in annotations are OK, all you have to do is run the suite. The XML defines beans with names corresponding to the test properties and autowiring will take care of the rest.Also notice that @Before method (which runs before each test) actually DOES modify the database and inserts records with same primary key over and over. This works thanks to transaction magic of Spring, which rolls back the inserts at the end of the test.Last thing to mention is using of "mockXXX" static methods to generate the instance of object. IT not really a mock object we are creating here, but a well defined instance of business object with some properties parametrized. You can even define it as a bean in Spring context XML, but that is IMHO an overkill - keeping everything in test Java class makes things easier to understand.</p>
+<p>This method does belong to tests, but it is very convenient just to keep it with domain object. I usually create the 'createMock' method right after I add a new domain object</p>

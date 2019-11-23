@@ -1,0 +1,21 @@
+---
+layout: post
+title: Fix for 'Sender address is invalid' error on iPhone 3G
+date: 2008-11-24 23:08:20.000000000 -05:00
+type: post
+published: true
+status: publish
+category: lifehacks
+tags: []
+author: "Miro Adamy"
+---
+<p>I started to have this error about week ago, out of the blue. I was not aware of making any changes, but suddenly could not reply to an email, send new email or even forward existing email in the iPhone default Mail application. I am using GMail account and because other clients on different platforms worked OK, I suspected either Rogers or Apple. I was trying several possible fixes (and used Safari and Gmail web access - which is not much fun).</p>
+<p>Here is what did NOT resolve the problem:</p>
+<ul>
+<li>deleting and recreating the account</li>
+<li>upgrading to firmware 2.2</li>
+<li>resetting and restoring the phone</li>
+</ul>
+<p>Finally, the fix was to switch off all Gmail SMTP servers (for no particular reason there were two) and switch on the Rogers SMTP. To do that, go to Settings, Mail Contacts Calendar, click on account, select SMTP server.</p>
+<p>I do not remember entering any of these servers, so they must have been created automagically when creating the GMail account in the Mail app. The Rogers account that works is all greyed out, the username and password is set to optional and the part of URL showing is smtp.rogerswirelessdata.c...</p>
+<p>Because I have disabled BOTH Gmail server, the Default settings now shows under SMTP 'No Server' - but it works :-)</p>

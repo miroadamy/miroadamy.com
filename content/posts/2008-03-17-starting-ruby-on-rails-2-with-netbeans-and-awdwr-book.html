@@ -1,0 +1,104 @@
+---
+layout: post
+title: Starting Ruby on Rails 2 with Netbeans and AWDWR book
+date: 2008-03-17 20:11:08.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [ruby]
+author: "Miro Adamy"
+---
+<p>After some break, I got back to Rails land. The return is not as smooth as I hoped: since Rails 2.0, many things work differently and quite a few steps learned from "<a href="http://pragprog.com/titles/rails2" target="_blank">The Book</a>" do not work any more. The issues are more often than not quite easy to fix, but there is quite a few of them.</p>
+<p>All the following is related to NetbeansRuby build 6327 from Jan 26th with JRuby 1.1RC1</p>
+<p>After installing NetbeansRuby and  updating the Gems (Tools-&gt;Ruby Gems), the attempt to generate Rails application fails:</p>
+<p>[sourcecode language='xml']</p>
+<p>/Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:379:in `report_activate_error': Could not find RubyGem activeresource (= 2.0.2) (Gem::LoadError)</p>
+<p>        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:311:in `activate'<br />
+        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:337:in `activate'<br />
+        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:336:in `each'<br />
+        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:336:in `activate'<br />
+        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:336:in `active_gem_with_options'<br />
+        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/lib/ruby/site_ruby/1.8/rubygems.rb:50:in `gem'<br />
+        from /Users/miro/Applications/RubyNetBeans.app/Contents/Resources/nbrubyide/ruby1/jruby-1.1RC1/bin/rails:18</p>
+<p>[/sourcecode]<br />
+Looks like the gem  updater somehow missed activeresource - maybe a problem with dependencies ?To fix this, manually install activeresource 2.0.2 - Tools -&gt; Ruby Gems, New Gems, search for resource, install. This is list of the installed gems:</p>
+<ul>
+<li>actionmailer (2.0.2, 1.3.5)</li>
+<li>actionpack (2.0.2, 1.13.5)</li>
+<li>actionwebservice (1.2.6, 1.2.5)</li>
+<li>activerecord (2.0.2, 1.15.5)</li>
+<li>activerecord-jdbc-adapter (0.7.2, 0.7)</li>
+<li>activeresource (2.0.2)</li>
+<li>activesupport (2.0.2, 1.4.4)</li>
+<li>jruby-openssl (0.1.1)</li>
+<li>rails (2.0.2, 1.2.5)</li>
+<li>rake (0.8.1, 0.7.3)</li>
+<li>rspec (1.1.3, 1.1.1)</li>
+<li>sources (0.0.1)</li>
+</ul>
+<p>By default, the Rails 2 selects Sqlite3 database. This is great choice if you use C-Ruby, but not so great for JRuby - see <a href="http://thinkwrap.wordpress.com/2008/03/16/showstopper-issue-with-jruby/" target="_blank">this post</a>. After few frustrated attempts to find workaround, I decided to go with Ruby 1.8.6, updated (again) the Gems in system installation (the first updated upgraded JRuby gems) and decided to try out the Depot sample - just have something that works, rather than fighting with issues of both Rails 2 and my own bugs. To keep with the book, I stayed with MySQL (quietly running in VMWare virtual machine).</p>
+<p>By the book I have generated Product model and Admin controller, but instead of seeing familiar screen, Rails responded with error:</p>
+<p>[sourcecode language='xml']</p>
+<p>Routing Error</p>
+<p>No route matches "/admin" with {:method=&gt;:get}</p>
+<p>[/sourcecode]<br />
+This can be fixed by addingmap.connect ':controller/:action'to routes.rb, but this is probably bad idea because it goes against REST design principles which Rails 2 tries to promote. But to go ahead with the  example, I hacked it :-) and added scaffolding. Next error I got was:<br />
+[sourcecode language='xml']</p>
+<p> NoMethodError in AdminController#index</p>
+<p>undefined method `scaffold' for AdminController:Class</p>
+<p>RAILS_ROOT: /Users/miro/Projects/RAILS2/Depot<br />
+Application Trace | Framework Trace | Full Trace</p>
+<p>app/controllers/admin_controller.rb:2<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_file'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:202:in `load_file'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:94:in `require_or_load'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:453:in `const_missing'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:465:in `const_missing'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/inflector.rb:257:in `constantize'<br />
+/Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/string/inflections.rb:148:in `constantize'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1426:in `recognize'</p>
+<p>[/sourcecode]<br />
+Scaffolding is one of the parts removed in Rails 2. :-(. I tried to install 'scaffolding', which led to another error:<br />
+[sourcecode language='xml']</p>
+<p>NoMethodError in AdminController#index</p>
+<p>undefined method `paginate' for #</p>
+<p>RAILS_ROOT: /Users/miro/Projects/RAILS2/Depot<br />
+Application Trace | Framework Trace | Full Trace</p>
+<p>vendor/plugins/scaffolding/lib/scaffolding.rb:107:in `list'<br />
+vendor/plugins/scaffolding/lib/scaffolding.rb:95:in `index'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'</p>
+<p>[/sourcecode]<br />
+Based on <a href="http://groups.google.com/group/beginning-rails/browse_thread/thread/c6f0a57966669e90" target="_blank">this post</a>,  I installed classic_pagination, which resulted in another error when trying to enter new Product<br />
+[sourcecode language='xml']</p>
+<p> ActionController::InvalidAuthenticityToken in AdminController#create</p>
+<p>ActionController::InvalidAuthenticityToken</p>
+<p>RAILS_ROOT: /Users/miro/Projects/RAILS2/Depot<br />
+Application Trace | Framework Trace | Full Trace</p>
+<p>/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/request_forgery_protection.rb:79:in `verify_authenticity_token'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:441:in `run'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:716:in `run_before_filters'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'<br />
+/Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'[/sourcecode]<br />
+I backtracked, and tried to go with generated scaffold, rather with dynamic. The generated views were named edit.html.erb, rather than edit.rhtml and the generator did not allow to enter controller (second argument). This lead to error<br />
+[sourcecode language='xml']</p>
+<p>Error:</p>
+<p>Template is missing</p>
+<p>Missing template admin/index.html.erb in view path /Users/miro/Projects/RAILS2/Depot/app/views</p>
+<p>[/sourcecode]<br />
+At this point I gave up and decided to:</p>
+<ul>
+<li>read the Rails 2.0 documentation (after everything else failed, read the manual ...)</li>
+<li>reconsider using AWDWR as the guide - obviously, it needs to be updated to be useful with Rails 2. If you purchased the PDF from Pargmatic Programmers, there is an update available on their website, but it is not an update for Rails 2 ...</li>
+</ul>
+<p>I was not the only person to try <a href="http://pragprog.com/titles/rails2" target="_blank">AWDWR</a> with Rails 2.  The best resource I found was Ruby Plus website with series of screencasts, starting with <a href="http://www.rubyplus.org/episodes/19-AWDR-Depot-App-using-Rails-2-version.html" target="_blank">this</a>. The author - <a href="http://www.workingwithrails.com/person/8567-bala-paranj" target="_blank">Bala Paranj</a> did great job in putting together very useful collection of Rails screencasts. If you want to use the AWDWR with Rails 2.0, listen to them first - unless you are very experienced Rails developer.</p>

@@ -1,0 +1,95 @@
+---
+layout: post
+title: Trying out Groovy with Oracle database
+date: 2008-04-07 22:44:17.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags:
+- java
+- groovy
+author: "Miro Adamy"
+---
+<p>There is a saying that necessity is the mother of invention. Such necessity happened last week and forced me to try out the Groovy language.</p>
+<p>The trigger was need for creating good data set for testing changes in a full text search. I had to locate few hundred of obsolete technical documents to be used as test data, dump the metadata as well as the BLOB data to disc, create INSERT sql scripts and loader that would from Ant pre-load the database with the test set and insert the BLOB's. It is fairly simple task, the issue were boundary conditions:</p>
+<p>Database in question is Oracle. I have no OCI8 installed on my MBP and refuse to install Oracle on OS-X - it was little fun getting it up and running on Linux. Usually I run Oracle in Windows or Linux VM and with lack of OCI8, only option how to communicate with it is Level 4 JDBC driver.</p>
+<p>Because of missing OCI8, Ruby was out of question (the gems for Oracle access needs OCI). So was PL/SQL, for the reason of administator priviledges. I am not exactly a PL/SQL programmer, but know enough to write stored proc that loads or unloads BLOB, assumed that UTL_FILE and DBMS_LOB packages are available and accessible. Which was not the case.</p>
+<p>Before falling to default and writing it all in Java (which would work, but take certainly longer than I was willing to invest), I decided try out this Groovy thing :-). My exposure to the language was minimal - I never programmed in it (not counting 2 hours spent browsing Ruby in Action), but I hoped that similarity with Java and almighty Google will help me out ...</p>
+<p>Connecting to database in Groovy is simple and elegant:</p>
+<p>[sourcecode language='java']</p>
+<p>import groovy.sql.Sql</p>
+<p>db = Sql.newInstance(<br />
+            'jdbc:oracle:thin:@myoraclehost:1521:XE',<br />
+            'USER', 'PWD', 'oracle.jdbc.driver.OracleDriver')</p>
+<p>      def sql = """<br />
+            select d1.document_id, d1.version, d1.filename from document d1<br />
+            where d1.document_id in ...</p>
+<p>           .... REST OF SQL DELETED ....<br />
+        """<br />
+        list = db.rows(sql)</p>
+<p>[/sourcecode]</p>
+<p>The result is hash-like structure that can be used to drive both generating the DELETE and INSERT SQL statements into text file as well as retrieving the BLOB's and saving them to HDD:</p>
+<p>[sourcecode language='java']</p>
+<p>    def writeBlobToFile(db, docid, version, filename, reallyWrite=false) {<br />
+        def sqlString = "SELECT d.DOCUMENT_BODY FROM document d where d.document_id = '$docid' and version = $version"<br />
+        def row = db.firstRow(sqlString)<br />
+        def blob = (oracle.sql.BLOB)row[0]<br />
+        def byte_stream = blob.getBinaryStream()<br />
+        if( byte_stream == null ) {  println "Error for ${docid} : ${version}"  }</p>
+<p>        int total = blob.length();</p>
+<p>    // Write to a file<br />
+       if (reallyWrite) {<br />
+            byte[] byte_array = new byte[total]<br />
+            int bytes_read = byte_stream.read(byte_array)<br />
+           def fullname =     "/Users/miro/tmp/BLOBS/$filename"<br />
+           def fos= new FileOutputStream(fullname)<br />
+           fos.write(byte_array);<br />
+           fos.close()<br />
+       }<br />
+        println "Document $docid:$version, file: $filename, size $total"<br />
+        return total<br />
+    }</p>
+<p>[/sourcecode]</p>
+<p>Loading the documents and metadata from disk to database is done by Ant script</p>
+<p>[sourcecode language='xml']</p>
+<p>[/sourcecode]</p>
+<p>The Groovy task must be defined before used (with proper classpath). The groovy<br />
+task shows passing arguments and executing script. The most important part of<br />
+the script (loading binary file and inserting the BLOB) is here:</p>
+<p>[sourcecode language='java']</p>
+<p>// each line in METADATA.TXT looks like this:<br />
+reg =  /document_id: \'(\w+)\', version: (\d+), filename: \'(.+)\', size: (\d+)/</p>
+<p>db = Sql.newInstance(<br />
+        'jdbc:oracle:thin:@myoraclehost:1521:XE',<br />
+        'USER', 'PWD', 'oracle.jdbc.driver.OracleDriver')<br />
+counter = 0<br />
+new File(args[1]).eachLine { line -&gt;<br />
+    line.eachMatch(reg) { match -&gt;<br />
+        try {<br />
+            str = "${args[0]}/${match[3]}"<br />
+            println "Opening file: ${str}"<br />
+            FileInputStream fis = new FileInputStream(str)<br />
+            int size = fis.available()<br />
+            byte[] data = new byte[size]<br />
+            fis.read(data)</p>
+<p>            // get the BLOB<br />
+            row = db.firstRow("select document_body from document where document_id = ? and version = ? for update",<br />
+                    [match[1], match[2]])<br />
+            my_blob = (oracle.sql.BLOB)row[0]<br />
+            if( my_blob == null ) println "my_blob is null!"<br />
+            outstream = my_blob.getBinaryOutputStream();<br />
+            outstream.write(data);<br />
+            outstream.close()<br />
+            fis.close()<br />
+            counter = counter+1<br />
+        } catch (Exception e) {<br />
+            print "Exception: ${e}\n"<br />
+    }<br />
+}<br />
+println "Processed files: ${counter}"<br />
+[/sourcecode]</p>
+<p>The loader is controlled by the file METADATA.TXT that contains information linking document metadata in database (inserted by SQL statement) with file on disk. This indirect way allows easily "inject" document body with required search phrases, reload database and run tests.</p>
+<p>The whole experience was quite pleasant and considering how little I knew about Groovy, it took very little time to create something useful. I wish I could have done some thing in Ruby (which I still like better) - but I was amazed how powerful the combination of Groovy + Ant can be.</p>
+<p>The most valuable feature is no need to add anything really new or exotic to Java environment - all you need is Jar file and Eclipse plugin, no new/different library packaging scheme - Jars are still jars, not gems.</p>
+<p>The only minor hickup and weird thing I found was passing arguments between Ant and Groovy script. It looks like that the groovy script should be a script and not use classes + static main method (which would be natural instinct for Java developer). Thanks to <a href="http://juddsolutions.blogspot.com/2008/03/groovy-ant-task-is-for-groovy-scripts.html" target="_blank">Christopher Judd</a> for the hint.</p>

@@ -1,0 +1,64 @@
+---
+layout: post
+title: iBatis, Date null values and Oracle
+date: 2008-03-07 23:36:09.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>I better blog this before I forget what was the issue :-).</p>
+<p>During daily run of unit tests, I started to receive this (very well explained) exception:</p>
+<p>[sourcecode language='xml']<br />
+org.springframework.jdbc.UncategorizedSQLException: SqlMapClient operation; uncategorized SQLException for SQL []; SQL state [null]; error code [17004];<br />
+--- The error occurred while applying a parameter map.<br />
+--- Check the APPROVAL_TASK.insert-InlineParameterMap.<br />
+--- Check the parameter mapping for the 'scheduledDate' property.<br />
+--- Cause: java.sql.SQLException: Invalid column type; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:<br />
+--- The error occurred while applying a parameter map.<br />
+--- Check the APPROVAL_TASK.insert-InlineParameterMap.<br />
+--- Check the parameter mapping for the 'scheduledDate' property.<br />
+--- Cause: java.sql.SQLException: Invalid column type<br />
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.translate(SQLStateSQLExceptionTranslator.java:121)<br />
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.translate(SQLErrorCodeSQLExceptionTranslator.java:322)<br />
+	at org.springframework.orm.ibatis.SqlMapClientTemplate.execute(SqlMapClientTemplate.java:212)<br />
+	at org.springframework.orm.ibatis.SqlMapClientTemplate.insert(SqlMapClientTemplate.java:397)<br />
+... [/sourcecode]<br />
+Now the problem was that scheduledDate was null. Here is partial SQL map used:<br />
+[sourcecode language='xml']</p>
+<p>    insert into APPROVAL_TASK (APPR_ID, STEP, TASK, EMAIL_TO, CREATE_DATE)<br />
+    values (#apprId:DECIMAL#, #step:DECIMAL#, #task:DECIMAL#, #emailTo:VARCHAR#, #createDate:DATETIME#)</p>
+<p>[/sourcecode]The createDate time jdbcType DATETIME was actually one of my changes. What Abator generated originally was this:</p>
+<p>[sourcecode language='xml']</p>
+<p>    insert into APPROVAL_TASK (APPR_ID, STEP, TASK, EMAIL_TO, CREATE_DATE)<br />
+    values (#apprId:DECIMAL#, #step:DECIMAL#, #task:DECIMAL#, #emailTo:VARCHAR#, #createDate:DATE#)</p>
+<pre>[/sourcecode]This map does not suffer by the Null value problem, but unfortunately does not store the time portion of the date - which was the main reason why I used DATETIME, unaware of the Null sensitivity.
+
+There are three ways how to fix this. First is obvious - do use DATETIME and make sure that the field has value. This may be good enough as long as you do not need to save null values.
+
+Second solution is to keep DATETIME and use iBatis magic with conditionals in map definition:
+
+[sourcecode language='xml']</pre>
+<pre>
+    insert into APPROVAL_TASK (APPR_ID, STEP, TASK, EMAIL_TO, CREATE_DATE)
+    values (#apprId:DECIMAL#, #step:DECIMAL#, #task:DECIMAL#, #emailTo:VARCHAR#,
+                
+			null
+		
+		
+			#createDate:DATETIME#
+		   )
+</pre>
+<pre>[/sourcecode]
+This deals with the null value differently and avoids "guessing" the column type, which caused the problem.Third solution may not work on other databases, but on Oracle works prefectly. The data type TIMESTAMP does both store the time portion as well as handles Null values without any problems. This is what I used at the end.
+
+Final map:
+
+[sourcecode language='xml']</pre>
+<pre>
+    insert into APPROVAL_TASK (APPR_ID, STEP, TASK, EMAIL_TO, CREATE_DATE)
+    values (#apprId:DECIMAL#, #step:DECIMAL#, #task:DECIMAL#, #emailTo:VARCHAR#, #createDate:TIMESTAMP#)
+</pre>
+<pre>[/sourcecode]</pre>

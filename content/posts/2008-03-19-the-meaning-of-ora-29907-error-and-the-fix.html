@@ -1,0 +1,26 @@
+---
+layout: post
+title: The meaning of ORA-29907 error and the fix
+date: 2008-03-19 23:17:52.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>I have first time encountered the error:</p>
+<p>ORA-29907: found duplicate labels in primary invocations</p>
+<p>after testing the change request we have implemented recently. The error message was not very helpful - I was not exactly sure which labels and which invocations ;-) - and as Oracle guru who actually does understand fine details of Oracle Text was visiting sunny India, I was on my own.</p>
+<p>The change addressed an issue in repository search: users were asking for more flexible processing of full text search phrases: instead of e.g. searching for "unit test" search for document that contains both unit AND test. The text was parsed in Java and the SQL generator produced instead of something like</p>
+<p>[sourcecode language='sql']</p>
+<p>SELECT * FROM DOCUMENT d1 WHERE ROWNUM  5)</p>
+<p>[/sourcecode]<br />
+[sourcecode language='sql']</p>
+<p>SELECT * FROM DOCUMENT d1 WHERE ROWNUM  5)<br />
+AND ( CONTAINS(d1.document,'unit',1) &gt; 5)</p>
+<p>[/sourcecode]I am still unsure what primary invocation is, but the above mentioned 'label' was the number one. After changing the generator to issue sequence numbers in the CONTAINS, everything worked OK:</p>
+<p>[sourcecode language='sql']</p>
+<p>SELECT * FROM DOCUMENT d1 WHERE ROWNUM  5)<br />
+AND ( CONTAINS(d1.document,'unit',2) &gt; 5)</p>
+<p>[/sourcecode]</p>

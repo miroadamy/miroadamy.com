@@ -1,0 +1,31 @@
+---
+layout: post
+title: Almost perfect backup backup solution
+date: 2009-03-24 21:19:36.000000000 -04:00
+type: post
+published: true
+status: publish
+category: lifehacks
+tags: []
+author: "Miro Adamy"
+---
+<p>The double backup word in the title is not an oversight. If I would be talking about "almost perfect backup solution", it would be Time Machine - which has proven, despite it's minor annoyances (see this) to be very unobtrusive and functional. As long as you have Mac and Leopard, of course.</p>
+<p>What I am talking about here is second level - an offsite backup, that you may need in case you house burns down, gets flooded or your computer with time machine disk gets stolen. I do not live in tornado valley, earthquake zone and crime rate around Westboro is fairly low even compared to low Canadian levels, but anyway.</p>
+<p>The product in question is <a href="https://www.backblaze.com/" target="_blank">Backblaze</a> and I am happy user since December last year. It is cloud based service, running on (I assume) Amazon S3 and unlike Time Machine it works for all you stuck in Windows world as well. Not available yet for all you brave explorers of multiple universes of Linux, but I guess you would not give up rsync anyway :-).<br />
+All you need to do is setup a very low profile client that runs in the background and uploads all that was changed. The initial backup can take few weeks, depending on the size of the hard disk.</p>
+<p><img class="alignnone size-full wp-image-682" title="picture-5" src="/images/picture-5-bu.png" alt="picture-5" width="450" height="364" /></p>
+<p>It backups almost everything, except system areas and few excluded file types - like DMG and VMDK (virtual machine volumes). You can define your own exclusions but you cannot  un-exclude the default exclusions.</p>
+<p><img class="alignnone size-full wp-image-683" title="picture-6" src="/images/picture-6-bu.png" alt="picture-6" width="450" height="362" /></p>
+<p>Backblaze has quite attractive pricing scheme: you pay $5 a month per computer and can backup as much as the pipes between your house and cloud allow you to push up. The price of one venti chai latte is in my books very much worth the good feeling.</p>
+<p>When the disaster strikes and you need your files, you do not have to go the slow route and download multi-gigabytes of data. For reasonable fee, Backblaze will send you your data on DVD's or even on USB disk. I hope I will never need that :-). For small recovery you can always access files using Web interface.</p>
+<p>Because I am curious creature and like to understand how thing work, I was watching its progress for few weeks. Thanks to my curiosity I had several communications with backblaze technical support. I am happy to report that:<br />
+a) it exists ! (this is always the case with cloud companies )<br />
+b) it is very fast - I got back response in few hours, one day max<br />
+c) it is very competent and friendly. The person I communicated with knew the product at the deepest technical detail level.</p>
+<p><img class="alignnone size-full wp-image-685" title="picture-8" src="/images/picture-8-bu.png" alt="picture-8" width="450" height="329" /></p>
+<p>Last but not least: privacy and security. Many people are concerned about having their data anywhere except on the server in locked office. I trust strong encryption. In addition to using SSL for transfer, Backblaze gives you an option for aditional encryption on client side - before the data leaves your computer it is encrypted with the key only you know. This way you cannot download the data through Web unless you enter the key and not even Backblaze can read your data.</p>
+<p>So why almost perfect ? There are few minor issues. I would certainly like to have more control (and better UI) for both monitoring and management of the files to be backed up. Either GUI client, or simple way to put a file inside directory that would work as .gitignore. Actualy, for a developer, it would make sense not to backup anything specified in .gitignore or .svnignore or .cvsignore files, because if something is not worth putting to source control, it is not worth backup up either.</p>
+<p>Other are duplicate files: I have on my notebook subset of pictures, podcasts and music from home iMac. Those files are backup up and tranferred twice. With volume, this becomes an annoyance. Backblaze could based on SHA1 recognize the duplicate files within same account and offer option skip those already uploaded - same way how Git stores each blob only once.</p>
+<p>Last issue (which is completely out of Backblaze's control) is your bandwidth. Since I started, I am maxing out my 95 GB transfer limit with Rogers in third consecutive month. Here in Canada, 95GB is max you can get unless you  pay for business connection[1] (which is several times the price of "Extreme plus"). You have some control over the backup upload speed - you can "throttle" the speed and you can also manage schedule (to a limited extend). This may or may not impact you - depending on your bandwidth allocation and size of the data to back up.</p>
+<p>All summed - definitely recommended.</p>
+<p>Disclaimer: I am not anyhow affiliated to Backblaze product or company. Only reason for this blog is my personal, very positive experience with their product and user support, which I believe deserves to be shared.</p>

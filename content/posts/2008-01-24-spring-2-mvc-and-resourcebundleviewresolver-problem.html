@@ -1,0 +1,26 @@
+---
+layout: post
+title: Spring 2 MVC and ResourceBundleViewResolver problem
+date: 2008-01-24 23:12:57.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>This one took some time to figure out - it is one of those problems that are obvious after you know the solution but hard to see beforehand.</p>
+<p>I had the ResourceBundleViewResolver configured with Tiles 2, like this:</p>
+<p>[code language='xml']</p>
+<p>[/code]</p>
+<p>and the view.properties was:</p>
+<p>[code language='xml']<br />
+parent-view.(class)=org.springframework.web.servlet.view.JstlView<br />
+parent-view.(abstract)=true</p>
+<p>about.url=/WEB-INF/jsp/about.jsp<br />
+form.url=/WEB-INF/jsp/form.jsp<br />
+list.url=/WEB-INF/jsp/list.jsp</p>
+<p>[/code]</p>
+<p>It kept givin exception saying that /WEB-INF/jsp/list.jsp does not exist. Which it did. I tried couple of things, no result.</p>
+<p>The problem was in trailing space AFTER list.jsp, therefore the path to JSP file searched for was "/WEB-INF/jsp/list.jsp ", not "/WEB-INF/jsp/list.jsp".</p>
+<p>Not sure if this is bug or feature - but removing trailing spaces should really be a  sensible thing to do.  As I found afterwards, the problem exists since 2005 - see <a href="http://forum.springframework.org/showthread.php?t=16243&amp;highlight=trailing+space" target="_blank">this</a> and <a href="http://forum.springframework.org/showthread.php?t=15611" target="_blank">this</a>.</p>

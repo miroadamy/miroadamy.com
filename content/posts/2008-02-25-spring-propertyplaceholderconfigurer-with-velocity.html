@@ -1,0 +1,34 @@
+---
+layout: post
+title: Spring PropertyPlaceholderConfigurer with Velocity
+date: 2008-02-25 23:24:11.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>Part of the configuration magic is (one of several) Spring post-processors, that allows load the property file or files and refer to the values in these files inside XML configuration files. The rationale behind these is that property files are much easier to edit that possibly huge XML config file and using property values prevents repeating same value over and over again. With this approach, the following configuration:</p>
+<p>[sourcecode language='xml']<br />
+ 	</p>
+<p>[/sourcecode]<br />
+can be written as<br />
+[sourcecode language='xml']<br />
+ 	</p>
+<p>				WEB-INF/mail.properties<br />
+				WEB-INF/jdbc.properties</p>
+<p> 	</p>
+<p> <br />
+[/sourcecode]<br />
+and (in jdbc.properties)<br />
+[sourcecode language='java']<br />
+jdbc.username=some_user<br />
+jdbc.password=secret[/sourcecode]If you are using in the same project Velocity and want to utilize the VTL macros inside the configured values, the approach above will not work, because PropertyPlaceholderConfigurer will try to replace ALL macros in form ${something} with a value from property file - and throw exception if not found.The solution is easy: you need to switch the prefix of the   PropertyPlaceholderConfigurer to something else than the default ${ and avoid conflict wih Velocity. The modified configuration could look like:</p>
+<p>[sourcecode language='xml']<br />
+ </p>
+<p>				WEB-INF/mail.properties<br />
+				WEB-INF/jdbc.properties</p>
+<p> </p>
+<p> <br />
+[/sourcecode]</p>

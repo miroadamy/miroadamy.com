@@ -1,0 +1,23 @@
+---
+layout: post
+title: Fix for iDVD 08 crash after the start
+date: 2008-05-15 00:57:37.000000000 -04:00
+type: post
+published: true
+status: publish
+tags:
+- osx
+author: "Miro Adamy"
+---
+<p>Today I tried for the first time the iDVD 08 with intention to create DVD version of the screencast - just to find out that the application dies right after the start. From the error report (thanks for that) the problem was in missing dependency Oxygene framework - a module similar to Windows DLL. Here is the error message:</p>
+<p>[sourcecode language='xml']</p>
+<p>Link (dyld) error:</p>
+<p>Library not loaded: @executable_path/../Frameworks/Oxygene.framework/Versions/A/Oxygene<br />
+Referenced from: /Applications/iDVD.app/Contents/MacOS/iDVD<br />
+Reason: image not found</p>
+<p>[/sourcecode]</p>
+<p>The solutions described in the Apple discussion groups revolved around using shareware tool Pacifist - something I did not like particularly. The plain reinstallation of the DVD did not help either.</p>
+<p>What worked for me and solved the problem was complete removal of iDVD and subsequential reinstall. I used AppZapper to remove the application, but it also can be done manually by deleting the application bundle from /Applications, removing all iDVD receipts from /Library/Receipts and all content from ~/Library/iDVD and ~/Library/Preferences (which is in a nutshell all AppZapper did).</p>
+<p><img class="alignnone size-full wp-image-406" src="{{ site.baseurl }}/images/picture-1-2008.png" alt="" width="409" height="515" /></a></p>
+<p>Right after removal, insert Installation disk 1, select Install Bundled Software Only, press Customize and uncheck everything except iDVD. The program starts fine after installation finishes.</p>
+<p>One more minor hickup after reinstall was that the Theme introduction would not play in preview - all the application showed was black screen with background music. This was resolved by selecting 'Check for updates' and allowing installation of the update. Afterwards, I was able to start working in my first DVD :-).</p>

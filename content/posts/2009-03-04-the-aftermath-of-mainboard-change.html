@@ -1,0 +1,19 @@
+---
+layout: post
+title: The aftermath of mainboard change
+date: 2009-03-04 01:01:04.000000000 -05:00
+type: post
+published: true
+status: publish
+category: general
+tags: [osx]
+author: "Miro Adamy"
+---
+<p>In theory, exchanging mainboard on Macbook has no impact because all your data is stored on your harddisk that is untouched. In real life, there are few minor surprises.</p>
+<p>First, your MAC address of the network card had changed. This is something you will not notice, unless Murphy's law plays funny game with you, as it did with me. When arriving back to the office, I was able to connect to WiFi network, but the ethernet was stubbornly getting the "internal IP" - 169.254.x.x address, which is pretty much useless from connectivity point of view. We are running two separate networks - both NAT-ed, one on WiFi - mainly for guests, other internal. Not getting an IP address did not make any sense: the cable was OK, because other machine worked just fine with same drop/cable. The Ethernet connection was OK, because it worked when assigned IP address manually.</p>
+<p>The problem was - new MAC address. During last week or so, by playing with virtual machines, I must have allocated all available IP addresses from DHCP server space. The leases are fairly long lived and all slots were taken by either computers around the office or by both running and also now defunct VM's. One of them was still kept reserved for my old and gone MBP's MAC address. Nobody would notice the problem, unless you tried to attach new DHCP based VM or new computer. Lesson learned - if you have problems with internal IP address does not want to go away - check the DHCP server. In home environment, resetting the router mostly helps.</p>
+<p>Second effect of changed MAC address was that all VMs in Fusion started to ask whether they were moved or copied. Always answer "moved", otherwise you VM will get new virtual MAC address generated - which can have impact on your DHCP space (if in bridged mode).</p>
+<p>Third, quite unexpected effect was that Time Machine stopped working, with 'volume cannot be found' message. See e.g. <a href="http://www.macfixitforums.com/ubbthreads.php/topics/454151/Time_Machine_can_t_find_backup" target="_blank">http://www.macfixitforums.com/ubbthreads.php/topics/454151/Time_Machine_can_t_find_backup</a> for more details. It looks like Time Machine is using the MAC address to match the backup volume with the computer it belongs to. Clean solution is to erase backup and start from scratch - or use different disk. Partial solution is a hack - in /Volumes/Time Machine Backup/ locate file that has the MAC address encoded in the name, e.g:</p>
+<p><span style="font-family:Courier;">/Volumes/myTMbackupVolume/<span style="color:#330033;">.0a1b2c3d4e5f</span></span></p>
+<p>Get the new MAC address (from ifconfig) and copy the old cookie file to new cookie file - using the new MAC as name. This made the volume accessible again - with unfortunate effect that pretty much ALL content was considered as unbacked-up and first back up took away over 90 GB of disk space. But at least, the old data was still there, should the need ever occur.</p>
+<p>Maybe this experience will be useful for somebody else - it was quite good learning experience for me.</p>

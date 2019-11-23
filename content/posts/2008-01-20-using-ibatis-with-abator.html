@@ -1,0 +1,37 @@
+---
+layout: post
+title: Using iBatis with Abator
+date: 2008-01-20 23:02:44.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>I am back to Java and on mission of re-discovering <a href="http://www.springframework.org/" target="_blank">Spring</a> coolness - and in awe how much was added since 1.2 to current 2.5.1. Thanks, <a href="http://www.springsource.com/web/guest/home" target="_blank">SpringSource</a> and hundreds of contributors.</p>
+<p>Data layer of the current project is based on <a href="http://ibatis.apache.org/" target="_blank">iBatis</a> and Spring DAO. We have decided to try out the <a href="http://ibatis.apache.org/abator.html" target="_blank">Abator</a> tool from Apache (part of the iBatis suite) to generate initial version of data mapping (as we inherited the database schema).</p>
+<p>Only necessary part is abator.jar (there are no other dependencies).</p>
+<p>The abator is driven by the XML file that defines to which database to connect and which tables must be be processed.</p>
+<p>Running abator is simple:</p>
+<p>[sourcecode language='java']<br />
+java -cp abator.jar org.apache.ibatis.abator.api.AbatorRunner PROJECT.xml true[/sourcecode]<br />
+Parameter 'true' defines whether generator will overwrite files.The generated files are stored in location from xml file (in our case 'generated/src'). This directory MUST exist - Abator will not create it.The project file contains information about your database driver + connection the used generator, packages for generated Java and XML files. The Java5 generator is very useful, because it produces code using generics. Abator can also understand Spring based iBatis templates and produce code directly usable in Spring projects.Two "gotchas" I have encounter (so far):</p>
+<p>If you generate maps with many tables, the Abator assumes that you will be using namespaces. The examples from Spring do not however use namespaces, so if you use the existing code as blueprint for your project, make sure you have the namespaces enabled in the sqlmap</p>
+<p>[sourcecode language='java']</p>
+<p>...[/sourcecode]<br />
+Second is related to timestamp columns (e.g. CREATED_AT and similar columns).In Java, they are (most of the time) represented as java.util.Date object, which contains both date and time portion. In SQL, there are multiple data types available, depending on your database. We are using Oracle 10g and the generated map was using DATE as SQL type. This caused cutting of the time portion of the value and setting all times to 0:00:00.The solution was to use proper, explicit types for both SQL and Java. You may need to edit the map in multiple locations, replacing:<br />
+[sourcecode language='xml']</p>
+<p>[/sourcecode]<br />
+with<br />
+[sourcecode language='xml']</p>
+<p>[/sourcecode]<br />
+and the<br />
+[sourcecode language='xml']</p>
+<p>CREATE_DATE = #createDate:DATE#,</p>
+<p>[/sourcecode]<br />
+with<br />
+[sourcecode language='xml']</p>
+<p>CREATE_DATE = #createDate:DATETIME#,</p>
+<p>[/sourcecode]<br />
+After this, everything works fine.So far, the only minor unresolved annoyance is the abatorgenerated_ prefix of all SQL id's - I cannot find the way how to switch it off.It is sometimes very useful - if you want to re-run the tool, it will not touch SQL without this prefix. In our case, where the generated code is just an initial step to speed us in getting the initial codebase out fast., we would actually prefer to avoid it and keep the SQL fragments id's nice and tidy.</p>

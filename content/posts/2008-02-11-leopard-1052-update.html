@@ -1,0 +1,34 @@
+---
+layout: post
+title: Leopard 10.5.2 update
+date: 2008-02-11 22:55:10.000000000 -05:00
+type: post
+published: true
+status: publish
+tags: []
+author: "Miro Adamy"
+---
+<p>Apple released today the 10.5.2 update. After over a year and half with Mac platform (and over 2 months on Mac only work environment) I become fearless and installed update without too much worries :-). Year ago, I guess I would be quite concerned whether the Service Pack will or will not render my work notebook useless with unreparable registry ... I still remember the fun after SP2 got installed ...</p>
+<p>But back to the topic. Upgrade went smooth and after 2 bangs (reboots) everything seems to work OK. Finally there is an option to "tigerize" the translucent menu, without add-ons and hacks. Time machine has small menu item to access preferences. The update promises WiFi improvements (tests pending). What seems not get fixed is the annoying rfc1323 TCP/IP stack setting (see <a href="http://thinkwrap.wordpress.com/2007/12/22/fix-for-the-stalled-downloads-in-leopard/" target="_blank">here</a>).</p>
+<p>So far the only things broken is the Beta version of fantastic little utility <a href="http://haroldchu.id.au/index.php?q=node/2" target="_blank">Library books</a> (highly recommended - it does support many libraries, including <a href="http://www.biblioottawalibrary.ca/index_e.html" target="_blank">our</a>). The error message that comes after the program start says:</p>
+<p>[sourcecode language='java']</p>
+<p>NSInvalidArgumentException</p>
+<p>*** -[DebugController length]: unrecognized selector sent to instance 0x2ade20</p>
+<p>Stack trace:</p>
+<p>1    NSExceptionHandlerExceptionRaiser (in ExceptionHandling)</p>
+<p>2    objc_exception_throw (in libobjc.A.dylib)</p>
+<p>3    -[NSObject doesNotRecognizeSelector:] (in CoreFoundation)</p>
+<p>4    ___forwarding___ (in CoreFoundation)</p>
+<p>5    _CF_forwarding_prep_0 (in CoreFoundation)</p>
+<p>6    -[Parser initWithString:] (in Library Books)</p>
+<p>7    +[Parser parserWithString:] (in Library Books)</p>
+<p>8    -[Dynix booksOnHoldFormat1:] (in Library Books)</p>
+<p>9    -[Dynix booksOnHold] (in Library Books)</p>
+<p>10    -[MainController _updateLibraryBooks] (in Library Books)</p>
+<p>11    -[MainController _updateThread:] (in Library Books)</p>
+<p>12    -[NSThread main] (in Foundation)</p>
+<p>13    __NSThread__main__ (in Foundation)</p>
+<p>14    _pthread_start (in libSystem.B.dylib)</p>
+<p>15    thread_start (in libSystem.B.dylib)</p>
+<p>[/sourcecode]<br />
+What helps is to roll back to version 2.5 which works just fine.</p>

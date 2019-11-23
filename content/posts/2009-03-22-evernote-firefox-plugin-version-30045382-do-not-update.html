@@ -1,0 +1,23 @@
+---
+layout: post
+title: Evernote Firefox plugin version 3.0.0.45382 - do NOT update
+date: 2009-03-22 18:35:07.000000000 -04:00
+type: post
+published: true
+status: publish
+category: lifehacks
+tags: []
+author: "Miro Adamy"
+---
+<p>Since few months I have slowly switched all my online notebooks to <a href="http://www.evernote.com/" target="_self">Evernote</a>. In case you are not familiar with it, it is a great service. You can clip pieces of Web pages, type in notes, attach documents and multimedia files (pictures, sounds) and store them online to be always available through nicely done Ajaxian Web interface. The notes can be tagged, organized into notebooks and full text searched. One of the killer features is that for uploaded pictures, Evernote will do OCR and include the photographed tex into full text search</p>
+<p>For each platform there is desktop application that seamlessly synchronizes the on-line notes with local database and also allows create notes using thick client interface with all desktop goodies.   If you are iPhone users, make sure you get the free app that allows both access the notes as well as capture notes - textual, pictures or voice notes with the GPS information.</p>
+<p>The basic service is free and limits you not by storage taken on the servers, but by transfer 40 MB a month, which is a lot unless you do picture notes. The very reasonably priced pro-service increases the monthly transfer quota to 500 MB and gives few more goodies - like PDF and Doc attachments to the notes. I am fairly frequent user and never used more than one half of that amount.  To make clipping from the browser easier, Evernote offers Firefox plugin as well as Safari plugin.</p>
+<p>The Firefox plugin is equipped with the self-update capabilities. And this is why I am posting this: if you have not updated yet, stick to version 3.0.0.128, do NOT upgrade to latest but far from greatest 3.0.0.45382.  The latest version of Evernote (3.0.0.45382 as of today) is definitely a step back. Unlike the .128 which clips the selected text nicely into the Web, the .45382 always opens the desktop application and creates note there. This is only annoying and there is no obvious way how to prevent starting desktop client.</p>
+<p>The real problem is that the captured note contains HTML attachment named 'Firefox clipping.html' and does not show the clipped text in the Evernote desktop client. To see what you clipped you need to open the clipping in the browser.   To add insult to the injury, the quality of clipping is dramatically worse than in .128. The layout is all over the place, and result looks much worse. It is hard to tell whether this is caused by clipping or by different way how to display result.</p>
+<p>If you got to the point of bad surprise after updating, here is how to bring back the version .128:</p>
+<p>- uninstall extension</p>
+<p>- restart Firefox</p>
+<p>- download the previous version of the extension (the .xpi file) from here <a href="https://addons.mozilla.org/en-US/firefox/downloads/file/47839/evernote_web_clipper-3.0.0.128-fx+tb.xpi" target="_blank">https://addons.mozilla.org/en-US/firefox/downloads/file/47839/evernote_web_clipper-3.0.0.128-fx+tb.xpi</a> and save it on local disk</p>
+<p>- in Firefox, open the downloaded file and confirm installation</p>
+<p>- restart Firefox</p>
+<p>I hope that somebody at Evernote will recognize that the version .45382 was a bad idea and bring back the clip-to-web capabilities (or at least make it configurable), avoid creation of useless HTML attachments and fix the clipping engine. Until that happens, I will stick with .128.</p>

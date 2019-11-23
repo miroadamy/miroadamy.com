@@ -1,0 +1,16 @@
+---
+layout: post
+title: Mac firmware update
+date: 2008-05-12 22:10:43.000000000 -04:00
+type: post
+published: true
+status: publish
+tags: [] 
+meta:
+  _edit_last: '369559'
+author: "Miro Adamy"
+---
+<p>Today I (finally) found out that Apple pushed the long expected Java update with Java 6 for OS-X. Together with this update was another one - Firmware update. I installed both, but on next login, the same firmware update showed up again and checking the firmware version with System Profiler has shown that it was not updated.</p>
+<p>So I installed firmware update again, and rebooted. But nothing happened again.</p>
+<p>After some googling, I found out that the Firmware update - unlike all other updates does NOT really install itself. What it does is to download the Firmware update program. After you start this program (you can locate it by Spotlight), it will display instructions and asks for initiating shutdown. When machine reboots, you need to press and hold power button while it boots - until hearing long beep sound or seeing the sleep light rapidly flashing. After this, system shows update progress bar under grey apple and on finishing the update reboots again. Having done this, firmware is finally updated.</p>
+<p>From technical point of view it makes lots of sense to perform firmware update this way, but it would be very helpful if Apple would at least TELL the users what they are supposed to do. This was so un-applish user interaction experience like none before ...</p>

@@ -1,0 +1,38 @@
+---
+layout: post
+title: Versioning with Spring and Ant
+date: 2008-03-10 21:11:33.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>This is post is NOT about version control in the sense of source code control. It addresses the issue how to easily tell which version of the Web application is running as well make sure that the same version is reflected in the snapshots performed by Ant. We have used this approach on several applications and found it quite useful.</p>
+<p>The version I talk about is not the automatically generated version from VCS system (such as SVN revision). The version number is set manually.</p>
+<p>In every project, we include property file named application.properties, placed at the root of the classpath (next to 'com' directory in the source tree). The content can look like this</p>
+<p>[sourcecode language='java']</p>
+<p>app.name = MyApp<br />
+app.version = 0.5.4<br />
+app.info = User authentication implemented</p>
+<p>[/sourcecode]This property file will be available to Java code because of its location in classpath. Our build.xml file ususally starts with few includes like this</p>
+<p>[sourcecode language='xml']</p>
+<p>    ...<br />
+    [/sourcecode]We try to load first the property files named after the computer. This way we can easily address differences in e.g. Tomcat locations, pathnames to libraries etc. This is very useful if not all team members have identical development environment - which is almost always the case, as I am on Mac and the others mostly on Windows :-). The environment variable COMPUTERNAME is automatically set for you if you are on Windows, for Mac/Linux users all you need is an export in your .bashrc file.</p>
+<p>The second include loads the application properties and makes the 'app.version', 'app.name' available for Ant tasks. Externalizing the app.name allows reusing same Ant script for multiple project. Here is an example of the task that creates and archive of current source code snapshot using this information:</p>
+<p>[sourcecode language='xml']</p>
+<p>    [/sourcecode]The DSTAMP and TSTAMP are set in prepare task:</p>
+<p>[sourcecode language='xml']</p>
+<p>[/sourcecode]To access the information from application.properties, we simply add it to the list of message sources:</p>
+<p>[sourcecode language='xml']</p>
+<p>                messages<br />
+                application</p>
+<p>[/sourcecode]This allows to easily display the version number and information as part of e.g. JSP page:</p>
+<p>[sourcecode language='xml']</p>
+<p> -</p>
+<p>[/sourcecode]For production, I usually still leave the version in the JSP, only include it in HTML comments, so that it does not interfere with the UI but is still accessible by viewing page source.</p>
+<p>I usually set version number and info string manually, but it possible to automatically write information about e.g. build date and time of the application and make it a part of the version info. To do that, use the Ant task:</p>
+<p>[sourcecode language='xml']</p>
+<p>    File test.properties updated at ${DSTAMP} ${TSTAMP}<br />
+  [/sourcecode]In this case, the value of property app.stamp will be overwritten every time the 'set_version' task executes.</p>

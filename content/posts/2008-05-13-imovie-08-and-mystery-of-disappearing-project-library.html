@@ -1,0 +1,21 @@
+---
+layout: post
+title: iMovie 08 and mystery of disappearing Project Library
+date: 2008-05-13 01:12:49.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags:
+- osx
+author: "Miro Adamy"
+---
+<p>As if the yesterday's Firmware update issue was not enough, I had very strange experience with iMovie 08. Suddenly, for no obvious particular reason the user interface became very unresponsive, I was not able to select project in project library. Switching Event library and Project windows on or off stopped working. Windows were not redrawn properly. Creating new project had no visible effect. I could not click on project to select it (well, technically I *could* click, but nothing happened). The time sliders in Events and Projects were either disabled or invisible ...</p>
+<p>Here is how the iMovie looked like most of the time:</p>
+<p><a href="{{ site.baseurl }}/images/picture-81.png"><img class="alignnone size-medium wp-image-403" src="{{ site.baseurl }}/images/picture-81.png?w=300" alt="" width="300" height="184" /></a></p>
+<p>I tried multiple things to fix that: Logout and re-login - no change. Reboot (remember, I came from Windows where this very often used remedy ;-)). No luck. Check and repair the permissions using Disk Utility. No improvement. Verify disk. No errors and still no improvements.</p>
+<p>I even resorted to reinstallation of iLife 08. The only effect I achieved was that I got back trial version of Office 2004 which I deleted right after installing Leopard and had to download and install several updates for Garage Band and iWeb - but iMovie still did not work. Installation of iMovie HD (from iLife 06) worked OK as well did the iMovie 06 - but that was not much help because I did not want start from scratch and iMovie 08 with all its bad features is still able to accept way more input formats than '06.</p>
+<p>After killing well over three hours that was supposed to be spent on finishing the screencast, I started to delete all iMovie project files and even libraries from previous attempts. And suddenly, iMovie sprung to life and was as before.</p>
+<p>I think that reason for the issues was moving the Events library for some of the older screencasts to external disk, but leaving the Project files in iMovie. Somehow this must have confused the program and the non-responsiveness could be caused by trying to connect the thumbnails and file references from the projects to the not available source clips from event library.</p>
+<p>Lesson learned: whenever I move done an event library used in the screencast to external hard disk, it is probably safest to backup and remove the project as well. In other words - keep these two words separated and disjunct.</p>
+<p>But of course - this can also be a pure coincidence and everything can have completely different cause. Time will tell. Too bad that Premiere Elements does not exist for Mac platform. Maybe I should seriously consider looking at Final Cut Express ?</p>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: Spring Framework - the biggest missing piece
+date: 2008-02-04 22:04:18.000000000 -05:00
+type: post
+published: true
+status: publish
+category: programming
+tags: [java]
+author: "Miro Adamy"
+---
+<p>I am having the pleasure working with Spring 2.x since about October last year. It is my return back to Spring, after first encounter in 2005 (counting only larger projects). Same as in previous project, it has been so much fun :-). So much fun in fact, that I was spending my evening playing with code and reading up what is new in 2.5, rather that blogging ;-)</p>
+<p>I am still amazed about how nice is the whole thing designed and how many ways it can be used. It's flexibility is simply breathtaking. The price for the flexibility is complexity - sometimes it is not obvious what of many options should be chosen and what are all these options anyway :-).</p>
+<p>Spring has very good documentation, compared to most of the open source projects I have looked at (and it was pretty large number over last 10 years). There are also many books on Spring, several of them pretty good. All this makes the fairly steep learning curve more accessible. But what is still missing are good examples.</p>
+<p>But wait a moment, you may say - Spring source distribution DOES have several examples - for example JPetstore (offering two alternative implementations of UI - once using Spring MVC, once using Struts), Petclinic, and several others. The source code is nicely readable and well commented. So what is the big deal ?</p>
+<p>The big deal is the ratio of options and possibilities offered by the framework to the options actually presented and demonstrated by the examples. Let's take only the Spring MVC, which is certainly less than 30 % of the area covered by framework. Considering the possible combination of components would easily justify 20 examples just on that topic, not 2 or 3. The examples select one or two of possible URL mappers, provide some examples of controllers, view resolution and then the actual view. What is missing are alternatives and explanation of the differences. How would using <tt>SimpleUrlHandlerMapping</tt> instead of <tt>BeanNameUrlHandlerMapping</tt> impact the application, is explained pretty well in Chapter 13 of the documentation. For an experienced developer this (and a source code itself) is usually enough. If you try to explain Spring based application to somebody without prior IoC / DI experience, you may find out that it is not as obvious and that having an example of working code that would show the actual different implementation and letting him/her to compare and experiment, turning one into another would probably be the easiest way how to get started.</p>
+<p>I realize that creating enough examples could be possibly a code maintenance nightmare - at least if the pace of Spring development will remain the same. In many cases, more documentation on the samples, explaining how it works at the high level and discussing the alternatives would be almost as helpful as the full source. The otherwise very good documentation is quite brief on the Samples side - the Chapters 26 has about two screens, and that for all the samples.</p>
+<p>And because this is definitely NOT a rant, but an attempt to make a constructive suggestions, I plan to do something about the situation myself and will post the notes from "dissecting the Spring App" that I used for explaining how things works in Spring MVC and around. As soon as I get them to presentable form ;-). Stay tuned.</p>

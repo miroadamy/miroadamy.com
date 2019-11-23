@@ -1,0 +1,14 @@
+---
+layout: post
+title: VMWare Converter error P2VError UNABLE_TO_DETERMINE_GUEST_OS
+date: 2008-10-19 17:34:26.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags: []
+author: "Miro Adamy"
+---
+<p>This was error I have received while trying to convert physical machine running Windows 2003 SP1 into VMWare image.</p>
+<p>After some googling around and experimenting (<a href="http://communities.vmware.com/thread/114954" target="_blank">this link</a> was most helpful to point me in correct direction) I found solution that worked for me.</p>
+<p>All I had to do was to disable Floppy Drive in the System applet of Control panel. After this, the conversion continued and right now is squeezing 100 GB disk into 50 2 GB files on external USB disk.</p>

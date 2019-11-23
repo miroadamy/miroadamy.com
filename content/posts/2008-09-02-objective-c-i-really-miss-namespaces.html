@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Objective C: I really miss namespaces'
+date: 2008-09-02 23:33:30.000000000 -04:00
+type: post
+published: true
+status: publish
+category: programming
+tags:
+- objectivec
+author: "Miro Adamy"
+---
+<p>One feature that I strongly miss from Objective C are namespaces. Inability to avoid name clash between your  classes sometimes really stands in your way.</p>
+<p>I am reading S. Kochan's book "<a href="http://search.safaribooksonline.com/0672325861" target="_blank">Programming in Objective C</a>" and in one of the examples he creates the class Point. Unfortunately, there already is struct Point defined in mactypes.h.</p>
+<p>The solution is easy - rename the darn Point to something like TKPoint ... at least that is what <a href="http://cocoadevcentral.com/articles/000082.php" target="_self">Cocoa naming guide</a> recommends. It is probably matter of getting used to it  - but I still find the solution suggested by Kevin Hoffman <a href="http://dotnetaddict.dotnetdevelopersjournal.com/objc_namespaces.htm" target="_blank">much more elegant</a> - too bad it is only theoretical. Much nicer than NSHack ;-)</p>
