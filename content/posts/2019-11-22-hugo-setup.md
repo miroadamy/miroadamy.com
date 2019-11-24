@@ -346,6 +346,34 @@ Untracked files:
     content/posts/2019-11-22-hugo-setup.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
+
+# We add the changes to source - new changed file as well as the 'public' link
+➜  miroadamy.com git:(master) ✗ git add .
+
+➜  miroadamy.com git:(master) ✗ git commit -m "Published the Hugo setup article source"
+[master f078d54] Published the Hugo setup article source
+ 2 files changed, 352 insertions(+), 1 deletion(-)
+ create mode 100644 content/posts/2019-11-22-hugo-setup.md
+
 ```
 
+And we are done
 
+
+It can be automated to this small script:
+
+```
+#!/bin/bash
+
+MESSAGE=${1:-'Published changes'}
+
+hugo
+cd public
+git add .
+git commit -m "$MESSAGE"
+git push
+cd ..
+git add .
+git commit -m "${MESSAGE} - source"
+git push
+```
