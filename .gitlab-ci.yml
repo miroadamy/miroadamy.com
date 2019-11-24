@@ -6,9 +6,10 @@ variables:
 
 pages:
   script:
-  - hugo
+  - mkdir -p public
+  - hugo --baseURL https://miro.adamy.gitlab.io/miroadamy.com/
   artifacts:
     paths:
     - public
   only:
-  - master
+  - gitlab-pages
