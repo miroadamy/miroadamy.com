@@ -18,7 +18,7 @@ Im am DevOps/Cloud engineer, living in beautiful Valencia, Spain and spending my
 
 ## Resume
 
-My current resume can be downloaded from here <a href="/resume/miro-adamy-2019.pdf" download>as PDF</a>
+My current resume is [available online](https://miro.adamy.gitlab.io/resume/) or can be downloaded from here <a href="/resume/miro-adamy-2019.pdf" download>as PDF</a>
 
 ## Contact
 
