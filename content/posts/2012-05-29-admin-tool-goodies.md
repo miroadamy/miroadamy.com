@@ -3,8 +3,8 @@ title: "Admin tool goodies"
 date: 2012-05-29T11:22:48+08:00
 published: true
 type: post
-categories: ["admin"]
-tags: ["tools", "commandline", "osx"]
+categories: ["tools"]
+tags: ["commandline", "osx"]
 author: "Miro Adamy"
 ---
 

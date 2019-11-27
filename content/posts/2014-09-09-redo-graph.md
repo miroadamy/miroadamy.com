@@ -4,7 +4,7 @@ date: 2014-09-09T11:22:48+08:00
 published: true
 type: post
 categories: ["devops"]
-tags: ["commandline","texttools", "documentation","groovy","atg","graphviz"]
+tags: ["commandline","plaintext", "documentation","groovy","atg","graphviz"]
 author: "Miro Adamy"
 ---
 

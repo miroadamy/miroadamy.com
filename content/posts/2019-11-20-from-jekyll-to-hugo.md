@@ -4,7 +4,7 @@ date: 2019-11-20T23:22:48+08:00
 published: true
 type: post
 categories: ["general"]
-tags: ["blog", "hugo", "jekyll"]
+tags: ["blog", "hugo", "jekyll", "plaintext"]
 author: "Miro Adamy"
 ---
 
