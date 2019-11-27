@@ -1,24 +1,16 @@
 ---
 title: "XXXX"
-date: 2016-09-05T11:22:48+08:00
+date: 2029-09-03T11:22:48+08:00
 published: true
 type: post
-categories: ["programming"]
-tags: ["git"]
+categories: ["UNCATEGORY"]
+tags: ["CHANGETHIS","ANDTHAT"]
 author: "Miro Adamy"
 ---
 
-# Update all local branches in Git repo
+# Header
 
-Issue: The git pull updates just one current branch.
+Lorem Ipsum
 
-In DevOps I am following many Git repos and need to keep up to date for all local branches.
-
-## git ffwd-update command
-
-Source: <http://stackoverflow.com/questions/4318161/can-git-pull-all-update-all-my-local-branches>
-
-Create file named git-ffwd-update somewhere on the path (in my case `~/bin`)
-
-
-![](/images/binding-dashdoc-with-editors-and-eclipse_5.png)
+![](/images/grasshopper.png)
+link to a <a href="{{< relref "2014-08-28-elastic-tutorial.md" >}}">post</a>
