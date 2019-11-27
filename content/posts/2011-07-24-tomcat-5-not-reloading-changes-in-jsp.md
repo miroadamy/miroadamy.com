@@ -6,7 +6,7 @@ type: post
 published: true
 comments: true
 status: publish
-category: programming
+categories: ["programming"]
 tags:
 - java
 author: "Miro Adamy"

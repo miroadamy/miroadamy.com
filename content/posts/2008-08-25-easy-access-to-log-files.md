@@ -5,7 +5,7 @@ date: 2008-08-25 22:04:04.000000000 -04:00
 type: post
 published: true
 status: publish
-category: programming
+categories: ["programming"]
 tags: []
 author: "Miro Adamy"
 ---

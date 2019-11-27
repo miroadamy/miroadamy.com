@@ -6,7 +6,7 @@ type: post
 published: true
 comments: true
 status: publish
-category: devops
+categories: ["devops"]
 tags:
 - git
 author: "Miro Adamy"

@@ -5,7 +5,7 @@ date: 2007-11-08 15:56:30.000000000 -05:00
 type: post
 published: true
 status: publish
-category: programming
+categories: ["programming"]
 tags: [java, atg]
 meta: {}
 author: "Miro Adamy"

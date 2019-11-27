@@ -5,7 +5,7 @@ date: 2009-01-09 14:37:46.000000000 -05:00
 type: post
 published: true
 status: publish
-category: programming
+categories: ["programming"]
 tags: []
 author: "Miro Adamy"
 ---

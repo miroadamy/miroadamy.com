@@ -6,7 +6,7 @@ comments: true
 type: post
 published: true
 status: publish
-category: general
+categories: ["general"]
 tags: [blog]
 author: "Miro Adamy"
 ---

@@ -5,7 +5,7 @@ date: 2007-12-23 20:22:50.000000000 -05:00
 type: post
 published: true
 status: publish
-category: programming
+categories: ["programming"]
 tags: [java,ruby]
 meta: {}
 author: "Miro Adamy"

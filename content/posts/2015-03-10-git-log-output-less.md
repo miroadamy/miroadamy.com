@@ -6,7 +6,7 @@ type: post
 published: true
 status: publish
 comments: true
-category: lifehacks
+categories: ["lifehacks"]
 tags:
 - osx
 - git

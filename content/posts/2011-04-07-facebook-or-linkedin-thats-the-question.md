@@ -5,7 +5,7 @@ date: 2011-04-07 22:51:48.000000000 -04:00
 type: post
 published: true
 status: publish
-category: lifehacks
+categories: ["lifehacks"]
 tags: []
 author: "Miro Adamy"
 ---

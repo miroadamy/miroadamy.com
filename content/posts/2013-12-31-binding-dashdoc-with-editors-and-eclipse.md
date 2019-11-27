@@ -6,7 +6,7 @@ type: post
 comments: true
 published: true
 status: publish
-category: programming
+categories: ["programming"]
 tags:
 - osx
 - java

@@ -5,7 +5,7 @@ date: 2006-08-19 18:24:13.000000000 -04:00
 type: post
 published: true
 status: publish
-category: general
+categories: ["general"]
 tags: [blog]
 author: "Miro Adamy"
 ---
