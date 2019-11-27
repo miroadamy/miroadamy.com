@@ -1,7 +1,21 @@
 #!/bin/bash
+DATUM=$(date -u +\"%Y-%m-%dT%H:%M:%SZ\")
+cat << EOF | tee ./content/status.md
++++
+date = $DATUM
+title = "status"
+url = "/status"
++++
 
-cd ./content
-sed -i "s@HUGO_VERSION@$(hugo version)@g" status.md
-sed -i "s@PYGMENTS_VERSION@$(pygmentize -V)@g" status.md
-sed -i "s@BLOG_COMMIT@$(git rev-parse HEAD)@g" status.md
-sed -i "s@THEME_COMMIT@$(cd ../themes/even && git rev-parse HEAD)@g" status.md
+### Status
+
+$(hugo version)
+
+$(pygmentize -V)
+
+Blog commit: $(git rev-parse HEAD)
+
+Theme commit: $(cd ./themes/even && git rev-parse HEAD)
+
+Published: $DATUM
+EOF

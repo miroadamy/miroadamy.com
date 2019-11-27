@@ -28,4 +28,6 @@ Email me - firstname dot lastname, at Sergei's and Larry's company's email
 
 The thoughts and opinions expressed in this blog are mine and do not represent the position of my employer.
 
+## Blog version
 
+See <a href="/status">version page</a> for details
