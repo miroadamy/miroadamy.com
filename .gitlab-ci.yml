@@ -7,6 +7,7 @@ variables:
 pages:
   script:
   - mkdir -p public
+  - sh update-status.sh
   - hugo --baseURL https://miro.adamy.gitlab.io/miroadamy.com/
   artifacts:
     paths:
