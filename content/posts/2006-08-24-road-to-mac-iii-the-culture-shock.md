@@ -5,7 +5,7 @@ date: 2006-08-24 21:00:09.000000000 -04:00
 type: post
 published: true
 status: publish
-category: programming
+categories: ["technology"]
 tags: [osx]
 meta: {}
 author: "Miro Adamy"
