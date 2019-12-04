@@ -4,7 +4,7 @@ date: 2017-11-14T14:22:48+08:00
 published: true
 type: post
 categories: ["DevOps"]
-tags: ["aws", "cloud", "command-line"]
+tags: ["aws", "cloud", "commandline"]
 author: "Miro Adamy"
 ---
 
