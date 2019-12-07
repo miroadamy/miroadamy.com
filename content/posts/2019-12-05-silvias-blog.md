@@ -14,4 +14,4 @@ What makes this blog dear and interesting to me is that it's author is my daught
 
 This way you can learn not only about interesting places and how her generation sees the world, but also discover new nuances and interesting words (German would say Redewendungen) in English.
 
-Because of our work we do not enough time with our children, I am grateful for any channel that allows me to be part of their lives. Like [this blog](https://bookandtravel.blog/) and her Instagram channel - [https://www.instagram.com/sadamyova/](https://www.instagram.com/sadamyova/)
+Because of our work we do not get to spend enough time with our children, so I am grateful for any channel that allows me to be part of their lives. Like [this blog](https://bookandtravel.blog/) and her Instagram channel - [https://www.instagram.com/sadamyova/](https://www.instagram.com/sadamyova/)
