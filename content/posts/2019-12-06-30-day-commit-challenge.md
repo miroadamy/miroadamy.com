@@ -12,9 +12,9 @@ My work in last few years took my away from practical coding towards DevOps. Des
 
 On writing side, lots of my output shifted from code towards writing text in Wiki's, GoogleDocs and more and more in Slack messages. The code I write are short one-liners or small scripts with very short life span. This makes me a bit sad as there is no sense of accomplishment at the end of the day or week. The `git log` does not work over Wiki, AWS console, iTerm, Slack and GoogleDrive.
 
-So in the spirit of [30 day Challenges](https://www.unexpectedlydomestic.com/30-day-challenge-ideas/), I have started yesterday on Dec 6th the `30 day commit-every-day challenge` to overcome this feeling. 
+So in the spirit of [30 day Challenges](https://www.unexpectedlydomestic.com/30-day-challenge-ideas/), I am starting today on Dec 6th the `30 day commit-every-day challenge` to overcome this feeling. 
 
-## Here are the rules:
+## Here are the self imposed rules:
 
 * there will be at least one commit every day betweek Dec 6th and January 6th, inclusive
 * Commit must show in the activity log in at least one of my 3 Cloud source repos: GitHub, GitLab or Bitbucket
@@ -22,11 +22,11 @@ So in the spirit of [30 day Challenges](https://www.unexpectedlydomestic.com/30-
 * The commits must be meaningful - no commits just for commits - and must represent at least one hour of coding or writing work.
 * The gists / snippets count as long as they are in cloud (the SnippetsLab does not count)
 
-## What I want to get out of all this
+## What I want to get out of all this:
 
 I hope for four main benefits
 
-1. feel good 
+1. feel good and start habit
 2. stimulate the progress on writing documenation in source code
 3. speed up the work on the certification preparation with practical examples to try
 4. improve extracting/capturing the reusable chunks of scripts into Gists, blog entries or tools
