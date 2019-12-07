@@ -26,8 +26,8 @@ So in the spirit of [30 day Challenges](https://www.unexpectedlydomestic.com/30-
 
 I hope for four main benefits
 
-1. feel good and start habit
-2. stimulate the progress on writing documenation in source code
+1. feel good and start/re-enforce habit
+2. stimulate the motivation on writing more code and documentation in source code
 3. speed up the work on the certification preparation with practical examples to try
 4. improve extracting/capturing the reusable chunks of scripts into Gists, blog entries or tools
 
