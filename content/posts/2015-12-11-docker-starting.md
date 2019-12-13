@@ -3,8 +3,8 @@ title: "Docker - getting started"
 date: 2015-12-11T11:22:48+08:00
 published: true
 type: post
-categories: ["programming"]
-tags: ["docker"]
+categories: ["devops"]
+tags: ["docker", "osx"]
 author: "Miro Adamy"
 ---
 

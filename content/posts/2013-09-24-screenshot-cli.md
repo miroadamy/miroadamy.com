@@ -3,8 +3,8 @@ title: "How to make screenshot from command line"
 date: 2013-09-24T11:22:48+08:00
 published: true
 type: post
-categories: ["Technology"]
-tags: ["os-x", "virtualbox"]
+categories: ["lifehacks"]
+tags: ["osx", "virtualbox"]
 author: "Miro Adamy"
 ---
 

@@ -4,7 +4,7 @@ date: 2013-09-25T16:12:48+08:00
 published: true
 type: post
 categories: ["Programming"]
-tags: ["os-x", "editors"]
+tags: ["osx", "editors"]
 author: "Miro Adamy"
 ---
 

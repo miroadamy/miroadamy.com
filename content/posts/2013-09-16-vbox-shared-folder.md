@@ -4,7 +4,7 @@ date: 2013-09-16T11:22:48+08:00
 published: true
 type: post
 categories: ["Technology"]
-tags: ["os-x", "virtualbox"]
+tags: ["osx", "virtualbox"]
 author: "Miro Adamy"
 ---
 

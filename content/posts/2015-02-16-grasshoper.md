@@ -3,8 +3,8 @@ title: "New image that expresses my new undefined job title"
 date: 2015-02-16T11:22:48+08:00
 published: true
 type: post
-categories: ["general"]
-tags: [""]
+categories: ["startuplife"]
+tags: ["blog"]
 author: "Miro Adamy"
 ---
 

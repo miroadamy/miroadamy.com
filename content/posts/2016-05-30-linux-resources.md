@@ -3,8 +3,8 @@ title: "Learning resources for Linux and Command line"
 date: 2016-05-30T11:22:48+08:00
 published: true
 type: post
-categories: ["programming"]
-tags: ["git"]
+categories: ["devops"]
+tags: ["git", "linux"]
 author: "Miro Adamy"
 ---
 

@@ -3,7 +3,7 @@ title: "How to truncate Git history"
 date: 2015-07-14T11:22:48+08:00
 published: true
 type: post
-categories: ["programming"]
+categories: ["devops"]
 tags: ["git"]
 author: "Miro Adamy"
 ---

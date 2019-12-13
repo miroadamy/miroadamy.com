@@ -3,7 +3,7 @@ title: "Show lock screen indicator in OS-X menu"
 date: 2013-09-03 12:57:35.000000000 -05:00
 categories: ["Technology"]
 type: post
-tags: ["os-x"]
+tags: ["osx"]
 author: "Miro Adamy"
 ---
 

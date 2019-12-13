@@ -3,7 +3,7 @@ title: "Update all local branches in Git repo"
 date: 2016-09-05T11:22:48+08:00
 published: true
 type: post
-categories: ["programming"]
+categories: ["devops"]
 tags: ["git"]
 author: "Miro Adamy"
 ---

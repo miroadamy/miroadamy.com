@@ -4,7 +4,7 @@ date: 2013-09-26T21:02:48+08:00
 published: true
 type: post
 categories: ["Technology"]
-tags: ["os-x"]
+tags: ["osx"]
 author: "Miro Adamy"
 ---
 

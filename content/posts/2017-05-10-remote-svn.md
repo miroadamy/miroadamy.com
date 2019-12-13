@@ -3,7 +3,7 @@ title: "Managing code in remote SVN repo"
 date: 2017-05-10T11:22:48+08:00
 published: true
 type: post
-categories: ["programming"]
+categories: ["devops"]
 tags: ["git"]
 author: "Miro Adamy"
 ---

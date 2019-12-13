@@ -5,7 +5,7 @@ type: post
 published: true
 status: publish
 comments: true
-categories: ["programming"]
+categories: ["devops"]
 tags: 
   - osx
   - git

@@ -1,6 +1,6 @@
 ---
 title: "Merge conflict with deleted file"
-date: 2016-09-05T11:22:48+08:00
+date: 2013-04-13T11:22:48+08:00
 published: true
 type: post
 categories: ["programming"]
