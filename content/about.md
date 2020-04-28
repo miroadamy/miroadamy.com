@@ -11,7 +11,7 @@ weight: 50
 
 This is personal blog of Miro Adamy.
 
-<img src="/miro-wald.jpg" width="450">
+![Miro](/miro-wald.jpg)
 
 
 Im am DevOps/Cloud engineer, living in beautiful Valencia, Spain and spending my days designing and creating software systems for living and pleasure, reading books, surfing Web, walking, thinking and enjoying life with my family
