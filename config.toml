@@ -9,10 +9,10 @@ theme = "even"
 enableGitInfo = false # use git commit log to generate lastmod record 
 
 # Syntax highlighting by Chroma. NOTE: Don't enable `highlightInClient` and `chroma` at the same time!
-pygmentsOptions = "linenos=table"
-pygmentsCodefences = true
-pygmentsUseClasses = true
-pygmentsCodefencesGuessSyntax = true
+PygmentsCodefences = true
+PygmentsUseClasses = true
+PygmentsCodefencesGuessSyntax = true
+PygmentsStyle = "monokai"
 
 hasCJKLanguage = false    # has chinese/japanese/korean ? 
 paginate = 5                                              
