@@ -1,7 +1,6 @@
 ---
 title: "Reference Architecture as a Code"
 date: 2020-08-10T13:00:00+08:00
-published: true
 type: post
 description: "Version control friendly approach to designing and documenting the architecture"
 tldr: ""

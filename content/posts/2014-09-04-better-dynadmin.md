@@ -1,7 +1,6 @@
 ---
 title: "Better dynadmin"
 date: 2014-09-04T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["atg","tools"]

@@ -1,7 +1,6 @@
 ---
 title: "Sublime text macro to insert timestamp"
 date: 2013-09-25T16:12:48+08:00
-published: true
 type: post
 categories: ["Programming"]
 tags: ["osx", "editors"]

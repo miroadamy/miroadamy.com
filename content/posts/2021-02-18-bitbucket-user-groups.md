@@ -1,7 +1,6 @@
 ---
 title: "How to monitor Bitbucket user and group permissions with API"
 date: 2021-02-18T13:00:00+08:00
-published: true
 type: post
 description: "Using command line tool to access Bitbucket API - 3"
 tldr: ""

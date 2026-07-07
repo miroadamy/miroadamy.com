@@ -3,14 +3,12 @@ layout: post
 title: Git - find unmerged commits
 date: 2016-03-22 12:57:35.000000000 -05:00
 type: post
-published: true
 status: publish
 comments: true
-categories: ["programming"]
+categories: ["programming", "Technology"]
 tags: 
   - git
   - ruby
-categories: ["Technology"]  
 author: "Miro Adamy"
 ---
 

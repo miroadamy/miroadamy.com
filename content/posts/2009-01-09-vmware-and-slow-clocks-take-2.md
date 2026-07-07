@@ -3,7 +3,6 @@ layout: post
 title: VMWare and slow clocks - take 2
 date: 2009-01-09 14:37:46.000000000 -05:00
 type: post
-published: true
 status: publish
 categories: ["programming"]
 tags: []

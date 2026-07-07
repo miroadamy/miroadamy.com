@@ -1,7 +1,6 @@
 ---
 title: "Building Hugo as well on GitLab pages"
 date: 2019-11-23T22:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git", "blog", "hugo", "github", "gitlab"]

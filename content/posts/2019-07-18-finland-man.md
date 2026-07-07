@@ -1,7 +1,6 @@
 ---
 title: "Finland Män"
 date: 2019-07-16T11:22:48+08:00
-published: true
 type: post
 categories: ["jokes"]
 tags: ["europe" ]

@@ -1,7 +1,6 @@
 ---
 title: "ATG Module Diagram Generator"
 date: 2018-02-10T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["atg","ecommerce", "groovy", "plantuml"]

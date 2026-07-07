@@ -3,7 +3,6 @@ layout: post
 title: An advice to a fellow developer - 1
 date: 2007-12-12 23:55:20.000000000 -05:00
 type: post
-published: true
 status: publish
 categories: ["programming"]
 tags: [java]

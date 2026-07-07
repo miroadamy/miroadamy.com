@@ -1,7 +1,6 @@
 ---
 title: "Configuring permanent time updates for Linux"
 date: 2011-02-03T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["linux"]

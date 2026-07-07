@@ -1,7 +1,6 @@
 ---
 title: "ATG Groovy TDD"
 date: 2014-05-16T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["atg", "groovy", "tdd"]

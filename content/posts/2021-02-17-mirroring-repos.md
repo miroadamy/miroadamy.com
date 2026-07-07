@@ -1,7 +1,6 @@
 ---
 title: "How to mirror Github and Bitbucket repositories"
 date: 2021-02-17T13:00:00+08:00
-published: true
 type: post
 description: "Using Bitbucket and Github API to mirror repositories"
 tldr: ""

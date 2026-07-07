@@ -1,7 +1,6 @@
 ---
 title: "Replace BSD grep with GNU grep"
 date: 2014-11-02T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["git"]

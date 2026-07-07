@@ -1,7 +1,6 @@
 ---
 title: "logstash - known error"
 date: 2014-09-16T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["logs","logstash", "elk"]

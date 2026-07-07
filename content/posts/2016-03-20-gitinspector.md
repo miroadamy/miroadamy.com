@@ -2,14 +2,12 @@
 title: Git project statistic tool
 date: 2016-03-20 12:57:35.000000000 -05:00
 type: post
-published: true
 status: publish
 comments: true
-categories: ["devops"]
+categories: ["devops", "Technology"]
 tags: 
   - osx
   - git
-categories: ["Technology"]
 author: "Miro Adamy"
 ---
 

@@ -3,7 +3,6 @@ layout: post
 title: XCode annoyances
 date: 2008-09-01 22:34:57.000000000 -04:00
 type: post
-published: true
 status: publish
 categories: ["programming"]
 tags:

@@ -1,7 +1,6 @@
 ---
 title: "Process for transferring Git repo from Gitolite to Bitbucket"
 date: 2016-11-02T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git", "gitolite", "bitbucket"]

@@ -1,7 +1,6 @@
 ---
 title: "BOTD - Blog of the Day"
 date: 2019-12-05T11:22:48+08:00
-published: true
 type: post
 categories: ["travel","lifehacks"]
 tags: ["blog","languages", "europe"]

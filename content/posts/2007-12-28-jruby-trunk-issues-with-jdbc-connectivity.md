@@ -3,7 +3,6 @@ layout: post
 title: JRuby trunk - issues with JDBC connectivity
 date: 2007-12-28 22:24:37.000000000 -05:00
 type: post
-published: true
 status: publish
 categories: ["programming"]
 tags: [ruby,java]

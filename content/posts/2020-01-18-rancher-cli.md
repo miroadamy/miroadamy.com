@@ -1,7 +1,6 @@
 ---
 title: "Rancher CLI vs kubectl"
 date: 2020-01-18T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["kubernetes","rancher"]

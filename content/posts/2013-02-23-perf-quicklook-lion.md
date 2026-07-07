@@ -1,7 +1,6 @@
 ---
 title: "Performance issues with Quicklook in OS-X Lion"
 date: 2013-02-23T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["osx"]

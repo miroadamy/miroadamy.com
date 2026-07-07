@@ -1,7 +1,6 @@
 ---
 title: "German attack"
 date: 2013-03-05T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["osx"]

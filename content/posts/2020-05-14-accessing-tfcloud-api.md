@@ -1,7 +1,6 @@
 ---
 title: "Accessing Terraform cloud Module registry programatically"
 date: 2020-05-14T21:22:48+08:00
-published: true
 type: post
 categories: ["DevOps"]
 tags: ["iaac","terraform", "cli"]

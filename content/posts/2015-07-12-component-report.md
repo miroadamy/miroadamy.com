@@ -1,7 +1,6 @@
 ---
 title: "How to get information about all ATG components"
 date: 2015-07-12T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["atg","dynadmin"]

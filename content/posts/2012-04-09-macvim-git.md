@@ -1,7 +1,6 @@
 ---
 title: "Using MacVim as git editor"
 date: 2012-04-09T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["git","vim","osx"]

@@ -1,7 +1,6 @@
 ---
 title: "Keepass-Node install"
 date: 2014-10-03T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["git"]

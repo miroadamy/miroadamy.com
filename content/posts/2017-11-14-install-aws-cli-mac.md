@@ -1,7 +1,6 @@
 ---
 title: "Install AWS CLI on Mac"
 date: 2017-11-14T14:22:48+08:00
-published: true
 type: post
 categories: ["DevOps"]
 tags: ["aws", "cloud", "commandline"]

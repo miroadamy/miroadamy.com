@@ -1,7 +1,6 @@
 ---
 title: "Storing sensitive information in Git"
 date: 2017-05-17T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git"]

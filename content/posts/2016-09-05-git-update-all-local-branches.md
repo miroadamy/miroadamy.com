@@ -1,7 +1,6 @@
 ---
 title: "Update all local branches in Git repo"
 date: 2016-09-05T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git"]

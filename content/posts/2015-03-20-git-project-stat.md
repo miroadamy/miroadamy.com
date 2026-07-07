@@ -1,7 +1,6 @@
 ---
 title: "Git project statistic tool"
 date: 2015-03-20T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["git"]

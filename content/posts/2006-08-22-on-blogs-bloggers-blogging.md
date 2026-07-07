@@ -3,7 +3,6 @@ layout: post
 title: On blogs, bloggers, blogging
 date: 2006-08-22 07:42:55.000000000 -04:00
 type: post
-published: true
 status: publish
 categories: ["general"]
 tags: [blog]

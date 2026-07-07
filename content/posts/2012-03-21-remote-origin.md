@@ -1,7 +1,6 @@
 ---
 title: "How to fix the remote origin from read only"
 date: 2012-03-21T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["git","ssh"]

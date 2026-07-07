@@ -3,7 +3,6 @@ layout: post
 title: 'Road to Mac IV: Getting accustomed'
 date: 2006-08-25 22:51:19.000000000 -04:00
 type: post
-published: true
 status: publish
 categories: ["technology"]
 tags: [osx]

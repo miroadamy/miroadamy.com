@@ -1,7 +1,6 @@
 ---
 title: "Jupyter notebook with Bash kernel"
 date: 2019-03-16T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["python","jupyter","bash"]

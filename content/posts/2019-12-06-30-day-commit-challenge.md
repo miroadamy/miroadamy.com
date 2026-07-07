@@ -1,7 +1,6 @@
 ---
 title: "30 day commit challenge"
 date: 2019-12-06T11:22:48+08:00
-published: true
 type: post
 categories: ["lifehacks"]
 tags: ["blog","30daychallenge"]

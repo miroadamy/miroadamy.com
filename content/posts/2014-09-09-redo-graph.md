@@ -1,7 +1,6 @@
 ---
 title: "Recreate txt base graph generator"
 date: 2014-09-09T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["commandline","plaintext", "documentation","groovy","atg","graphviz"]

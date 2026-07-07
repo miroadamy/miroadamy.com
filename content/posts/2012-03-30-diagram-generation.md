@@ -1,7 +1,6 @@
 ---
 title: "Diagram generation - plain text approach"
 date: 2012-03-30T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["tools","plaintext"]

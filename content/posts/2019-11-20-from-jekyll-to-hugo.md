@@ -1,7 +1,6 @@
 ---
 title: "From Jekyll to Hugo"
 date: 2019-11-20T23:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["blog", "hugo", "jekyll", "plaintext"]

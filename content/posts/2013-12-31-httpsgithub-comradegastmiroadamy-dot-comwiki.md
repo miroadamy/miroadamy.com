@@ -3,7 +3,6 @@ layout: post
 title: Miro's World 2.0
 date: 2013-12-31 00:54:46.000000000 -05:00
 type: post
-published: true
 status: published
 comments: true
 categories: ["general"]

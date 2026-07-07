@@ -3,7 +3,6 @@ layout: post
 title: Easy access to log files
 date: 2008-08-25 22:04:04.000000000 -04:00
 type: post
-published: true
 status: publish
 categories: ["programming"]
 tags: []

@@ -3,7 +3,6 @@ layout: post
 title: Cure for crashing FourSquare and RunKeeper on iPhone
 date: 2010-01-11 00:29:18.000000000 -05:00
 type: post
-published: true
 status: published
 comments: true
 categories: ["programming"]

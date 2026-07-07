@@ -1,7 +1,6 @@
 ---
 title: "Dealing with 'Java Runtime SE 6' required error"
 date: 2014-10-14T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["java","osx"]

@@ -1,7 +1,6 @@
 ---
 title: "How to list Github repositories and users"
 date: 2021-02-16T13:00:00+08:00
-published: true
 type: post
 description: "Using command line tool to access Github/Bitbucket API - 2"
 tldr: ""

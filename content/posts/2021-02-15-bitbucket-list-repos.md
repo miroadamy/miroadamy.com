@@ -1,7 +1,6 @@
 ---
 title: "How to list Bitbucket repositories and users"
 date: 2021-02-15T13:00:00+08:00
-published: true
 type: post
 description: "Using command line tool to access Bitbucket API - 1"
 tldr: ""

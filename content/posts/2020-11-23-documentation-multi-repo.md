@@ -1,7 +1,6 @@
 ---
 title: "Documenting multi-repository projects"
 date: 2020-11-23T13:00:00+08:00
-published: true
 type: post
 description: "Documentation best practices, tools and techniquest for cloud-native multi-repository projects"
 tldr: ""

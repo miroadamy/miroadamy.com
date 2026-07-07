@@ -1,7 +1,6 @@
 ---
 title: "How to access shared folder in Linux guest in VirtualBox"
 date: 2014-09-23T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["virtualbox", "linux"]

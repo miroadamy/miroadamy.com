@@ -1,7 +1,6 @@
 ---
 title: "Miro Manifesto"
 date: 2012-02-15T11:22:48+08:00
-published: true
 type: post
 categories: ["technology","startup-life"]
 tags: ["agile"]

@@ -1,7 +1,6 @@
 ---
 title: "Accessing Keepass information from command line"
 date: 2015-07-08T11:22:48+08:00
-published: true
 type: post
 categories: ["tools"]
 tags: ["keepass", "commandline", "perl"]

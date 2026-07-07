@@ -1,7 +1,6 @@
 ---
 title: "How to fix Jenkins build issues related to Git connectivity"
 date: 2015-06-18T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git","jenkins"]

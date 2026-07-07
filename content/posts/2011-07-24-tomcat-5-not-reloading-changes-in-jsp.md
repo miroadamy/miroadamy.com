@@ -3,7 +3,6 @@ layout: post
 title: Tomcat 5 not reloading changes in JSP
 date: 2011-07-24 17:33:34.000000000 -04:00
 type: post
-published: true
 comments: true
 status: publish
 categories: ["programming"]

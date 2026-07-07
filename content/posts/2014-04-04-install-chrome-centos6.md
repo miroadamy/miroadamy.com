@@ -1,7 +1,6 @@
 ---
 title: "How to install Chrome in Centos 6.5"
 date: 2014-04-04T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["linux"]

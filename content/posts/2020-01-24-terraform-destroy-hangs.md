@@ -1,8 +1,7 @@
-
 ---
 title: "Debugging errors on Terraform Destroy"
 date: 2020-01-24T22:34:38+08:00
-published: false
+draft: true
 type: post
 categories: ["devops"]
 tags: ["terraform","iaac", "traefik"]

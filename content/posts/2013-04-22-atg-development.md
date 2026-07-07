@@ -1,7 +1,6 @@
 ---
 title: "ATG Development using 'hidden' VM"
 date: 2013-04-22T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["atg","virtualbox","virtualization"]

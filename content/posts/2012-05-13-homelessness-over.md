@@ -1,7 +1,6 @@
 ---
 title: "Homelessness is over, moved in"
 date: 2012-05-13T11:22:48+08:00
-published: true
 type: post
 categories: ["technology"]
 tags: ["osx"]

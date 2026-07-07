@@ -3,7 +3,6 @@ layout: post
 title: Fix for the stalled downloads in Leopard
 date: 2007-12-22 23:12:18.000000000 -05:00
 type: post
-published: true
 status: publish
 tags: []
 meta: {}

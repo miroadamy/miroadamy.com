@@ -1,7 +1,6 @@
 ---
 title: "Current Hugo setup on Github Pages"
 date: 2019-11-22T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["blog","plaintext"]

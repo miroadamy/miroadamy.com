@@ -1,7 +1,6 @@
 ---
 title: "Creating Kubernetes Cluster in AWS from scratch with kops"
 date: 2018-05-07T11:22:48+08:00
-published: true
 type: post
 categories: ["DevOps"]
 tags: ["aws","kubernetes", "kops"]

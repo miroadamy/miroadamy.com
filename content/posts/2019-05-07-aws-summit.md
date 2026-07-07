@@ -1,7 +1,6 @@
 ---
 title: "AWS Summit Madrid"
 date: 2019-05-07T11:22:48+08:00
-published: true
 type: post
 categories: ["events"]
 tags: ["AWS", "summit", "spain", "madrid" ]

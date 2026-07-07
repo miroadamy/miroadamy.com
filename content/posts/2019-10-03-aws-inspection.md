@@ -1,7 +1,6 @@
 ---
 title: "AWS Inspection"
 date: 2019-10-03T11:22:48+08:00
-published: true
 type: post
 categories: ["DevOps"]
 tags: ["AWS", "cloud", "oneliners"]

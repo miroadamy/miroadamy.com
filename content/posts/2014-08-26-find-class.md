@@ -1,7 +1,6 @@
 ---
 title: "Finding out the class in ATG installation"
 date: 2014-08-26T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["atg","java","tools"]

@@ -1,7 +1,6 @@
 ---
 title: "Endeca start scripts - Oracle way"
 date: 2013-10-16T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["oracle","endeca"]

@@ -1,7 +1,6 @@
 ---
 title: "History of Faith"
 date: 2020-03-31T11:24:48+08:00
-published: true
 type: post
 categories: ["DevOps", "startup-life"]
 tags: ["kubernetes","k8s","aws","cloud"]

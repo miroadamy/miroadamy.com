@@ -1,7 +1,6 @@
 ---
 title: "Gitolite Administration Guide"
 date: 2012-08-06T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["gitolite","git"]

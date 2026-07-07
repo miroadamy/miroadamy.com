@@ -3,7 +3,6 @@ layout: post
 title: Difference between matching and simple Git push
 date: 2013-12-31 16:41:38.000000000 -05:00
 type: post
-published: true
 comments: true
 status: publish
 categories: ["devops"]

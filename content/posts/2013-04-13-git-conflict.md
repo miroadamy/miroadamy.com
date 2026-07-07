@@ -1,7 +1,6 @@
 ---
 title: "Merge conflict with deleted file"
 date: 2013-04-13T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["git"]

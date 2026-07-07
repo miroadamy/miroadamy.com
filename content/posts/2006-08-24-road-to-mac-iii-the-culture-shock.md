@@ -3,7 +3,6 @@ layout: post
 title: 'Road to Mac III: The Culture Shock'
 date: 2006-08-24 21:00:09.000000000 -04:00
 type: post
-published: true
 status: publish
 categories: ["technology"]
 tags: [osx]

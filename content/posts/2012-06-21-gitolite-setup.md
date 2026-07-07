@@ -1,7 +1,6 @@
 ---
 title: "Using Gitolite for code sharing setup"
 date: 2012-06-21T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git","gitolite"]

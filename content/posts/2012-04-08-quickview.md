@@ -1,7 +1,6 @@
 ---
 title: "How to make unregistered files work in Quick View on OS-X"
 date: 2012-04-08T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["osx"]

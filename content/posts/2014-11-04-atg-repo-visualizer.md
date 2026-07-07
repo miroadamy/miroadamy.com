@@ -1,7 +1,6 @@
 ---
 title: "ATG Repository structure visualizer"
 date: 2014-11-04T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["atg","groovy","plantuml"]

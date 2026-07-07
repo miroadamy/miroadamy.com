@@ -1,7 +1,6 @@
 ---
 title: "ATG Repository item linking and versioned repos"
 date: 2013-03-10T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["atg","ecommerce"]

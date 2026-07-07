@@ -1,7 +1,6 @@
 ---
 title: "All Day DevOps 2019"
 date: 2019-11-07T11:22:48+08:00
-published: true
 type: post
 categories: ["devops", "events"]
 tags: ["gitops", "k8s", "aws"]

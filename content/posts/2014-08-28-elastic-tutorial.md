@@ -1,7 +1,6 @@
 ---
 title: "Tutorial on Elastic"
 date: 2014-08-28T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["search","elastic","tutorial"]

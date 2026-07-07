@@ -1,7 +1,6 @@
 ---
 title: "Fixing the shutdown problem with JBoss"
 date: 2015-04-11T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["java","jboss"]

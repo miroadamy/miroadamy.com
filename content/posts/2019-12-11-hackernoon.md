@@ -1,7 +1,6 @@
 ---
 title: "On harvesting credit card numbers and passwords"
 date: 2019-12-11T21:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["security","hacking"]

@@ -1,7 +1,6 @@
 ---
 title: "Folder action to autorename screenshots"
 date: 2014-04-22T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["applescript","osx"]

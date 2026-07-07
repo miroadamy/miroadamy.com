@@ -3,7 +3,6 @@ layout: post
 title: Facebook or LinkedIn - that's the question
 date: 2011-04-07 22:51:48.000000000 -04:00
 type: post
-published: true
 status: publish
 categories: ["lifehacks"]
 tags: []

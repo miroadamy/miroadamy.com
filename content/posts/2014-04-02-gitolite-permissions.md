@@ -1,7 +1,6 @@
 ---
 title: "Gitolite permissions setup"
 date: 2014-04-02T11:22:48+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["git","gitolite"]

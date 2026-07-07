@@ -1,7 +1,6 @@
 ---
 title: "ATG module graph"
 date: 2012-04-02T11:22:48+08:00
-published: true
 type: post
 categories: ["programming"]
 tags: ["groovy","tools","atg","plaintext"]

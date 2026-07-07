@@ -1,7 +1,6 @@
 ---
 title: "Kubectl client and server version mismatch"
 date: 2020-01-19T11:12:38+08:00
-published: true
 type: post
 categories: ["devops"]
 tags: ["kubernetes","kubectl", "k8s"]

@@ -20,8 +20,8 @@ disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        
 
-[author]                  # essential                     
-  name = "olOwOlo"
+[author]                  # essential
+  name = "Miro Adamy"
 
 [sitemap]                 # essential                     
   changefreq = "weekly"
@@ -180,3 +180,27 @@ copyright = ""            # default: author.name ↓
 #  section = ["HTML", "RSS"]
 #  taxonomy = ["HTML", "RSS"]
 #  taxonomyTerm = ["HTML"]
+
+# --- Compatibility with modern Hugo (added 2026-07-07 for blog revival) ---
+
+# This blog has ~200 legacy WordPress-export posts as raw .html content files.
+# Hugo >=0.16x blocks text/html content by default (security.allowContent =
+# ['! ^text/html$']). Allow all content media types so .html posts build.
+[security]
+  allowContent = ['.*']
+
+# Posts carry `published: true` (a WordPress bool). Hugo's DEFAULT date-resolution
+# sequences (date, publishDate, lastmod) all list `published` as an alias, so Hugo
+# tries to parse the bool `true` as a date and logs an error for every post. Pin all
+# four date descriptors to real date fields only — dropping the `published`/`pubdate`
+# aliases so the WordPress `published` bool is never treated as a date.
+# Legacy WordPress-export posts embed raw HTML inside Markdown (and the .html posts
+# ARE raw HTML). Modern Hugo/Goldmark strips raw HTML by default; this restores it.
+# (Same fix as the résumé site.)
+[markup.goldmark.renderer]
+  unsafe = true
+
+# The updated Even theme (origin/master) reads the site-wide author fallback via
+# `.Site.Params.Author.name` (a map, used on pages with no per-post `author`).
+[params.author]
+  name = "Miro Adamy"
