@@ -5,8 +5,8 @@ MESSAGE=${1:-'Published changes'}
 # Update the status
 ./update-status.sh
 
-# Generate static HTML to ./public
-hugo
+# Generate static HTML to ./public (clean out files no longer produced by the build)
+hugo --cleanDestinationDir
 
 # commit and publish static site
 cd public

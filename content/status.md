@@ -1,17 +1,17 @@
 +++
-date = "2021-02-22T16:10:12Z"
+date = "2026-08-21T14:28:44Z"
 title = "status"
 url = "/status"
 +++
 
 ### Status
 
-Hugo Static Site Generator v0.79.0/extended darwin/amd64 BuildDate: unknown
+hugo v0.164.0+extended+withdeploy darwin/arm64 BuildDate=2026-07-06T16:39:30Z VendorInfo=Homebrew
 
-Pygments version 2.4.2, (c) 2006-2019 by Georg Brandl.
+Pygments version 2.21.0, (c) 2006-present by Georg Brandl, Matthäus Chajdas and contributors.
 
-Blog commit: e0222446b82a1497508d7b8ec22c66b7441a5461
+Blog commit: 34c342bcb7c9fdde989acc7eceb31189b012e053
 
-Theme commit: d39d3e443953caea05510b19fdd7a259c71a0ab3
+Theme commit: e03080913d6148d055471f76027a33f28234cb32
 
-Published: "2021-02-22T16:10:12Z"
+Published: "2026-08-21T14:28:44Z"
