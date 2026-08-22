@@ -5,7 +5,7 @@ type: post
 description: "Using command line tool to access Bitbucket API - 3"
 tldr: ""
 categories: ["DevOps", "Version Control", "HowTo"]
-tags: ["git", "bitbucket", "API", "python", shell"]
+tags: ["git", "bitbucket", "API", "python", "shell"]
 image: "img/tomas-malik-TCJM2dF7FLM-unsplash.jpg"
 thumbnail: "img/tomas-malik-TCJM2dF7FLM-unsplash.tn-500x500.jpg"
 author: "Miro Adamy"
