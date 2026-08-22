@@ -7,3 +7,4 @@
 [submodule "public"]
 	path = public
 	url = git@github.com:miroadamy/miroadamy.github.io.git
+	ignore = dirty

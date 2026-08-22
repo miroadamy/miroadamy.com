@@ -1,0 +1,6 @@
+# Hugo build cache — regenerated on every build
+resources/_gen/
+.hugo_build.lock
+
+# macOS
+.DS_Store
