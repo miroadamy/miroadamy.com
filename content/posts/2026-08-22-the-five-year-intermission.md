@@ -6,7 +6,6 @@ type: post
 categories: ["general"]
 tags: ["meta", "blog", "catching-up"]
 author: "Miro Adamy"
-draft: true
 ---
 
 The last post here is dated February 18, 2021. It was a perfectly ordinary
@@ -68,5 +67,5 @@ The gap years may get backfilled with a few posts under the
 work, in the reading — written when one of them wants to be written, not
 on a schedule.
 
-Mostly this is for me. But if someone else is reading: welcome back, and
-so am I.
+Mostly this is for future me. But if someone else is reading: welcome back —
+I'm back too.

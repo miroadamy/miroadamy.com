@@ -4,36 +4,44 @@ date: 2026-08-22 11:15:00 +02:00
 lastmod: 2026-08-22 11:15:00 +02:00
 menu: "main"
 weight: 45
-draft: true
 ---
 
 # What I'm doing now
 
 *Updated 2026-08-22, from Bratislava, Slovakia.*
 
-<!-- FILL each section with 1-3 lines. Delete sections that don't fit.
-     Rule of the page: only what is true NOW - history lives in the blog. -->
-
 ## Work
 
-DevOps/Cloud engineering. <!-- FILL: current focus, one line -->
+- DevOps/Cloud engineering
+- AI-supported software development and change-process consulting
 
 ## Building
 
-<!-- FILL: current side projects - e.g. the vault-to-blog pipeline,
-     the digital garden plans -->
+- ABM — a Python tool that manages my audiobook library (DRM-free
+  purchases from Audioteka and AudioLibrix)
+- Deduplication and integrity verification of decades of accumulated
+  file archives
+- The digital garden: this blog's revival plus an
+  Obsidian-vault-to-web publishing pipeline
 
 ## Learning
 
-<!-- FILL: e.g. Italian, AI tooling, whatever is actually active -->
+- AI tooling
+- Rust
+- Italian
 
-## Reading
+## Reading / Listening
 
-<!-- FILL: current book or two -->
+- Finished: the Czech translation of the Game of Thrones saga
+- Listening: the Kurt Wallander series, in chronological order
+- Reading: *LazyVim for Ambitious Developers* (Dusty Phillips)
+- Reading: *Suroviny a moc – geopolitika nerostného bohatství*
+  (Michel Jébrak)
 
 ## Life
 
-<!-- FILL: one or two lines - family, place, walking, whatever belongs -->
+- Training for the traditional September hiking trip to the High Tatras
+- Looking forward to an October trip to Napoli
 
 ---
 
