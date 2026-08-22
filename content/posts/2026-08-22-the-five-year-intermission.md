@@ -20,13 +20,15 @@ This post is the missing announcement, written from the other side.
 
 The short version: life kept running, and the writing habit didn't.
 
-<!-- FILL: 3-6 bullets, one per significant thread of the 2021-2026 years.
-     Work, family, places, health, projects. Keep each to one or two
-     sentences - the details can become their own posts later. -->
+- we moved - again, we left Spain and now we're living (again) in Bratislava, Slovakia
+- my journey inside the company I cofounded (Thinknostic => Thinkwrap) ended with its acquisition by Tenzing. I stayed a few more years in a DevOps / Platform role, left in 2024
+- I changed my priorities and my focus in many areas of life quite significantly
+- I created a single-man consulting company - Klassify and started to pick interesting assignments, [preferably short term](https://miroadamy.notion.site/) / part time ones
+- finally, after many years I started to dedicate a significant amount of my time to my hobbies and [personal projects](https://miro-adamy.gitlab.io/#contributions)
 
-- ...
-- ...
-- ...
+The side effect of the last two items is that I have now almost unrestricted freedom to write about things I am working on and playing with. No more locked-in Confluence posts, IP-barred solutions and self-imposed censorship :-)
+
+Some of these (maybe) deserve a more detailed post, which I (maybe) will get to in the catching-up series.
 
 ## The world moved too
 
@@ -39,8 +41,10 @@ archive, the theme, the publishing pipeline. That story deserves its own
 post; the point here is that the person writing in 2026 works in a
 noticeably different world than the one who stopped in 2021.
 
-<!-- FILL: one or two sentences of your own take on the AI shift -
-     what it changed for you specifically, not the industry take. -->
+Since 2025, LLMs and especially Claude have become an integral part of my work, hobbies, life, and everyday activities. I remember that in 2016 or '17, when I did the previous upgrade and porting of this blog, it took 2 or 3 weeks until I got it working in Hugo. And fine-tuning for many more weeks as I discovered problems, issues, here and there. This time it took less than 2 hours, and my participation was mostly making decisions and confirming or providing additional details - Claude did all the heavy lifting.
+I resisted the temptation to "fix" my imperfect grammar, weird language constructs in the past entries, so everything from the past stays as it was written by a human without any AI involvement. I don't plan to use Claude or any other LLMs to generate articles - there is too much AI slop out there anyway, and this is mostly interesting for me or for the very few people that know me.
+
+What I definitely want to do is to use Claude to review them and help me to make them sound a little bit better while still preserving my style.
 
 ## Where I am now
 

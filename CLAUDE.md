@@ -71,6 +71,18 @@ page generation breaks.
 - Global site config is `config.toml`; per-post overrides go in front matter (see `archetypes/default.md`
   comment). `config.toml` also pins CDN asset tags under `[params.publicCDN]`.
 
+## Content editing policy (Miro's rule, 2026-08-22)
+
+- **Never generate, rewrite, or restyle blog content** (posts, notes, pages) unless Miro
+  explicitly asks for it in the current conversation. The imperfect, human sound of the
+  writing is intentional and must be preserved.
+- **Fixing grammar, typos, spelling, and punctuation is always okay** — list every fix
+  made so Miro can veto.
+- If a passage reads oddly, **offer 2-3 suggestions and stop** — never apply a style or
+  wording change without Miro's go-ahead.
+- Legacy posts (2006-2021) are a historical record, written without AI — do not "improve"
+  them at all.
+
 ## Notes
 
 - The working tree often carries a large number of modified post files (line-ending / normalization
