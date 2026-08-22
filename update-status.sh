@@ -15,7 +15,7 @@ $(pygmentize -V)
 
 Blog commit: $(git rev-parse HEAD)
 
-Theme commit: $(cd ./themes/even && git rev-parse HEAD)
+Theme commit: $(cd ./themes/blowfish && git rev-parse HEAD)
 
 Published: $DATUM
 EOF

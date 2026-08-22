@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{/* Notes stream: title-less micro-posts rendered full-content, newest first.
+     Custom because every theme's list template assumes a .Title. */}}
+<header class="max-w-prose">
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  {{ with .Params.description }}
+  <p class="mt-2 text-neutral-500 dark:text-neutral-400">{{ . }}</p>
+  {{ end }}
+</header>
+<section class="max-w-prose">
+  {{ $pages := .Paginate (.RegularPages.ByDate.Reverse) }}
+  {{ range $pages.Pages }}
+  <article class="pt-8 mt-8 border-t border-neutral-200 dark:border-neutral-700" id="{{ .File.ContentBaseName }}">
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      <a href="{{ .RelPermalink }}" class="hover:underline">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      </a>
+      {{ if .Title }}<span class="mx-1">&middot;</span>{{ .Title }}{{ end }}
+    </div>
+    <div class="mt-2 prose dark:prose-invert">
+      {{ .Content }}
+    </div>
+  </article>
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</section>
+{{ end }}
