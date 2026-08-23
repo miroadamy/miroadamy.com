@@ -1,14 +1,14 @@
 ---
-title: "Now"
-date: 2026-08-22 11:15:00 +02:00
-lastmod: 2026-08-22 11:15:00 +02:00
-menu: "main"
+title: Now
+menu: main
 weight: 45
+date: '2026-08-22 11:15:00 +02:00'
+lastmod: '2026-08-23 18:03:00 +02:00'
 ---
 
 # What I'm doing now
 
-*Updated 2026-08-22, from Bratislava, Slovakia.*
+_Updated 2026-08-23, from Bratislava, Slovakia._
 
 ## Work
 
@@ -34,8 +34,8 @@ weight: 45
 
 - Finished: the Czech translation of the Game of Thrones saga
 - Listening: the Kurt Wallander series, in chronological order
-- Reading: *LazyVim for Ambitious Developers* (Dusty Phillips)
-- Reading: *Suroviny a moc – geopolitika nerostného bohatství*
+- Reading: _LazyVim for Ambitious Developers_ (Dusty Phillips)
+- Reading: _Suroviny a moc – geopolitika nerostného bohatství_
   (Michel Jébrak)
 
 ## Life
