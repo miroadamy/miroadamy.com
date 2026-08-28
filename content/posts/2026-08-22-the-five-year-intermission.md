@@ -5,6 +5,8 @@ date: 2026-08-22 11:15:00 +02:00
 type: post
 categories: ["general"]
 tags: ["meta", "blog", "catching-up"]
+series: ["Catching-up 2021-2026"]
+series_order: 1
 author: "Miro Adamy"
 ---
 

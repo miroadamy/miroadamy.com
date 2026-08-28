@@ -13,6 +13,15 @@ theme = "blowfish"
 [frontmatter]
   date = ["date", ":filename", ":default"]
 
+# Blowfish series feature (the Catching-up posts): the theme's own
+# `series = "series"` taxonomy does NOT merge into the site config, and
+# defining [taxonomies] here replaces Hugo's defaults — so category/tag
+# must be restated or /tags/ and /categories/ disappear.
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
 [pagination]
   pagerSize = 10
 
