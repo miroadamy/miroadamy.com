@@ -1,13 +1,11 @@
 ---
 title: "About"
 date: 2017-08-20T21:38:52+08:00
-lastmod: 2021-02-21T21:41:52+08:00
+lastmod: 2026-09-02T12:30:00+02:00
 menu: "main"
 weight: 50
 
 ---
-
-# About me
 
 This is personal blog of Miro Adamy.
 
