@@ -13,6 +13,10 @@ This is personal blog of Miro Adamy.
 
 ![Miro](/miro-wald.jpg)
 
+![Miro, as an image model imagines him](/miro-wald-ai.jpg)
+
+_The same scene, as Gemini imagines it — DevOps edition._
+
 
 Im am DevOps/Cloud engineer, currently living in Bratislava, Slovakia and spending my days designing and creating software systems for living and pleasure, reading books, surfing Web, walking, thinking and enjoying life with my family
 
