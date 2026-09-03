@@ -13,4 +13,4 @@ What you will not find there is exaggeration, linked-in-ish AI crafted slop or b
 to exist is to take care of the business side of my engagements.
 
 A longer post on how it was put together (GitHub Pages, Route 53, and a working
-session with Claude) will follow.
+session with Claude) is here: [How klassify.com went live: one static page, GitHub Pages and Route 53](/posts/2026-09-03-how-klassify-com-went-live-on-github-pages/).
