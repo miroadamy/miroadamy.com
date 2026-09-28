@@ -15,7 +15,7 @@ tags:
 
 
 
-Last weekend 25th to 27th of September, members of [Wikimedia Slovensko](https://wikimedia.sk/) met in [Dubnica nad Váhom](https://en.wikipedia.org/wiki/Dubnica_nad_V%C3%A1hom). It was great to meet the fellow Wikipedians in the flesh again (Matej, Patrik and Filip), and to meet Kormi in 3D for the first time. 
+Last weekend 25th to 27th of September, members of [Wikimedia Slovensko](https://wikimedia.sk/) met in [Dubnica nad Váhom](https://en.wikipedia.org/wiki/Dubnica_nad_V%C3%A1hom). It was great to meet the fellow Wikipedians in the flesh again (Matej, Patrik and Filip), and to meet Kormi in 3D for the first time.
 
 It was mainly a planning, coordination and brainstorming meeting, but part of the programme happened outdoors, with cameras. By Sunday the town's 18th-century Calvary had [its own photos on Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Kalv%C3%A1ria_(Dubnica_nad_V%C3%A1hom)), [a record on Wikidata](https://www.wikidata.org/wiki/Q141567812) and [the start of a Slovak Wikipedia article](https://sk.wikipedia.org/wiki/Kalv%C3%A1ria_(Dubnica_nad_V%C3%A1hom)). The [local Jewish cemetery](https://commons.wikimedia.org/wiki/Category:Jewish_cemetery_in_Dubnica_nad_V%C3%A1hom) gained a set of new photographs too. That weekend is a good small example of what this whole thing is about.
 
@@ -23,7 +23,7 @@ It was mainly a planning, coordination and brainstorming meeting, but part of th
 
 Pretty much everybody knows that [Wikipedia](https://www.wikipedia.org/) is a free online encyclopedia that anyone can read and anyone can edit. Jimmy Wales and Larry Sanger founded it in 2001. Today it exists in [**348 language editions**](https://meta.wikimedia.org/wiki/Special:SiteMatrix). The [English one](https://en.wikipedia.org/) alone has more than **7.2 million articles**, and the [**Slovak Wikipedia**](https://sk.wikipedia.org/) has about **261,000**. Nobody is paid to write it. The articles come from volunteers, and every statement is meant to be backed by a published, reliable source. Every edit is public and can be traced in the page history.
 
-## What is Wikimedia, and how does it relate to Wikipedia?
+### What is Wikimedia, and how does it relate to Wikipedia?
 
 "Wikimedia" is the name of the family around Wikipedia, and it means three things:
 
@@ -35,7 +35,7 @@ In short: Wikipedia is the best-known project; Wikimedia is everything that make
 
 ## It is not just an encyclopedia: the sister projects
 
-There are many wiki things under Wikimedia umbrella. They complement each other, and address different aspects of a free knowledge sharing. 
+There are many wiki things under the Wikimedia umbrella. They complement each other and address different aspects of free knowledge sharing.
 
 - [Wikimedia Commons](https://commons.wikimedia.org/): a free media library of more than **148 million** photos, maps, recordings and videos. Our Dubnica photos went here.
 - [Wikidata](https://www.wikidata.org/): a shared database of facts that people and machines can both read, with over **120 million** entries. Wikipedias in every language can draw dates, coordinates and links from it.
