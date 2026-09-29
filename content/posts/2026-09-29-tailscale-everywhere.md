@@ -31,7 +31,7 @@ Before, the reality looked like this. Names like `nas.local` worked only at home
 
 The most important decision was not a technical one. Every machine now has one name that is valid everywhere, and that name is the default in every document and script I write. The LAN name and the IP address are fallbacks only. No more "am I at home?" branching. It also fixed a real class of failures: scripts and AI agents running in a shell on my laptop could not reach the NAS, because they relied on names that only resolve at home.
 
-The free tier is enough. [MagicDNS](https://tailscale.com/kb/1081/magicdns) (the short names), [Taildrop](https://tailscale.com/kb/1106/taildrop) (sending files between your own devices), exit nodes and subnet routing are all included. The paid tiers sell enterprise plumbing - user provisioning, device management, flow logs - that a household does not need. I tried the business trial and switched to the free plan the same day.
+The free tier is enough. [MagicDNS](https://tailscale.com/kb/1081/magicdns) (the short names), [Taildrop](https://tailscale.com/kb/1106/taildrop) (sending files between your own devices), exit nodes and subnet routing are all included. The paid tiers sell enterprise plumbing - user provisioning, device management, flow logs - that a household does not need. I tried the business trial for the custom domain, then settled on the free plan.
 
 One neat privacy detail: the name of your tailnet is random on purpose. If it were derived from your domain, it would end up in the public certificate-transparency logs, and anyone could see whose network it is. A random name tells them nothing.
 
@@ -63,7 +63,7 @@ Not everything Tailscale can do made it in.
 
 An [exit node](https://tailscale.com/kb/1103/exit-nodes) would route all my traffic through home when I sit on some hotel or café wi-fi. The always-on Mac mini is the obvious candidate, but I parked the idea. It would be capped by my home upload speed anyway.
 
-[Tailscale Funnel](https://tailscale.com/kb/1223/funnel) can publish a service from your tailnet to the open internet. I looked at it for giving my kids access to my ebook libraries, and rejected it. Family will not install a VPN, and Funnel puts no login gate in front of the service. The libraries now sit behind [Cloudflare Access](https://www.cloudflare.com/zero-trust/products/access/) instead, where a one-time code sent to an approved email address opens the door. Tailscale is for my machines, not for my audience.
+[Tailscale Funnel](https://tailscale.com/kb/1223/funnel) can publish a service from your tailnet to the open internet. I looked at it for sharing my ebook libraries with family, and rejected it. Family will not install a VPN, and Funnel puts no login gate in front of the service. The libraries now sit behind [Cloudflare Access](https://www.cloudflare.com/zero-trust/products/access/) instead, where a one-time code sent to an approved email address opens the door. Tailscale is for my machines, not for my audience.
 
 A [subnet router](https://tailscale.com/kb/1019/subnets) would expose a whole local network to the tailnet, including devices that cannot run Tailscale themselves. I keep that one in reserve for a possible second location, where a small mini PC would make remote access feel the same as being on site.
 
