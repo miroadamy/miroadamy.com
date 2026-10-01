@@ -24,7 +24,7 @@ The short version: life kept running, and the writing habit didn't.
 - we moved - again, we left Spain and now we're living (again) in Bratislava, Slovakia
 - my journey inside the company I cofounded (Thinknostic => Thinkwrap) ended with its acquisition by Tenzing. I stayed a few more years in a DevOps / Platform role, left in 2024
 - I changed my priorities and my focus in many areas of life quite significantly
-- I created a single-man consulting company - Klassify and started to pick interesting assignments, [preferably short term](https://miroadamy.notion.site/) / part time ones
+- I created a single-man consulting company - Klassify and started to pick interesting assignments, [preferably short term](/consulting/) / part time ones
 - finally, after many years I started to dedicate a significant amount of my time to my hobbies and [personal projects](https://miro-adamy.gitlab.io/#contributions)
 
 The side effect of the last two items is that I have now almost unrestricted freedom to write about things I am working on and playing with. No more locked-in Confluence posts, IP-barred solutions and self-imposed censorship :-)

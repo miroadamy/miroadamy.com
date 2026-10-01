@@ -1,0 +1,43 @@
+{{- /* Standalone chromeless page (content/consulting/). Deliberately does NOT
+  use baseof.html: no site header, menu, footer, search or theme JS. The page
+  is kept out of lists, RSS, search and the sitemap by its frontmatter. */ -}}
+<!doctype html>
+<html lang="{{ site.Language.Locale | default `en` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+  <style>
+    :root {
+      --bg: #fafafa; --fg: #1f2933; --muted: #52606d; --accent: #0b6e99; --rule: #e4e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #18191b; --fg: #e4e7eb; --muted: #9aa5b1; --accent: #5ab0d8; --rule: #323f4b; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+    h1 { font-size: 2.2rem; letter-spacing: .02em; margin: 0 0 1.5rem; }
+    h2 { font-size: 1.45rem; margin: 2.5rem 0 .75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+    h3 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; }
+    p, ul { margin: 0 0 1rem; }
+    li { margin: .25rem 0; }
+    em { color: var(--muted); }
+    a { color: var(--accent); text-underline-offset: 2px; }
+    .badges { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin: 0 0 1.5rem; }
+    .badges img { width: calc((100% - 3rem) / 5); min-width: 88px; max-width: 128px; height: auto; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>{{ .Title | upper }}</h1>
+    {{ .Content }}
+  </main>
+</body>
+</html>
