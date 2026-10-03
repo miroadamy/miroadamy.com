@@ -1,0 +1,9 @@
+Na slovenskej Wikipédii je veľa červených odkazov - teda odkazov na články, ktoré zatiaľ neexistujú. Na to existuje šikovný nástroj: [What to Blue](https://whattodo.toolforge.org/whattoblue?lang=sk&topic=Computing&importance=Any), ktorý chýbajúce články zoradí podľa popularity, takže hneď vidno, ktorý nový článok by Wikipédii pomohol najviac.
+
+Chvíľu som sa s ním hral a rozhodol som sa sústrediť na oblasť, ktorej rozumiem najviac: softvérové inžinierstvo, open source a ľudia zo sveta softvéru, ktorých pozná každý programátor, ale málokto iný. Na slovenskej Wikipédii sú výrazne podreprezentovaní. Ich články buď úplne chýbajú, alebo sú to len krátke výhonky - oveľa kratšie ako česká verzia, o anglickej ani nehovoriac. Špeciálnou kategóriou sú ženy v tejto oblasti - zastúpenie stránok venovaných ženám v Computer Science na slovenskej Wikipédii je hanebne žalostné.
+
+Začal som teda tieto články vytvárať a rozširovať. Zatiaľ mám zoznam približne 80 článkov na najbližšie týždne. Prvé sú už vonku: nový článok Larry Ellison, rozšírený Guido van Rossum, autor Pythonu, a nová Margaret Hamilton, ktorá písala softvér pre Apollo. Ďalší na rade je James Gosling, otec Javy, a niekoľko technologicky orientovaných článkov (Kubernetes, programovacie jazyky, cloudové technológie). Bude to zaujímavý challenge, keďže tieto články by nemali byť písané mojou obľúbenou voľnou zmesou angličtiny a slovenčiny, ale poriadne spisovne a hlavne s dodržiavaním terminológie, ktorú vo väčšine prípadov nepoužívam.
+
+Červené odkazy sa tak pomaly budú meniť na modré... alespoň doufám (viď Zdeněk Svěrák v Záskoku)
+
+A ešte jeden shameless personal plug na záver: môj edit counter na Wikipédii presiahol 1000, aj keď drvivú väčšinu z nich tvoria jednoduché malé edity. Na vyjadrenie počtu vlastných článkov mi bohužiaľ stále stačia 4 bity. But it's a start.

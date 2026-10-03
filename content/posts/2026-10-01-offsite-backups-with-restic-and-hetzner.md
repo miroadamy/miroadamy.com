@@ -72,4 +72,4 @@ Deduplication has pleasant surprises. When I unzipped a few hundred audiobook ar
 
 And finally, restore drills. Every folder except the newest one has already been restored from the cloud at least once, and a single lost document comes back in about three seconds. That number, not the upload speed, is what the whole project buys.
 
-Next in this series: taming the online storages.
+Next in this series: [taming the online storages](/posts/2026-10-03-taming-the-online-storages/).
