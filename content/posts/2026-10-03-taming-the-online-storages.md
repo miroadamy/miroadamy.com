@@ -63,4 +63,4 @@ And that checkbox from 2023? I can finally tick it - by deleting the list.
 
 This was the last of the infrastructure posts. The two remaining parts of the series step away from disks and clouds. Part 11 goes back to the early 2000s, to a one-man company in Canada called Miro Adamy Software Solutions, and follows it through Thinknostic, Thinkwrap and an acquisition, back to a one-man company again. Part 12 is about what changed along the way, and what I want to do next.
 
-Next in this series: full circle, from a one-man company to a one-man company.
+Next in this series: [full circle, from a one-man company to a one-man company](/posts/2026-10-04-full-circle/).

@@ -5,8 +5,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 Source for **miroadamy.com** ("Miro's World"), a personal blog. It is a **Hugo** static site
-(`hugo v0.163.0+extended` via Homebrew) using the **Even** theme. This repo holds the *source*;
-the generated static HTML is published to two separate hosts (see Deploy).
+(`hugo v0.166.0+extended` via Homebrew) using the **Blowfish** theme (v3.8.0, submodule
+`themes/blowfish`; the former **Even** theme is still checked out under `themes/even` but unused
+since 2026-08-22). This repo holds the *source*;
+the generated static HTML is pushed to `miroadamy.github.io`, from where Cloudflare Pages serves
+www.miroadamy.com (GitHub Pages stays on as the rollback) — see Deploy.
 
 ## Critical setup — submodules
 
@@ -17,7 +20,10 @@ so a fresh clone will fail to build until you run:
 git submodule update --init --recursive
 ```
 
-- `themes/even` → the Even theme (https://github.com/olOwOlo/hugo-theme-even). **Hugo build fails without it.**
+- `themes/blowfish` → the Blowfish theme (https://github.com/nunocoracao/blowfish), pinned to the
+  `v3.8.0` tag. **Hugo build fails without it** (`config.toml` sets `theme = "blowfish"`).
+- `themes/even` → the former Even theme (https://github.com/olOwOlo/hugo-theme-even), kept as a
+  submodule for history only; nothing in `config.toml` references it.
 - `public/` → the GitHub Pages repo `miroadamy.github.io`. Hugo writes its output *into* this submodule,
   and publishing commits/pushes it as a nested repo.
 
@@ -26,11 +32,11 @@ git submodule update --init --recursive
 This 2006-era WordPress-imported blog was revived on modern Hugo (v0.163) on 2026-07-07.
 Several deliberate compatibility choices keep it building — don't undo them:
 
-- **The `themes/even` submodule is pinned to upstream `origin/master` (2024-12), NOT a tagged
-  release.** The Hugo-compat fixes (removed `.Site.Author`/`.Site.RSSLink`/`_internal/google_news`,
-  GA4) landed on `master` only — `v4.1.0` and earlier still break on modern Hugo. **Do not reset
-  the theme to a tag.** (The theme is otherwise semi-abandoned; a future move to a maintained theme
-  is tracked in the vault under `[[Stampa-Press]]`.)
+- Historical, Even era (2026-07 to 2026-08-22): the `themes/even` submodule is pinned to upstream
+  `origin/master` (2024-12), NOT a tagged release, because the Hugo-compat fixes (removed
+  `.Site.Author`/`.Site.RSSLink`/`_internal/google_news`, GA4) landed on `master` only. If Even is
+  ever reused, do not reset it to a tag. The theme move to Blowfish is logged in the vault under
+  `[[Stampa-Press]]`.
 - `config.toml` carries required compat settings (see its "Compatibility with modern Hugo" block):
   `security.allowContent = ['.*']` (Hugo blocks `text/html` content by default — needed for the
   200+ `.html` posts), `[markup.goldmark.renderer] unsafe = true` (posts embed raw HTML),
@@ -52,10 +58,22 @@ page generation breaks.
 
 ## Deploy (two independent targets)
 
-1. **GitHub Pages (primary)** — via `./github-publish.sh "<msg>"`. This script:
-   runs `update-status.sh`, runs `hugo`, then **commits and pushes the `public/` submodule**
-   (deploying to `miroadamy.github.io`), then **commits and pushes this source repo**.
+1. **Cloudflare Pages (serves www.miroadamy.com since 2026-10-03)** — via `./github-publish.sh "<msg>"`.
+   This script: runs `update-status.sh`, runs `hugo`, then **commits and pushes the `public/` submodule**
+   to `miroadamy.github.io`, then **commits and pushes this source repo**.
    Running it is an outward-facing publish that pushes to two remotes — confirm before invoking.
+   The push to `miroadamy.github.io` (branch `master`) is picked up by the Cloudflare Pages project
+   `miroadamy-github-io` (Git integration, no build step, output directory `/`), which deploys it
+   within a few minutes. Preview address: https://miroadamy-github-io.pages.dev. There is no
+   wrangler, no API token and no Cloudflare step in this repo; the script is the whole deploy.
+   - **GitHub Pages is still enabled on `miroadamy.github.io` as the standby rollback.** It receives
+     every publish too. DNS in Cloudflare: `www` CNAME → `miroadamy-github-io.pages.dev` (Pages);
+     apex `miroadamy.com` CNAME → `miroadamy.github.io` (GitHub, which 301s the apex to `https://www.`).
+   - **Revert to GitHub Pages**: in the Cloudflare DNS page for miroadamy.com
+     (`https://dash.cloudflare.com/?to=/:account/:zone/dns/records`) edit the `www` row to
+     CNAME `miroadamy.github.io`, Proxied, TTL Auto. Nothing in this repo changes. Verify with
+     `curl -sI https://www.miroadamy.com/ | grep -i x-github-request-id` (a value = GitHub again).
+     Full procedure and clean-up steps: vault note `[[Stampa-Press]]`, section "Hosting".
 2. **GitLab Pages** — via `.gitlab-ci.yml`, builds on the `gitlab-pages` branch only, using the
    `monachus/hugo` image with `GIT_SUBMODULE_STRATEGY: recursive`. Independent of the GitHub path.
 
