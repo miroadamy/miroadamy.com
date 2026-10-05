@@ -56,4 +56,4 @@ It is the same shape as twenty years ago, but not the same thing: twenty years a
 
 What I do with that freedom, and what I say no to, is the subject of the last part.
 
-Next in this series: what changed.
+Next in this series: [what changed](/posts/2026-10-05-what-changed/).
