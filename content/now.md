@@ -3,18 +3,18 @@ title: Now
 menu: main
 weight: 45
 date: '2026-08-22 11:15:00 +02:00'
-lastmod: '2026-09-29 16:49:31 +02:00'
+lastmod: '2026-11-03 13:07:42 +01:00'
 ---
 
 # What I'm doing now
 
-_Updated 2026-09-29, from Bratislava, Slovakia._
+_Updated 2026-11-03, from Bratislava, Slovakia._
 
 ## Work
 
-- AI-supported software development and change-process consulting
+- Spending a lot of time in Wikipedia, learning the ecosystem and finding the way how to use AI for finding sources and checking that references and helping out translation.
+- moving a garden (it is harder than one would expect)
 - multiple [side projects](https://miro-adamy.gitlab.io/#contributions)
-- Learning how to be a better Wikipedian
 
 ## Building
 
@@ -25,26 +25,26 @@ _Updated 2026-09-29, from Bratislava, Slovakia._
 - The digital garden: this blog's revival plus an
   Obsidian-vault-to-web publishing pipeline
 - Meme-archive
-- porting Istros.eu Website to Wordpress
+- Exploring how to best use obsidian for genealogy project.
 
 ## Learning
 
+- Wiki ecosystem
 - AI tooling
 - Rust
 - Italian
 
 ## Reading / Listening
 
-- Finished: Wallander Book 4
-- Listening: Ellis Peter's Yorkshire murders series
+- Listening: Ellis Peter's Yorkshire murders series, book 5
+- Reading https://sk.wikipedia.org/wiki/Robert_A._Heinlein
 - Reading: _LazyVim for Ambitious Developers_ (Dusty Phillips)
-- Reading: _Suroviny a moc – geopolitika nerostného bohatství_
-  (Michel Jébrak)
 
 ## Life
 
-- Just back from Wikimedia Weekend
-- Getting organized an October trip to Napoli
+- Leoexpress train is very nice, enjoying it often.
+- Discovered new board game - https://boardgamegeek.com/video/582993/harmonies/harmonies-how-to-play-and-complete-turorial
+- October trip to Napoli was very nice - see https://www.miroadamy.com/posts/2026-10-13-napoli-three-thousand-years-deep/
 
 ---
 
