@@ -7,7 +7,7 @@ enableEmoji = true
 enableGitInfo = false
 theme = "blowfish"
 
-# vpub notes stream: frontmatter-free files take their date from the filename
+# vpub notes stream: note files carry no date field and take their date from the filename
 # (YYYY-MM-DD-slug.md). "date" stays first so every page that HAS a date field
 # (all legacy posts, /now) keeps it exactly as written.
 [frontmatter]

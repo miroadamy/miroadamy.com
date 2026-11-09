@@ -1,3 +1,11 @@
+---
+title: I always run out of tokens
+tags:
+- ai
+- llm
+- claude
+---
+
 Whatever I sit down to do with an AI coding assistant, the session ends the same
 way: the token budget is gone. It does not seem to matter what the task was. Fix
 one small bug, plan a migration, write a three-paragraph note like this one - by

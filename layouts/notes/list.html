@@ -1,26 +1,37 @@
 {{ define "main" }}
-{{/* Notes stream: title-less micro-posts rendered full-content, newest first.
-     Custom because every theme's list template assumes a .Title. */}}
+{{/* Notes stream: titled cards, newest first, with a heading per month.
+     Custom because the theme's list template is built for posts; the notes
+     page is meant to look clearly different from the posts list. */}}
 <header class="max-w-prose">
   <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
   {{ with .Params.description }}
   <p class="mt-2 text-neutral-500 dark:text-neutral-400">{{ . }}</p>
   {{ end }}
+
+  {{/* Tag row: every tag used by at least one note, most used first, then
+       by name. The sort key packs both so one sort gives a stable order. */}}
+  {{ $rows := slice }}
+  {{ range $name, $weighted := site.Taxonomies.tags }}
+    {{ $count := len (where $weighted.Pages "Section" "notes") }}
+    {{ if gt $count 0 }}
+      {{ $key := printf "%06d-%s" (sub 999999 $count) $name }}
+      {{ $rows = $rows | append (dict "key" $key "page" $weighted.Page "count" $count) }}
+    {{ end }}
+  {{ end }}
+  <nav class="note-tagrow" aria-label="Notes by tag">
+    {{ range sort $rows "key" }}
+    <a href="{{ .page.RelPermalink }}">{{ .page.LinkTitle }}<span class="note-count">{{ .count }}</span></a>
+    {{ end }}
+    <a class="note-archive-link" href="{{ "notes/archive/" | relURL }}">Archive</a>
+  </nav>
 </header>
 <section class="max-w-prose">
-  {{ $pages := .Paginate (.RegularPages.ByDate.Reverse) }}
-  {{ range $pages.Pages }}
-  <article class="pt-8 mt-8 border-t border-neutral-200 dark:border-neutral-700" id="{{ .File.ContentBaseName }}">
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      <a href="{{ .RelPermalink }}" class="hover:underline">
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
-      </a>
-      {{ if .Title }}<span class="mx-1">&middot;</span>{{ .Title }}{{ end }}
-    </div>
-    <div class="mt-2 prose dark:prose-invert">
-      {{ .Content }}
-    </div>
-  </article>
+  {{ $paginator := .Paginate (.RegularPages.GroupByDate "January 2006") }}
+  {{ range $paginator.PageGroups }}
+  <h2 class="note-month">{{ .Key }}</h2>
+  {{ range .Pages }}
+  {{ partial "notes/card.html" . }}
+  {{ end }}
   {{ end }}
   {{ partial "pagination.html" . }}
 </section>

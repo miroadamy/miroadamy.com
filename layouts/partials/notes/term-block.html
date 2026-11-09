@@ -1,0 +1,11 @@
+{{/* The Notes block on a tag page: one line per note, newest first.
+     Context: dict with "notes" (a page collection). */}}
+<section id="term-notes" class="max-w-prose">
+  <h2 class="term-block-title">Notes</h2>
+  {{ range .notes.ByDate.Reverse }}
+  <div class="note-archive-line">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="note-day">{{ .Date.Format "Jan 2, 2006" }}</span>
+  </div>
+  {{ end }}
+</section>

@@ -1,0 +1,28 @@
+{{/* One note as a card on the notes stream. Context: the note page.
+     Length rule: up to 130 words the note is shown whole; above that a
+     fixed-height preview that fades out (CSS .note-preview), with a link
+     to the note's own page. Deliberately NOT Hugo's .Summary/summaryLength:
+     that setting is site-wide and would change the posts lists. */}}
+<article class="note-card" id="{{ .File.ContentBaseName }}">
+  <div class="note-top">
+    <a href="{{ .RelPermalink }}">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    </a>
+    <span>
+      {{- range .GetTerms "tags" -}}
+      <a class="note-tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end -}}
+    </span>
+  </div>
+  <h3 class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  {{ if gt .WordCount 130 }}
+  <div class="note-preview prose dark:prose-invert">
+    {{ .Content }}
+  </div>
+  <a class="note-more" href="{{ .RelPermalink }}">Continue reading &rarr;</a>
+  {{ else }}
+  <div class="prose dark:prose-invert">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</article>

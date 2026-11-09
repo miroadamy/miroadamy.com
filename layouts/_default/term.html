@@ -1,0 +1,136 @@
+{{/* Copied from themes/blowfish/layouts/_default/term.html at theme commit
+     51a361e and changed in three places (search for "notes:"). On a theme
+     upgrade, re-copy and re-apply. Design: two blocks per tag, posts first
+     (rendered and paginated exactly as the theme does), then notes as one
+     line each on the first page only. */}}
+{{ define "main" }}
+  {{/* notes: split the term's pages; only posts are paginated. */}}
+  {{ $notes := where .Pages "Section" "notes" }}
+  {{ $posts := where .Pages "Section" "ne" "notes" }}
+  {{ $paginator := .Paginate ($posts.GroupByDate "2006") }}
+  {{ .Scratch.Set "scope" "term" }}
+  {{ $showHero := .Params.showHero | default site.Params.term.showHero | default false }}
+  {{ if $showHero }}
+    {{ $heroStyle := print "hero/" site.Params.term.heroStyle ".html" }}
+    {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+      {{ partial $heroStyle . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
+    {{ end }}
+  {{- end -}}
+
+
+  <header class="mt-5">
+    {{ if .Params.showBreadcrumbs | default (site.Params.term.showBreadcrumbs | default false) }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      {{ partial "article-meta/term.html" (dict "context" . "scope" "single") }}
+    </div>
+  </header>
+
+  <section class="flex flex-col max-w-full mt-0 mb-5 prose dark:prose-invert lg:flex-row">
+    {{ if .Content }}
+      <div class="min-w-0 min-h-0 max-w-prose">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </section>
+
+  {{ if gt (len $posts) 0 }}
+    <section id="term-posts">
+    {{/* notes: the heading is only needed when the tag also has notes. */}}
+    {{ if gt (len $notes) 0 }}<h2 class="term-block-title">Posts</h2>{{ end }}
+    {{ $cardView := .Params.cardView | default (site.Params.term.cardView | default false) }}
+    {{ $cardViewScreenWidth := site.Params.term.cardViewScreenWidth | default false }}
+    {{ $groupByYear := .Params.groupByYear | default (site.Params.term.groupByYear | default false) }}
+
+    {{ if not $cardView }}
+
+      <section class="space-y-10 w-full">
+        {{ range $paginator.PageGroups }}
+          {{ if $groupByYear }}
+            <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              {{ .Key }}
+            </h2>
+          {{ end }}
+          {{ range .Pages }}
+            {{ partial "article-link/simple.html" . }}
+          {{ end }}
+        {{ end }}
+      </section>
+    {{ else if and $cardView (not $cardViewScreenWidth) }}
+
+      {{ if $groupByYear }}
+
+        {{ range $paginator.PageGroups }}
+          <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+            {{ .Key }}
+          </h2>
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {{ range .Pages }}
+              {{ partial "article-link/card.html" . }}
+            {{ end }}
+          </section>
+        {{ end }}
+
+      {{ else }}
+
+        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {{ range $paginator.PageGroups }}
+            {{ range .Pages }}
+              {{ partial "article-link/card.html" . }}
+            {{ end }}
+          {{ end }}
+        </section>
+      {{ end }}
+
+    {{ else if and $cardView $cardViewScreenWidth }}
+
+      {{ if $groupByYear }}
+
+        {{ range $paginator.PageGroups }}
+          <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
+            <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              {{ .Key }}
+            </h2>
+            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              {{ range .Pages }}
+                {{ partial "article-link/card.html" . }}
+              {{ end }}
+            </section>
+          </div>
+        {{ end }}
+
+      {{ else }}
+
+        <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            {{ range $paginator.PageGroups }}
+              {{ range .Pages }}
+                {{ partial "article-link/card.html" . }}
+              {{ end }}
+            {{ end }}
+          </section>
+        </div>
+      {{ end }}
+
+    {{ end }}
+
+    </section>
+  {{ else if eq (len $notes) 0 }}
+    <section class="mt-10 prose dark:prose-invert">
+      <p class="py-8 border-t">
+        <em>{{ i18n "term.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}
+
+  {{/* notes: the second block, first page only, never paginated. */}}
+  {{ if and (gt (len $notes) 0) (eq $paginator.PageNumber 1) }}
+    {{ partial "notes/term-block.html" (dict "notes" $notes) }}
+  {{ end }}
+
+  {{ partial "pagination.html" . }}
+{{ end }}

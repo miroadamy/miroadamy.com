@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{/* Notes archive: every note as one line, newest first, grouped by year and
+     month with a count per month. Rendered for content/notes-archive.md
+     (type: notes, layout: archive), which sits OUTSIDE content/notes/ so it
+     never shows up as an entry in the stream and that folder stays owned by
+     the vault publisher. */}}
+<header class="max-w-prose">
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  <p class="mt-2 text-neutral-500 dark:text-neutral-400">
+    <a class="hover:underline" href="{{ "notes/" | relURL }}">&larr; all notes</a>
+  </p>
+</header>
+<section class="max-w-prose">
+  {{ $notes := where site.RegularPages "Section" "notes" }}
+  {{ range $notes.GroupByDate "2006" }}
+  <h2 class="note-archive-year">{{ .Key }}</h2>
+  {{ range .Pages.GroupByDate "January" }}
+  <h3 class="note-archive-month">{{ .Key }} ({{ len .Pages }})</h3>
+  {{ range .Pages }}
+  <div class="note-archive-line">
+    <span class="note-day">{{ .Date.Format "2" }}</span>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </div>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+</section>
+{{ end }}

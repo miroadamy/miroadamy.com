@@ -1,3 +1,10 @@
+---
+title: Claude, the garden planner
+tags:
+- claude
+- ai
+---
+
 Both my wife and I have our favorite toys and leisure activities: mine are gadgets, books, internet and recently AI. And one of hers was always the garden. We also have many shared leisure activities like hiking and traveling, but that's not the point; the point is how these two worlds, the world of AI and the world of gardening, suddenly connected.
 
 She has been using AI, mainly Google Gemini, for some time, and was quite impressed with its results. I couldn't really convince her that Claude (especially Opus and Fable) is in a different league. Technically, it wasn't a fair comparison, because she was using the free models from Gemini and I was using the top models from Claude, but nevertheless.

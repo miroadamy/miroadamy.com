@@ -1,12 +1,23 @@
 {{ define "main" }}
-{{/* Single note: date is the headline (notes usually have no title). */}}
+{{/* Single note: the title is the headline; date, tags and the ways back sit
+     in one line under it. The full text is shown here, never the preview. */}}
 <article class="max-w-prose">
-  <div class="mt-5 text-sm text-neutral-500 dark:text-neutral-400">
-    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
-    {{ if .Title }}<span class="mx-1">&middot;</span>{{ .Title }}{{ end }}
-    <span class="mx-1">&middot;</span><a href="{{ .Parent.RelPermalink }}" class="hover:underline">all notes</a>
-  </div>
-  <div class="mt-2 prose dark:prose-invert">
+  <header>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    <div class="note-top note-meta">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span>
+        {{- range .GetTerms "tags" -}}
+        <a class="note-tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- end -}}
+      </span>
+      <span>&middot;</span>
+      <a href="{{ .Parent.RelPermalink }}">all notes</a>
+      <span>&middot;</span>
+      <a href="{{ "notes/archive/" | relURL }}">archive</a>
+    </div>
+  </header>
+  <div class="note-body prose dark:prose-invert">
     {{ .Content }}
   </div>
 </article>

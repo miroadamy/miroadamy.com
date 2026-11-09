@@ -1,0 +1,182 @@
+/* Notes stream: cards, previews, month headings, tag row, archive.
+   Used by layouts/notes/* and layouts/partials/notes/*.
+   The theme loads this file by itself (css/custom.css) and puts it in the
+   main bundle. Colours come from the theme's scheme variables, so the light
+   and dark appearance both follow the rest of the site. */
+
+/* tag row on top of /notes/ */
+.note-tagrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.note-tagrow a {
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--color-neutral-300), 1);
+  color: rgba(var(--color-neutral-700), 1);
+  text-decoration: none;
+}
+.note-tagrow a:hover {
+  border-color: rgba(var(--color-primary-500), 1);
+}
+.note-tagrow .note-count {
+  margin-left: 0.3rem;
+  color: rgba(var(--color-neutral-400), 1);
+}
+.note-tagrow .note-archive-link {
+  margin-left: auto;
+  border-style: dashed;
+}
+.dark .note-tagrow a {
+  border-color: rgba(var(--color-neutral-600), 1);
+  color: rgba(var(--color-neutral-200), 1);
+}
+
+/* month heading between cards */
+.note-month {
+  margin: 2.5rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(var(--color-neutral-500), 1);
+}
+.dark .note-month {
+  color: rgba(var(--color-neutral-400), 1);
+}
+
+/* one entry */
+.note-card {
+  margin-top: 1.25rem;
+  padding: 1.4rem 1.6rem 0.6rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(var(--color-neutral-200), 1);
+  background: rgba(var(--color-neutral-50), 1);
+}
+.dark .note-card {
+  border-color: rgba(var(--color-neutral-600), 0.7);
+  background: rgba(var(--color-neutral-700), 0.45);
+}
+.note-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(var(--color-neutral-500), 1);
+}
+.dark .note-top {
+  color: rgba(var(--color-neutral-400), 1);
+}
+.note-top a:hover {
+  text-decoration: underline;
+}
+.note-tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--color-neutral-300), 1);
+}
+.dark .note-tag {
+  border-color: rgba(var(--color-neutral-600), 1);
+}
+.note-title {
+  margin: 0.45rem 0 0.9rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: rgba(var(--color-neutral-900), 1);
+}
+.dark .note-title {
+  color: rgba(var(--color-neutral), 1);
+}
+
+/* notes over the length limit: a fixed amount, fading out */
+.note-preview {
+  max-height: 14em;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+.note-more {
+  display: inline-block;
+  margin: 0.5rem 0 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(var(--color-primary-700), 1);
+}
+.dark .note-more {
+  color: rgba(var(--color-primary-400), 1);
+}
+.note-more:hover {
+  text-decoration: underline;
+}
+
+/* single note page: the line under the title */
+.note-meta {
+  justify-content: flex-start;
+  margin-top: 0.6rem;
+}
+.note-body {
+  margin-top: 1.5rem;
+}
+
+/* archive page and the Notes block on tag pages: one line per note */
+.note-archive-year {
+  margin: 2rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.note-archive-month {
+  margin: 1.25rem 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(var(--color-neutral-500), 1);
+}
+.dark .note-archive-month {
+  color: rgba(var(--color-neutral-400), 1);
+}
+.note-archive-line {
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.2rem 0;
+}
+.note-archive-line .note-day {
+  flex: 0 0 auto;
+  min-width: 2ch;
+  text-align: right;
+  color: rgba(var(--color-neutral-500), 1);
+  font-variant-numeric: tabular-nums;
+}
+.note-archive-line a:hover {
+  text-decoration: underline;
+}
+.term-block-title {
+  margin: 2.5rem 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(var(--color-neutral-500), 1);
+}
+.dark .term-block-title {
+  color: rgba(var(--color-neutral-400), 1);
+}
+
+@media (max-width: 480px) {
+  .note-card {
+    padding: 1rem 1rem 0.3rem;
+  }
+  .note-title {
+    font-size: 1.25rem;
+  }
+}

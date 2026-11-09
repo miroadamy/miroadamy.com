@@ -1,3 +1,9 @@
+---
+title: Klassify has a landing page
+tags:
+- klassify
+---
+
 
 
 My company, Klassify s.r.o., finally has a web page: [klassify.com](https://klassify.com).

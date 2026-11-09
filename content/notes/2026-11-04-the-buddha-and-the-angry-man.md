@@ -1,9 +1,13 @@
+---
+title: The Buddha and the Angry Man
+tags:
+- philosophy
+- stories
+---
+
 Found this on [FB](https://www.facebook.com/photo/?fbid=1654087752745502&set=a.752947606192859) and it resonated ....
 Most likely AI, but consistent, and useful.
 
-### The Buddha and the Angry Man
-
-  
 One day, while the Buddha was walking with his disciples, a furious man rushed toward him.  
   
 His face was burning with anger.  

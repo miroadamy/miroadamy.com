@@ -1,3 +1,9 @@
+---
+title: What to blue
+tags:
+- wikipedia
+---
+
 Na slovenskej Wikipédii je veľa červených odkazov - teda odkazov na články, ktoré zatiaľ neexistujú. Na to existuje šikovný nástroj: [What to Blue](https://whattodo.toolforge.org/whattoblue?lang=sk&topic=Computing&importance=Any), ktorý chýbajúce články zoradí podľa popularity, takže hneď vidno, ktorý nový článok by Wikipédii pomohol najviac.
 
 Chvíľu som sa s ním hral a rozhodol som sa sústrediť na oblasť, ktorej rozumiem najviac: softvérové inžinierstvo, open source a ľudia zo sveta softvéru, ktorých pozná každý programátor, ale málokto iný. Na slovenskej Wikipédii sú výrazne podreprezentovaní. Ich články buď úplne chýbajú, alebo sú to len krátke výhonky - oveľa kratšie ako česká verzia, o anglickej ani nehovoriac. Špeciálnou kategóriou sú ženy v tejto oblasti - zastúpenie stránok venovaných ženám v Computer Science na slovenskej Wikipédii je hanebne žalostné.
