@@ -69,6 +69,9 @@ page generation breaks.
    Verified 2026-10-04 on the first publish after the switch: the new post was live on www within
    27 minutes of the push with no manual step, byte-identical to the pages.dev address, and the GitHub
    Pages origin had it 50 s after the push (so the rollback target is always current).
+   Re-measured 2026-11-09: a brand-new page (`/notes/archive/`) answered 200 on www between 10 and
+   26 seconds after the publish script finished (polled every 15 s with `scripts/wait-live.sh` from
+   the vpub repo). One measurement; the 27 minutes above is not the normal case.
    - **GitHub Pages is still enabled on `miroadamy.github.io` as the standby rollback.** It receives
      every publish too. DNS in Cloudflare: `www` CNAME → `miroadamy-github-io.pages.dev` (Pages);
      apex `miroadamy.com` CNAME → `miroadamy.github.io` (GitHub, which 301s the apex to `https://www.`).

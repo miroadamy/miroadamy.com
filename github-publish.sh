@@ -1,4 +1,6 @@
 #!/bin/bash
+# Stop at the first failing step: a failed build must never be committed or pushed.
+set -euo pipefail
 
 MESSAGE=${1:-'Published changes'}
 
@@ -14,13 +16,14 @@ hugo --cleanDestinationDir
 # commit and publish static site
 cd public
 git add .
-git commit -m "$MESSAGE"
+# (nothing staged is not an error: skip the commit, still push)
+git diff --cached --quiet || git commit -m "$MESSAGE"
 git push
 
 # commit and publish the source
 cd ..
 git add .
-git commit -m "${MESSAGE} - source"
+git diff --cached --quiet || git commit -m "${MESSAGE} - source"
 git push
 
 git last -3
